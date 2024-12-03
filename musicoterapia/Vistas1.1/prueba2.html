@@ -1,464 +1,52 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generos</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reproductor</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="/musicoterapia/Header/style.css"> 
   <link rel="stylesheet" href="/musicoterapia/footer/footer/inicio/styles.css"> 
-    <style>
-
-
- /* Ajustes para el sidebar en vista móvil */
- @media screen and (max-width: 768px) {
-  .sidebar {
-    margin-top: 80px; /* Espacio para evitar que choque con el header */
-    padding-top: 20px;
-  }
-
-  /* Ajustes para los elementos del menú */
-  .sidebar .menu-item {
-    margin: 10px 0;
-    padding: 10px;
-  }
-
-  /* Asegurar que el contenedor del sidebar tenga el espacio adecuado */
-  .sidebar-container {
-    padding-top: 60px; /* Espacio adicional para el header fijo */
-  }
+  <style>
+   /* Estilos generales del contenedor principal */
+.container {
+  display: flex;
+  margin-top: 80px; /* Ajusta esto según la altura exacta de tu header */
+  height: calc(100vh - 80px - 60px); /* Ajusta la altura total, restando header y footer */
+  margin-bottom: 0; /* Elimina el margen inferior */
 }
 
-/* Estilos base del sidebar */
+/* Estilos de la barra lateral */
 .sidebar {
-  position: relative;
-  z-index: 1; /* Asegurar que esté por debajo del header */
-}
-
-/* Asegurar que el header permanezca por encima */
-header, .header {
   position: fixed;
-  top: 0;
+  top: 89px; /* Ajusta según la altura del header */
   left: 0;
-  right: 0;
-  z-index: 10;
-  background: #fff; /* O el color que uses */
-}
-/* Añadir margen superior al contenedor del menú */
-.sidebar {
-  margin-top: 100px; /* Esto bajará todo el menú */
-  padding: 20px;
-}
-
-/* Ajustar el espaciado entre los botones del menú */
-.sidebar .menu-item {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Alineación a la izquierda */
-  padding: 12px;
-  margin: 15px 0; /* Espacio entre botones */
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-}
-
-/* Ajustar el primer elemento del menú (Géneros) si es necesario */
-.sidebar .menu-item:first-child {
-  margin-top: 30px; /* Espacio adicional en el primer botón */
-}
-/* Ajuste adicional para que el texto y la imagen estén bien alineados */
-.sidebar .menu-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-.sidebar .menu-item span {
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Ajuste del título */
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 75px;
-  margin-top: 200px; /* Aumentado de 150px a 200px para bajar más el título */
-  margin-bottom: 50px; /* Aumentado de 20px a 50px para dar más espacio */
-  width: 100%;
-  font-family: "Roboto Slab", serif;
-}
-
-/* Añadido para dar más espacio al inicio del menú */
-.sidebar {
-  padding-top: 30px;
-}
-
-/* Estilos adicionales para ajustar los botones dentro del menú */
-.sidebar .menu-item {
-  display: flex;
-  align-items: center; /* Centra verticalmente los elementos dentro del botón */
-  justify-content: center; /* Centra horizontalmente los elementos dentro del botón */
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-}
-
-/* Ajuste adicional para que el texto y la imagen estén bien alineados */
-.sidebar .menu-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-.sidebar .menu-item span {
-  text-align: center;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Ajuste del título */
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 75px;
-  margin-top: 150px;
-  margin-bottom: 20px;
-  width: 100%;
-  font-family: "Roboto Slab", serif;
-}
-
- /* Ajusta la posición del título del álbum */
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 75px;
-  margin-bottom: 20px;
-  font-family: "Roboto Slab", serif;
-  width: 100%;
-  margin-left: 0;
-  margin-top: 150px; /* Incrementado para bajar aún más el título */
-}
-
-/* NUEVOS ESTILOS */
-  
-     /* NUEVOS ESTILOS  */
-     .submenu {
-        position: absolute;
-        background-color: #fff;
-        padding: 5px 5px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        display: none;
-        top: 24px;
-        left: 0px;
-        width: auto;
-        z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
-      }
-
-      .nav:hover .submenu {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .submenu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .submenu li {
-        padding: 10px 20px; /* Reducido para mejor apariencia */
-        border-bottom: 1px solid #ddd;
-        cursor: pointer; /* Indica que es clickable */
-      }
-
-      .submenu li:hover {
-        background-color: #f0f0f0;
-      }
-
-      /* Estilos del contenedor principal */
-      .container {
-        display: flex;
-        height: calc(100vh - 126px);
-      }
-
-      /* Estilos de la barra lateral */
-      .sidebar {
-        width: 25%;
-        background-color: #c7b7fe49;
-        padding: 20px;
-      }
-
-      /* Estilos de los elementos del menu en la barra lateral */
-      .sidebar .menu-item {
-        padding: 12px;
-        margin: 10px 0;
-        background: #fff;
-        border-radius: 15px;
-        transition: background 0.3s ease;
-      }
-
-      /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-      .sidebar .menu-item.active,
-      .sidebar .menu-item:hover {
-        background: linear-gradient(#ffffff, #9c76c1);
-        box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-      }
-
-      /* Estilos de las imágenes dentro de los elementos del menú */
-      .sidebar .menu-item img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-      }
-
-      /* Estilos de los enlaces dentro de los elementos del menú */
-      .sidebar .menu-item a {
-        display: flex;
-        align-items: center;
-        color: inherit;
-        text-decoration: none;
-        justify-content: center;
-      }
-
-      /* Estilos del texto dentro de los elementos del menú */
-      .sidebar .menu-item span {
-        flex-grow: 1;
-        text-align: center;
-        font-size: 16px;
-      }
-
-      /* Estilos del contenido principal */
-      .main-content {
-        width: 75%;
-        padding: 20px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .title {
-        display: flex;
-        justify-content: center; /* Centra horizontalmente */
-        align-items: center; /* Centra verticalmente */
-        font-size: 75px;
-        margin-bottom: 20px;
-        font-family: "Roboto Slab", serif;
-        width: 100%; /* Asegura que tome todo el ancho disponible */
-        margin-left: 0; /* Elimina el margen izquierdo */
-      }
-
-      .title span {
-        position: relative;
-        z-index: 1;
-        transition: color 0.3s;
-      }
-
-      .genres {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px; /* Reducido de 20px a 10px */
-        font-family: "Roboto", sans-serif;
-        flex-grow: 1;
-      }
-
-      .genre {
-        width: calc(50% - 20px);
-        text-align: center;
-      }
-
-      .genre h3 {
-        margin-bottom: 10px;
-        font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
-        transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
-      }
-
-      .genre:hover h3 {
-        color: #59009a; /* Cambia el color del título al pasar el cursor */
-      }
-
-      .genre:hover img {
-        transform: scale(
-          1.1
-        ); /* Aumenta el tamaño de la imagen al pasar el cursor */
-      }
-
-      .genres a {
-        color: inherit; /* Inherits the color from parent elements */
-        text-decoration: none; /* Removes the underline */
-      }
-
-      .genres a:hover {
-        color: #59009a; /* Optional: Change color on hover for visual feedback */
-      }
-
-      /* Estilo para el título Álbum */
-      .main-content .title span {
-        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-      }
-
-      /* Estilo para el título Álbum */
-      .main-content .title span {
-        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-      }
-
-      /* Estilos para pantallas más pequeñas, como tablets o móviles */
-      @media only screen and (max-width: 768px) {
-        .container {
-          flex-direction: column;
-          height: auto;
-          /* Ajustar altura automática */
-        }
-
-        .sidebar {
-          width: 95%;
-          /* Ocupar todo el ancho disponible */
-          margin-bottom: 20px;
-          /* Espacio entre el sidebar y el contenido principal */
-          padding: 8px 16px;
-        }
-
-        .main-content {
-          width: 100%;
-          /* Ocupar todo el ancho disponible */
-        }
-
-        .image-container {
-          /* Ajustar el margen izquierdo */
-          margin-left: 0;
-          text-align: left;
-          /* Centrar el contenido */
-        }
-
-        .image-container2 {
-          margin-left: 0;
-          text-align: center;
-          /* Centrar el contenido */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-        }
-
-        .track-list {
-          max-height: none;
-          /* Ajustar altura automática */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-          box-sizing: border-box;
-          overflow-y: auto;
-          background-size: cover;
-          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-          background-position: center;
-          /* Centra la imagen de fondo */
-          background-repeat: no-repeat;
-          /* Evita que la imagen se repita */
-        }
-
-        .corner-text {
-          font-size: 1.5em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          top: 10px;
-          left: 10px;
-        }
-
-        .bottom-left-text {
-          font-size: 1em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          bottom: 10px;
-          left: 10px;
-        }
-
-        .title {
-          font-size: 55px;
-          /* Cambiar el tamaño del texto para pantallas pequeñas */
-          margin: 20px;
-          width: 100%;
-          /* Asegúrate de que ocupe el ancho completo */
-          text-align: center;
-          /* Asegura que el texto esté centrado */
-        }
-
-        /* Centrar el título de géneros */
-        .title {
-          text-align: center;
-          margin-left: 0;
-          margin-right: 0;
-          width: 100%;
-          justify-content: center;
-        }
-      }
-      
-
-      /* --------------------------- */
-      e/* NUEVOS ESTILOS */
-.submenu {
-  position: absolute;
-  background-color: #fff;
-  padding: 5px 5px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: none;
-  top: 24px;
-  left: 0px;
-  width: auto;
-  z-index: 1000;
-}
-
-.nav:hover .submenu {
-  display: flex;
-  flex-direction: column;
-}
-
-.submenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.submenu li {
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-}
-
-.submenu li:hover {
-  background-color: #f0f0f0;
-}
-
-/* Estilos del contendor principal */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-  position: relative;
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
+  width: 60px;
   background-color: #c7b7fe49;
   padding: 20px;
+  transition: width 0.3s ease; /* Transición suave al expandirse */
+  overflow: hidden;
+  height: calc(89vh - 89px); /* Ajusta la altura de la barra lateral */
 }
 
-/* Estilos de los elementos del menu en la barra lateral */
+/* Estilos de la barra lateral al pasar el ratón */
+.sidebar:hover {
+  width: 450px;
+}
+
+/* Estilos de los elementos del menu de la barra lateral */
 .sidebar .menu-item {
   padding: 12px;
   margin: 10px 0;
   background: #fff;
   border-radius: 15px;
-  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
 /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
@@ -466,2992 +54,234 @@ header, .header {
 .sidebar .menu-item:hover {
   background: linear-gradient(#ffffff, #9c76c1);
   box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
+  transform: scale(1.05);
 }
 
-     
-/* Estilos de las imágenes dentro de los elementos del menú */
+/* Estilos de las imagenes dentro de los elementos del menu */
 .sidebar .menu-item img {
   width: 24px;
   height: 24px;
   margin-right: 10px;
 }
 
-/* Estilos de los enlaces dentro de los elementos del menú */
-.sidebar .menu-item a {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: none;
-  justify-content: center;
-}
-
-/* Estilos del texto dentro de los elementos del menú */
+/* Estilos del texto dentro de los elementos del menu */
 .sidebar .menu-item span {
   flex-grow: 1;
   text-align: center;
   font-size: 16px;
+  display: none;
+  text-decoration: none;
+  color: #000000;
 }
 
-/* Estilos del contenido principal */
-.main-content {
-  width: 75%;
-  padding: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+/* Muestra el texto del elemento del menu al pasar el ratón por la barra lateral */
+.sidebar:hover .menu-item span {
+  display: initial;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 75px;
-  margin-bottom: 20px;
-  font-family: "Roboto Slab", serif;
-  width: 100%;
-  margin-left: 0;
-}
-
-.genres {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  font-family: "Roboto", sans-serif;
-  flex-grow: 1;
-}
-
-.genre {
-  width: calc(50% - 20px);
+.sidebar .menu-item a {
+  text-decoration: none; /* Elimina el subrayado */
+  display: block; /* Hace que el <a> se comporte como un elemento de bloque */
+  color: inherit; /* Hereda el color de los elementos padre */
+  width: 100%; /* Asegura que el área de clic abarque todo el ancho del elemento del menú */
   text-align: center;
 }
 
-.genre h3 {
+/* Estilos del contenedor principal de contenido */
+.main {
+  width: calc(100% - 60px);
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden; /* Evitar el scroll horizontal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-left: 60px; /* Deja espacio para la barra lateral */
+}
+
+/* Estilos del título principal */
+.title {
+  font-size: 54px;
+  color: #59009a;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Estilos del texto dentro del título */
+.title span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilos de las pestañas para navegar */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 28px;
+  margin-left: 150px;
+}
+
+/* Estilos de cada pestaña */
+.tabs div {
+  cursor: pointer;
+}
+
+/* Cambia el color al pasar el ratón por las pestañas */
+.tabs div:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos específicos para cada color de pestaña */
+.tabs div.black {
+  color: black;
+}
+
+.tabs div.purple {
+  color: rgb(69, 29, 69);
+}
+
+/* Elimina márgenes y padding de todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Evita desplazamiento horizontal si algún elemento desborda */
+}
+
+.footer {
+  background-color: #59009A;
+  color: #a7a7a7;
+  padding: 50px 20px; /* Añadido padding lateral para dispositivos pequeños */
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #333;
+  width: 100%;
+}
+
+.footer-column h4 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
   margin-bottom: 10px;
-  font-family: "Roboto Slab", serif;
-  transition: color 0.3s;
 }
 
-.genre:hover h3 {
-  color: #59009a;
-}
-
-.genre img {
-  width: 60%;
-  height: 230px;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.genre:hover img {
-  transform: scale(1.1);
-}
-
-.genres a {
-  color: inherit;
+.footer-column ul li a {
+  color: #a7a7a7;
   text-decoration: none;
+  font-size: 14px;
 }
 
-.genres a:hover {
-  color: #59009a;
+.footer-column ul li a:hover {
+  color: #ffffff;
 }
 
-
-      /* --------------------------------------------------------------------------------------------------- */
-    /* ESTILOS  */
-    .container {
-      display: flex;
-      height: calc(100vh - 126px);
-      flex: 1;
-    }
-
-
-    /* INICO DEL MENU FIJO */
-    .submenu {
-            position: absolute;
-            background-color: #fff;
-            padding: 5px 5px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            display: none;
-            top: 24px;
-            left: 0px;
-            width: auto;
-            z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
-        }
-
-        .nav:hover .submenu {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .submenu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .submenu li {
-            padding: 10px 20px; /* Reducido para mejor apariencia */
-            border-bottom: 1px solid #ddd;
-            cursor: pointer; /* Indica que es clickable */
-        }
-
-        .submenu li:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Estilos del contenedor principal */
-        .container {
-            display: flex;
-            height: calc(100vh - 126px);
-        }
-
-        /* Estilos de la barra lateral */
-        .sidebar {
-            width: 25%;
-            background-color: #c7b7fe49;
-            padding: 20px;
-        }
-
-        /* Estilos de los elementos del menu en la barra lateral */
-        .sidebar .menu-item {
-            padding: 12px;
-            margin: 10px 0;
-            background: #fff;
-            border-radius: 15px;
-            transition: background 0.3s ease;
-        }
-
-        /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-  .sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-    box-shadow:   #59009A;
-  }; /* Elimina las sombras */
-
-
-        /* Estilos de las imágenes dentro de los elementos del menú */
-        .sidebar .menu-item img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        /* Estilos de los enlaces dentro de los elementos del menú */
-        .sidebar .menu-item a {
-            display: flex;
-            align-items: center;
-            color: inherit;
-            text-decoration: none;
-            justify-content: center;
-        }
-
-        /* Estilos del texto dentro de los elementos del menú */
-        .sidebar .menu-item span {
-            flex-grow: 1;
-            text-align: center;
-            font-size: 16px;
-        }
-    /* fin del Menu fijo */
-    /* fin del Menu fijo */
-
-    .main-content {
-      /* flex: 1; */
-      width: 75%;
-      padding: 20px;
-      overflow-y: auto;
-    }
-
-    .title {
-      display: flex;
-      align-items: center;
-      font-size: 75px;
-      margin-bottom: 20px;
-      position: relative;
-      justify-content: center;
-      /* Centrar el contenido horizontalmente */
-    }
-
-    .title span {
-      position: relative;
-      z-index: 1;
-      white-space: nowrap;
-    }
-
-    .content .search-bar {
-      display: flex;
-      align-items: center;
-      background: #EDEDED;
-      padding: 10px;
-      border-radius: 30px;
-      width: 600px;
-    }
-
-    .content .search-bar img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .content .search-bar input {
-      flex: 1;
-      border: none;
-      background: transparent;
-      margin-left: 10px;
-      font-size: 16px;
-    }
-
-    .content .search-bar input:focus {
-      outline: none;
-    }
-
-    .content .recently {
-      margin-top: 40px;
-      font-size: 32px;
-    }
-
-    .playlist {
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(to bottom right, rgba(54, 54, 144, 0.868), rgb(202, 175, 239));
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    .playlist-item {
-      display: flex;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #CCC;
-    }
-
-    .playlist-item img {
-      width: 50px;
-      height: 50px;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-
-    .playlist-info {
-      flex: 1;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .playlist-info .title {
-      font-size: 18px;
-    }
-
-    .playlist-info .meta {
-      font-size: 14px;
-      color: #ffffff;
-    }
-    .main-content {
-      /* flex: 1; */
-      width: 75%;
-      padding: 20px;
-      overflow-y: auto;
-    }
-
-    .title {
-      margin-right: 50px;
-      display: flex;
-      align-items: center;
-      font-size: 75px;
-      margin-bottom: 20px;
-      position: relative;
-      justify-content: center;
-      /* Centrar el contenido horizontalmente */
-    }
-
-    .title span {
-      position: relative;
-      z-index: 1;
-      white-space: nowrap;
-    }
-
-    .image-container {
-      position: relative;
-      margin-bottom: 5px;
-      display: inline-block;
-      /* Para que el contenedor se ajuste al contenido */
-      text-align: center;
-      /* Centrar contenido */
-    }
-
-
-    .image-container img {
-      /*fondo*/
-      position: relative;
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-
-    }
-
-    .image-container2 {
-      width: 69vw;
-      position: relative;
-      margin-bottom: 5px;
-      display: inline-block;
-      height: auto;
-      /* Para que el contenedor se ajuste al contenido */
-      text-align: center;
-      /* Centrar contenido */
-
-    }
-
-    .image-container2 .track-list {
-      max-height: 400px;
-      position: relative;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      border-radius: 10px;
-
-      box-sizing: border-box;
-      overflow-y: auto;
-
-      background-image: url(../VISTAS/images/fondoselegidos.png);
-      background-size: cover;
-      /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-      background-position: center;
-      /* Centra la imagen de fondo */
-      background-repeat: no-repeat;
-      /* Evita que la imagen se repita */
-    }
-
-    .corner-text {
-      font-family: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
-      position: absolute;
-      top: 40px;
-      /* Ajusta según sea necesario */
-      left: 20px;
-      /* Ajusta según sea necesario */
-      font-size: 47px;
-      /* Ajusta el tamaño de fuente según sea necesario */
-      color: #59009a;
-      /* Color de letra morado */
-
-      padding: 5px 10px;
-      /* Espacio alrededor del texto */
-      border-radius: 5px;
-      /* Bordes redondeados */
-      z-index: 2;
-      /* Asegura que esté por encima de otros elementos */
-    }
-
-    .bottom-left-text {
-      font-family: Impact, Haettenschweiler, "Arial Narrow", sans-serif;
-      position: absolute;
-      bottom: 50px;
-      left: 20px;
-      /* Ajusta según sea necesario */
-      font-size: 28px;
-      /* Ajusta el tamaño de fuente según sea necesario */
-      color: #000000;
-      padding: 10px;
-      /* Espacio alrededor del texto */
-      border-radius: 5px;
-      /* Bordes redondeados */
-      z-index: 2;
-      /* Asegura que esté por encima de otros elementos */
-    }
-
-
-    /* Estilos del contenedor de pistas */
-    .tracks-container {
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px;
-      background: url();
-      border-radius: 15px;
-      align-items: center;
-      transition: background 0.3s ease, transform 0.3s ease;
-      cursor: pointer;
-      
-    }
-
-    /* Estilos generales de cada pista */
-    .track {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-
-    /* Elimina el borde inferior de la última pista */
-    .track:last-child {
-      border-bottom: none;
-    }
-
-    /* Estilos de las imágenes de las pistas */
-    .track img {
-      height: 50px;
-      width: 50px;
-      border-radius: 5px;
-    }
-
-    /* Estilos de los divs dentro de cada pista */
-    .track div {
-      padding: 0 20px;
-    }
-
-    /* Estilos de los enlaces de los botones de reproducción */
-    .track a.play-button {
-      background: white;
-      border: 2px solid black;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      cursor: pointer;
-      position: relative;
-      color: black;
-    }
-
-    /* Estilos del triángulo dentro del botón de reproducción */
-    .track a.play-button::before {
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 10px 0 10px 16px;
-      border-color: transparent transparent transparent black;
-      position: absolute;
-      left: 13px;
-    }
-    /* Estilos para pantallas más pequeñas, como tablets o móviles */
-    @media only screen and (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        height: auto;
-        /* Ajustar altura automática */
-      }
-
-      .sidebar {
-        width: 100%;
-        /* Ocupar todo el ancho disponible */
-        margin-bottom: 20px;
-        /* Espacio entre el sidebar y el contenido principal */
-        padding: 8px 16px;
-      }
-
-
-      .main-content {
-        width: 100%;
-        /* Ocupar todo el ancho disponible */
-
-      }
-
-      .image-container {
-        /* Ajustar el margen izquierdo */
-        margin-left: 0;
-        text-align: left;
-        /* Centrar el contenido */
-
-      }
-
-      .image-container2 {
-        margin-left: 0;
-        text-align: center;
-        /* Centrar el contenido */
-        width: 100%;
-        /* Ajustar el ancho al 100% */
-        padding: 10px;
-        /* Agregar algo de padding si es necesario */
-      }
-
-      .track-list {
-        max-height: none;
-        /* Ajustar altura automática */
-        width: 100%;
-        /* Ajustar el ancho al 100% */
-        padding: 10px;
-        /* Agregar algo de padding si es necesario */
-        box-sizing: border-box;
-        overflow-y: auto;
-        background-size: cover;
-        /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-        background-position: center;
-        /* Centra la imagen de fondo */
-        background-repeat: no-repeat;
-        /* Evita que la imagen se repita */
-      }
-
-
-      .corner-text {
-        font-size: 1.5em;
-        /* Reducir tamaño de fuente para pantallas pequeñas */
-        top: 10px;
-        left: 10px;
-      }
-
-      .bottom-left-text {
-        font-size: 1em;
-        /* Reducir tamaño de fuente para pantallas pequeñas */
-        bottom: 10px;
-        left: 10px;
-      }
-
-      .title {
-        font-size: 35px;
-        /* Reducir el tamaño del título */
-        margin-left: 20px;
-        /* Ajustar el margen izquierdo */
-        text-align: center;
-      }
-    }
-       /* Centrar el título de géneros */
-       .title {
-        text-align: center;
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        justify-content: center;
-    }
-
-
-    
-/* NUEVOS ESTILOS DR RESPONSIVE -------------------------------------------------*/
-
-/* NUEVOS ESTILOS  */
-.submenu {
-        position: absolute;
-        background-color: #fff;
-        padding: 5px 5px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        display: none;
-        top: 24px;
-        left: 0px;
-        width: auto;
-        z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
-      }
-
-      .nav:hover .submenu {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .submenu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .submenu li {
-        padding: 10px 20px; /* Reducido para mejor apariencia */
-        border-bottom: 1px solid #ddd;
-        cursor: pointer; /* Indica que es clickable */
-      }
-
-      .submenu li:hover {
-        background-color: #f0f0f0;
-      }
-
-      /* Estilos del contenedor principal */
-      .container {
-        display: flex;
-        height: calc(100vh - 126px);
-      }
-
-      /* Estilos de la barra lateral */
-      .sidebar {
-        width: 25%;
-        background-color: #c7b7fe49;
-        padding: 20px;
-      }
-
-      /* Estilos de los elementos del menu en la barra lateral */
-      .sidebar .menu-item {
-        padding: 12px;
-        margin: 10px 0;
-        background: #fff;
-        border-radius: 15px;
-        transition: background 0.3s ease;
-      }
-
-     /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-  .sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-    box-shadow:   #59009A;
-  }; /* Elimina las sombras */
-
-
-      /* Estilos de las imágenes dentro de los elementos del menú */
-      .sidebar .menu-item img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-      }
-
-      /* Estilos de los enlaces dentro de los elementos del menú */
-      .sidebar .menu-item a {
-        display: flex;
-        align-items: center;
-        color: inherit;
-        text-decoration: none;
-        justify-content: center;
-      }
-
-      /* Estilos del texto dentro de los elementos del menú */
-      .sidebar .menu-item span {
-        flex-grow: 1;
-        text-align: center;
-        font-size: 16px;
-      }
-
-      
-
-      /* Estilo para el título Álbum */
-      .main-content .title span {
-        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-      }
-
-      /* Estilo para el título Álbum */
-      .main-content .title span {
-        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-      }
-
-      /* Estilos para pantallas más pequeñas, como tablets o móviles */
-      @media only screen and (max-width: 768px) {
-        .container {
-          flex-direction: column;
-          height: auto;
-          /* Ajustar altura automática */
-        }
-
-        .sidebar {
-          width: 95%;
-          /* Ocupar todo el ancho disponible */
-          margin-bottom: 20px;
-          /* Espacio entre el sidebar y el contenido principal */
-          padding: 8px 16px;
-        }
-
-        .main-content {
-          width: 100%;
-          /* Ocupar todo el ancho disponible */
-        }
-
-        .image-container {
-          /* Ajustar el margen izquierdo */
-          margin-left: 0;
-          text-align: left;
-          /* Centrar el contenido */
-        }
-
-        .image-container2 {
-          margin-left: 0;
-          text-align: center;
-          /* Centrar el contenido */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-        }
-
-        .track-list {
-          max-height: none;
-          /* Ajustar altura automática */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-          box-sizing: border-box;
-          overflow-y: auto;
-          background-size: cover;
-          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-          background-position: center;
-          /* Centra la imagen de fondo */
-          background-repeat: no-repeat;
-          /* Evita que la imagen se repita */
-        }
-
-        .corner-text {
-          font-size: 1.5em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          top: 10px;
-          left: 10px;
-        }
-
-        .bottom-left-text {
-          font-size: 1em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          bottom: 10px;
-          left: 10px;
-        }
-
-        .title {
-          font-size: 55px;
-          /* Cambiar el tamaño del texto para pantallas pequeñas */
-          margin: 20px;
-          width: 100%;
-          /* Asegúrate de que ocupe el ancho completo */
-          text-align: center;
-          /* Asegura que el texto esté centrado */
-        }
-
-        /* Centrar el título de géneros */
-        .title {
-          text-align: center;
-          margin-left: 0;
-          margin-right: 0;
-          width: 100%;
-          justify-content: center;
-        }
-      }
-
-      
-      /* --------------------------- */
-      /* NUEVOS ESTILOS */
-.submenu {
-  position: absolute;
-  background-color: #fff;
-  padding: 5px 5px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: none;
-  top: 24px;
-  left: 0px;
-  width: auto;
-  z-index: 1000;
-}
-
-.nav:hover .submenu {
+.footer-bottom {
   display: flex;
-  flex-direction: column;
-}
-
-.submenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.submenu li {
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-}
-
-.submenu li:hover {
-  background-color: #f0f0f0;
-}
-
-/* Estilos del contenedor principal */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-  position: relative;
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-}
-
-/* Estilos de los elementos del menu en la barra lateral */
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-}
-
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-    box-shadow:   #59009A;
-  }; /* Elimina las sombras */
-
-
-     
-/* Estilos de las imágenes dentro de los elementos del menú */
-.sidebar .menu-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-/* Estilos de los enlaces dentro de los elementos del menú */
-.sidebar .menu-item a {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  color: inherit;
-  text-decoration: none;
-  justify-content: center;
-}
-
-/* Estilos del texto dentro de los elementos del menú */
-.sidebar .menu-item span {
-  flex-grow: 1;
-  text-align: center;
-  font-size: 16px;
-}
-
-
-
-/* Media queries mejorados */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    min-height: calc(100vh - 126px);
-    padding-bottom: 60px; /* Espacio para el footer */
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 0;
-  }
-
-  .main-content {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .title {
-    font-size: 40px;
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  /* Mantenemos el comportamiento original de los géneros */
-  .genre {
-    width: calc(50% - 20px);
-  }
-
-
-  /* Ajustes para el menú en móvil */
-  .nav {
-    position: relative;
-  }
-
-  .submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-width: 100vw;
-    z-index: 1000;
-  }
-
-  .submenu ul {
-    width: 100%;
-  }
-
-  .submenu li {
-    padding: 15px;
-    text-align: center;
-  }
-
-}
-/* ------------------------------------------------------- */
-  
-   
-   
-      /* Estilos de las imágenes dentro de los elementos del menú */
-      .sidebar .menu-item img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-      }
-
-   
-
-
-    /* Muestra el texto del elemento del menu al pasar el ratón por la barra lateral */
-    .sidebar:hover .menu-item span {
-      display: initial;
-    }
-
-    .sidebar .menu-item a {
-      text-decoration: none;
-      /* Removes the underline */
-      display: block;
-      /* Makes the <a> tag behave like a block-level element */
-      color: inherit;
-      /* Inherits the color from parent elements */
-      width: 100%;
-      /* Ensures the clickable area spans the full width of the menu item */
-      text-align: center;
-    }
-
-    /* Estilos del contenedor principal de contenido */
-    .main {
-      width: calc(100% - 60px);
-      padding: 20px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      /* Evitar el scroll horizontal */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-   
-
-    /* Estilos del texto dentro del título */
-    .title span {
-      position: relative;
-      z-index: 2;
-    }
-
-   
-
-    /* Estilos de cada pestaña */
-    .tabs div {
-      cursor: pointer;
-    }
-
-    /* Cambia el color al pasar el ratón por las pestañas */
-    .tabs div:hover {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-  
-
-
-@media only screen and (max-width: 768px) {
-  body {
-    padding-top: 100px;
-  }
-
-  .container {
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 95%;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto;
-    border-radius: 40px;
-    padding: 8px 16px;
-    border: 2px solid #59009A;
-  }
-
-  .main {
-    width: 100%;
-    padding: 20px;
-    margin: 0 auto;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .player {
-    width: 90%;
-    max-width: 100%;
-    margin: 20px auto;
-    padding: 15px;
-    border: 2px solid #59009A;
-    border-radius: 15px;
-  }
-
-  .tracks-container {
-    width: 90%;
-    max-width: 100%;
-    margin: 20px auto;
-    border: 2px solid #59009A;
-    border-radius: 15px;
-    padding: 15px;
-    transform: translateX(0);
-  }
-
-  .title {
-    font-size: 35px;
-    margin: 20px 0;
-    text-align: center;
-  }
-
-  .tabs {
-    margin-left: 0;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .track-list {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-
-
-
-/* Media query para pantallas grandes hasta 1200px */
-@media only screen and (max-width: 1200px) {
-  .content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .tracks-container {
-    margin: 20px auto; /* Centrado horizontal */
-    width: 90%;
-    max-width: 800px; /* Limitamos el ancho máximo */
-    transform: none; /* Eliminamos cualquier transformación */
-  }
-
-  .player {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-}
-
-/* Media query para tablets y dispositivos medianos */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 95%;
-  }
-
-  .tracks-container {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    transform: none;
-    border: 2px solid #59009A;
-    border-radius: 15px;
-    padding: 15px;
-  }
-}
-
-/* Media query para dispositivos móviles */
-@media only screen and (max-width: 480px) {
-  .tracks-container {
-    width: 95%;
-    margin: 15px auto;
-    padding: 10px;
-  }
-
-  .track-info h3 {
-    font-size: 1.2rem;
-  }
-
-  .track-info p {
-    font-size: 0.9rem;
-  }
-}
-}
-/* ----------------------------------------------------------- */
-/* Estilos del contenedor nav */
-.nav {
-  position: relative;
-  display: inline-block;
-}
-
-/* Estilos del submenú */
-.submenu {
-  position: absolute;
-  background-color: #fff;
-  padding: 5px 5px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: none;
-  top: 24px;  /* Mantenemos la posición original */
-  left: 0px;  /* Mantenemos la posición original */
-  width: auto;
-  min-width: 180px; /* Aseguramos un ancho mínimo para mejor legibilidad */
-  z-index: 1000;
-}
-
-/* Mostrar submenú al hacer hover */
-.nav:hover .submenu {
-  display: block; /* Cambiado de flex a block para mantener el comportamiento original */
-}
-
-/* Estilos de la lista del submenú */
-.submenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Estilos de los elementos de la lista */
-.submenu li {
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
-}
-
-/* Quitar el borde del último elemento */
-.submenu li:last-child {
-  border-bottom: none;
-}
-
-/* Efecto hover en los elementos */
-.submenu li:hover {
-  background-color: #f0f0f0;
-  color: #59009a;
-}
-
-/* Estilos para dispositivos móviles */
-@media only screen and (max-width: 768px) {
-  .submenu {
-    position: absolute;
-    top: 24px;
-    width: auto;
-    min-width: 200px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-
-  .submenu li {
-    padding: 12px 20px;
-    text-align: left;
-  }
-}
-/* ------------------------------------------------------------- */
-/* Estilos del contenedor principal */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-}
-
-/* Estilos de los elementos del menu en la barra lateral */
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-    box-shadow:   #59009A;
-  }; /* Elimina las sombras */
-
-
-/* Estilos de las imágenes dentro de los elementos del menú */
-.sidebar .menu-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Estilos de los enlaces dentro de los elementos del menú */
-.sidebar .menu-item a {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: none;
-  width: 100%;
-}
-
-/* Estilos del texto dentro de los elementos del menú */
-.sidebar .menu-item span {
-  font-size: 16px;
-  white-space: nowrap;
-  margin-left: 5px;
-}
-
-/* Ajustes responsive */
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .sidebar .menu-item {
-    padding: 10px;
-  }
-
-  .sidebar .menu-item img {
-    margin-right: 10px;
-  }
-}
-
-/* --------------------------------------------------------------------------- */
-@media only screen and (max-width: 768px) {
-  body {
-    padding-top: 60px; /* Reducido de 100px a 60px */
-  }
-
-  .container {
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-    padding: 10px; /* Reducido de 20px a 10px */
-    max-width: 95%;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 10px auto; /* Reducido de 20px a 10px */
-    border-radius: 40px;
-    padding: 8px 16px;
-    border: 2px solid #59009A;
-  }
-
-  .main {
-    width: 100%;
-    padding: 10px; /* Reducido de 20px a 10px */
-    margin: 0 auto;
-  }
-
-  /* Resto de los estilos se mantienen igual */
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .title {
-    font-size: 35px;
-    margin: 10px 0; /* Reducido de 20px a 10px */
-    text-align: center;
-  }
-}
-/* Estilos base mejorados */
-
-
-/* Estilos del contenedor principal mejorados */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-  position: relative;
-}
-
-.main-content {
-  width: 75%;
-  padding: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centrado de contenido */
-}
-
-/* Media queries mejorados para responsive */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center; /* Centrado del contenedor principal */
-    padding: 10px;
-  }
-
-  .main-content {
-    width: 100%;
-    max-width: 95%; /* Limita el ancho máximo en móvil */
-    margin: 0 auto; /* Centrado horizontal */
-    padding: 10px;
-  }
-
-  .genres {
-    width: 100%;
-    justify-content: center;
-    gap: 15px;
-    padding: 0;
-  }
-
-  .genre {
-    width: calc(50% - 10px);
-    margin: 0 auto 15px; /* Centrado y espacio inferior */
-    max-width: 300px; /* Limita el ancho máximo de cada género */
-  }
-
-  .genre img {
-    width: 100%;
-    height: auto;
-    display: block; /* Mejora el centrado de la imagen */
-    margin: 0 auto 10px; /* Centrado y espacio inferior */
-  }
-
-  .sidebar {
-    width: 95%;
-    margin: 0 auto 20px; /* Centrado y espacio inferior */
-    padding: 10px;
-  }
-
-  .title {
-    width: 100%;
-    text-align: center;
-    margin: 15px auto; /* Centrado y espacio vertical */
-  }
-}
-
-/* Para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .main-content {
-    max-width: 100%;
-    padding: 5px;
-  }
-
-  .genres {
-    gap: 10px;
-  }
-
-  .genre {
-    width: calc(50% - 5px);
-    max-width: 250px; /* Ajuste para pantallas muy pequeñas */
-  }
-
-  .title {
-    font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
-  }
-}
-/* Modificar el espaciado de los elementos del menu en la barra lateral */
-
-.sidebar .menu-item {
-    padding: 12px;
-    margin: 8px 0; /* Reducido a 8px para un espaciado más compacto y uniforme */
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-}
-.sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px; /* Reducido de 100px a 60px para un espaciado más moderado */
-}
-/* RESPONSIVE */
-/* Estilos base del contenedor */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-  padding-top: 108px;
-}
-
-/* Estilos de los elementos del menu */
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 8px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-}
-
-/* Media queries mejorados para dispositivos móviles */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
-    padding: 15px;
-    padding-top: 70px; /* Reducido para móviles */
-    border-radius: 20px;
-    border: 2px solid #59009A;
-  }
-
-  .menu-item {
-    margin: 6px 0 !important; /* Espaciado más compacto en móvil */
-    padding: 10px !important;
-  }
-
-  .sidebar .menu-item img {
-    width: 20px; /* Iconos ligeramente más pequeños en móvil */
-    height: 20px;
-    margin-right: 12px;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 14px; /* Texto ligeramente más pequeño en móvil */
-  }
-
-  /* Mejoras de interacción táctil */
-  .sidebar .menu-item:active {
-    transform: scale(0.98);
-    background: linear-gradient(#ffffff, #9c76c1);
-  }
-}
-
-/* Ajustes para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    max-width: 100%;
-    padding: 12px;
-    padding-top: 60px;
-  }
-
-  .menu-item {
-    margin: 4px 0 !important;
-    padding: 8px !important;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 13px;
-  }
-}
-/* NUEVOS ESTILOS Y RESPOSIVE */
-/* Estilos base del contenedor */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-  padding-top: 108px;
-}
-
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* Media queries para móvil */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto; /* Margen uniforme arriba y abajo */
-    padding: 20px 15px; /* Padding horizontal y vertical uniforme */
-    border-radius: 20px;
-    border: 2px solid #59009A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-  }
-
-  .sidebar .menu-item {
-    width: 96%; /* Ancho ajustado */
-    margin: 6px 0; /* Espaciado vertical entre items */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .sidebar .menu-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 14px;
-  }
-}
-
-/* Ajustes para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    margin: 15px auto; /* Margen reducido pero uniforme */
-    padding: 15px;
-  }
-
-  .sidebar .menu-item {
-    margin: 5px 0;
-    padding: 8px;
-  }
-}
-
-/* Mantener estilos de hover y active */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-  box-shadow:   #59009A;
-}
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-    .sidebar .menu-item:hover {
-      transform: scale(1.05);
-    }
-       
-    @media only screen and (max-width: 768px) {
-.container {
-flex-direction: column;
-height: auto;
-margin: 0 auto;
-padding: 20px;
-max-width: 95%;
-}
-.sidebar {
-width: 100%;
-max-width: 450px;
-margin: 20px auto;
-border-radius: 40px;
-padding: 8px 16px;
-border: 2px solid #59009A;
-}
-.main-content {
-width: 100%;
-padding: 20px;
-margin: 0 auto;
-}
-.title {
-font-size: 35px;
-margin: 20px 0;
-text-align: center;
-}
-}
-
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto;
-    border-radius: 25px; /* Aumentado para dar forma más ovalada */
-    padding: 8px 16px;
-    border: 2px solid #59009A;
-  }
-  
-  .sidebar .menu-item {
-    width: 96%;
-    margin: 6px 0;
-    padding: 10px;
-    border-radius: 20px; /* Aumentado para dar forma más ovalada */
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* Para pantallas aún más pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    border-radius: 20px; /* Mantenemos la forma ovalada */
-  }
-  
-  .sidebar .menu-item {
-    border-radius: 15px; /* Ligeramente menor pero manteniendo el aspecto ovalado */
-  }
-}
-
-
-
-
-
-
-
-/* NUEVOS ESTILOS DR RESPONSIVE -------------------------------------------------*/
-
-/* NUEVOS ESTILOS  */
-
-      .nav:hover .submenu {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .submenu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .submenu li {
-        padding: 10px 20px; /* Reducido para mejor apariencia */
-        border-bottom: 1px solid #ddd;
-        cursor: pointer; /* Indica que es clickable */
-      }
-
-      .submenu li:hover {
-        background-color: #f0f0f0;
-      }
-
-      /* Estilos del contenedor principal */
-      .container {
-        display: flex;
-        height: calc(100vh - 126px);
-      }
-
-      /* Estilos de la barra lateral */
-      .sidebar {
-        width: 25%;
-        background-color: #c7b7fe49;
-        padding: 20px;
-      }
-
-      /* Estilos de los elementos del menu en la barra lateral */
-      .sidebar .menu-item {
-        padding: 12px;
-        margin: 10px 0;
-        background: #fff;
-        border-radius: 15px;
-        transition: background 0.3s ease;
-      }
-
-      /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-      .sidebar .menu-item.active,
-      .sidebar .menu-item:hover {
-        background: linear-gradient(#ffffff, #9c76c1);
-        box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-      }
-
-      /* Estilos de las imágenes dentro de los elementos del menú */
-      .sidebar .menu-item img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-      }
-
-      /* Estilos de los enlaces dentro de los elementos del menú */
-      .sidebar .menu-item a {
-        display: flex;
-        align-items: center;
-        color: inherit;
-        text-decoration: none;
-        justify-content: center;
-      }
-
-      /* Estilos del texto dentro de los elementos del menú */
-      .sidebar .menu-item span {
-        flex-grow: 1;
-        text-align: center;
-        font-size: 16px;
-      }
-
-      /* Estilos del contenido principal */
-      .main-content {
-        width: 75%;
-        padding: 20px;
-        overflow-y: auto;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .title {
-        display: flex;
-        justify-content: center; /* Centra horizontalmente */
-        align-items: center; /* Centra verticalmente */
-        font-size: 75px;
-        margin-bottom: 20px;
-        font-family: "Roboto Slab", serif;
-        width: 100%; /* Asegura que tome todo el ancho disponible */
-        margin-left: 0; /* Elimina el margen izquierdo */
-      }
-
-      .title span {
-        position: relative;
-        z-index: 1;
-        transition: color 0.3s;
-      }
-
-      .genres {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        font-family: "Roboto", sans-serif;
-        flex-grow: 1;
-      }
-
-      .genre {
-        width: calc(50% - 20px);
-        text-align: center;
-      }
-
-      .genre h3 {
-        margin-bottom: 10px;
-        font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
-        transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
-      }
-
-      .genre:hover h3 {
-        color: #59009a; /* Cambia el color del título al pasar el cursor */
-      }
-
-
-      .genre:hover img {
-        transform: scale(
-          1.1
-        ); /* Aumenta el tamaño de la imagen al pasar el cursor */
-      }
-
-      .genres a {
-        color: inherit; /* Inherits the color from parent elements */
-        text-decoration: none; /* Removes the underline */
-      }
-
-      .genres a:hover {
-        color: #59009a; /* Optional: Change color on hover for visual feedback */
-      }
-
-      /* Estilo para el título Álbum */
-      .main-content .title span {
-        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-      }
-
-      /* Estilo para el título Álbum */
-      .main-content .title span {
-        font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-      }
-
-      /* Estilos para pantallas más pequeñas, como tablets o móviles */
-      @media only screen and (max-width: 768px) {
-        .container {
-          flex-direction: column;
-          height: auto;
-          /* Ajustar altura automática */
-        }
-
-        .sidebar {
-          width: 95%;
-          /* Ocupar todo el ancho disponible */
-          margin-bottom: 20px;
-          /* Espacio entre el sidebar y el contenido principal */
-          padding: 8px 16px;
-        }
-
-        .main-content {
-          width: 100%;
-          /* Ocupar todo el ancho disponible */
-        }
-
-        .image-container {
-          /* Ajustar el margen izquierdo */
-          margin-left: 0;
-          text-align: left;
-          /* Centrar el contenido */
-        }
-
-        .image-container2 {
-          margin-left: 0;
-          text-align: center;
-          /* Centrar el contenido */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-        }
-
-        .track-list {
-          max-height: none;
-          /* Ajustar altura automática */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-          box-sizing: border-box;
-          overflow-y: auto;
-          background-size: cover;
-          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-          background-position: center;
-          /* Centra la imagen de fondo */
-          background-repeat: no-repeat;
-          /* Evita que la imagen se repita */
-        }
-
-        .corner-text {
-          font-size: 1.5em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          top: 10px;
-          left: 10px;
-        }
-
-        .bottom-left-text {
-          font-size: 1em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          bottom: 10px;
-          left: 10px;
-        }
-
-        .title {
-          font-size: 55px;
-          /* Cambiar el tamaño del texto para pantallas pequeñas */
-          margin: 20px;
-          width: 100%;
-          /* Asegúrate de que ocupe el ancho completo */
-          text-align: center;
-          /* Asegura que el texto esté centrado */
-        }
-
-        /* Centrar el título de géneros */
-        .title {
-          text-align: center;
-          margin-left: 0;
-          margin-right: 0;
-          width: 100%;
-          justify-content: center;
-        }
-      }
-
-      
-      /* --------------------------- */
-      /* NUEVOS ESTILOS */
-.submenu {
-  position: absolute;
-  background-color: #fff;
-  padding: 5px 5px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: none;
-  top: 24px;
-  left: 0px;
-  width: auto;
-  z-index: 1000;
-}
-
-.nav:hover .submenu {
-  display: flex;
-  flex-direction: column;
-}
-
-.submenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.submenu li {
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-}
-
-.submenu li:hover {
-  background-color: #f0f0f0;
-}
-
-/* Estilos del contenedor principal */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-  position: relative;
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-}
-
-/* Estilos de los elementos del menu en la barra lateral */
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-}
-
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background: linear-gradient(#ffffff, #9c76c1);
-  box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-}
-
-     
-/* Estilos de las imágenes dentro de los elementos del menú */
-.sidebar .menu-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-/* Estilos de los enlaces dentro de los elementos del menú */
-.sidebar .menu-item a {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: none;
-  justify-content: center;
-}
-
-/* Estilos del texto dentro de los elementos del menú */
-.sidebar .menu-item span {
-  flex-grow: 1;
-  text-align: center;
-  font-size: 16px;
-}
-
-/* Estilos del contenido principal */
-.main-content {
-  width: 75%;
-  padding: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 75px;
-  margin-bottom: 20px;
-  font-family: "Roboto Slab", serif;
-  width: 100%;
-  margin-left: 0;
-}
-
-.genres {
-  display: flex;
+  padding-top: 20px;
   flex-wrap: wrap;
-  gap: 20px;
-  font-family: "Roboto", sans-serif;
-  flex-grow: 1;
-}
-
-.genre {
-  width: calc(50% - 20px);
-  text-align: center;
-}
-
-.genre h3 {
-  margin-bottom: 10px;
-  font-family: "Roboto Slab", serif;
-  transition: color 0.3s;
-}
-
-.genre:hover h3 {
-  color: #59009a;
-}
-
-.genres a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.genres a:hover {
-  color: #59009a;
-}
-
-/* Media queries mejorados */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    min-height: calc(100vh - 126px);
-    padding-bottom: 60px; /* Espacio para el footer */
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 0;
-  }
-
-  .main-content {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .title {
-    font-size: 40px;
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  /* Mantenemos el comportamiento original de los géneros */
-  .genre {
-    width: calc(50% - 20px);
-  }
-
-
-  /* Ajustes para el menú en móvil */
-  .nav {
-    position: relative;
-  }
-
-  .submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-width: 100vw;
-    z-index: 1000;
-  }
-
-  .submenu ul {
-    width: 100%;
-  }
-
-  .submenu li {
-    padding: 15px;
-    text-align: center;
-  }
-
-  
-}
-/* ------------------------------------------------------- */
-  
-   
-   
-      /* Estilos de las imágenes dentro de los elementos del menú */
-      .sidebar .menu-item img {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-      }
-
-   
-
-
-    /* Muestra el texto del elemento del menu al pasar el ratón por la barra lateral */
-    .sidebar:hover .menu-item span {
-      display: initial;
-    }
-
-    .sidebar .menu-item a {
-      text-decoration: none;
-      /* Removes the underline */
-      display: block;
-      /* Makes the <a> tag behave like a block-level element */
-      color: inherit;
-      /* Inherits the color from parent elements */
-      width: 100%;
-      /* Ensures the clickable area spans the full width of the menu item */
-      text-align: center;
-    }
-
-    /* Estilos del contenedor principal de contenido */
-    .main {
-      width: calc(100% - 60px);
-      padding: 20px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      /* Evitar el scroll horizontal */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-   
-
-    /* Estilos del texto dentro del título */
-    .title span {
-      position: relative;
-      z-index: 2;
-    }
-
-   
-
-    /* Estilos de cada pestaña */
-    .tabs div {
-      cursor: pointer;
-    }
-
-    /* Cambia el color al pasar el ratón por las pestañas */
-    .tabs div:hover {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-  
-
-
-@media only screen and (max-width: 768px) {
-  body {
-    padding-top: 100px;
-  }
-
-  .container {
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 95%;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto;
-    border-radius: 40px;
-    padding: 8px 16px;
-    border: 2px solid #59009A;
-  }
-
-  .main {
-    width: 100%;
-    padding: 20px;
-    margin: 0 auto;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .player {
-    width: 90%;
-    max-width: 100%;
-    margin: 20px auto;
-    padding: 15px;
-    border: 2px solid #59009A;
-    border-radius: 15px;
-  }
-
-  .tracks-container {
-    width: 90%;
-    max-width: 100%;
-    margin: 20px auto;
-    border: 2px solid #59009A;
-    border-radius: 15px;
-    padding: 15px;
-    transform: translateX(0);
-  }
-
-  .title {
-    font-size: 35px;
-    margin: 20px 0;
-    text-align: center;
-  }
-
-  .tabs {
-    margin-left: 0;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .track-list {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-  }
-
-
-
-
-/* Media query para pantallas grandes hasta 1200px */
-@media only screen and (max-width: 1200px) {
-  .content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .tracks-container {
-    margin: 20px auto; /* Centrado horizontal */
-    width: 90%;
-    max-width: 800px; /* Limitamos el ancho máximo */
-    transform: none; /* Eliminamos cualquier transformación */
-  }
-
-  .player {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-}
-
-/* Media query para tablets y dispositivos medianos */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 95%;
-  }
-
-  .tracks-container {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px auto;
-    transform: none;
-    border: 2px solid #59009A;
-    border-radius: 15px;
-    padding: 15px;
-  }
-}
-
-/* Media query para dispositivos móviles */
-@media only screen and (max-width: 480px) {
-  .tracks-container {
-    width: 95%;
-    margin: 15px auto;
-    padding: 10px;
-  }
-
-  .track-info h3 {
-    font-size: 1.2rem;
-  }
-
-  .track-info p {
-    font-size: 0.9rem;
-  }
-}
-}
-/* ----------------------------------------------------------- */
-/* Estilos del contenedor nav */
-.nav {
-  position: relative;
-  display: inline-block;
-}
-
-
-/* Mostrar submenú al hacer hover */
-.nav:hover .submenu {
-  display: block; /* Cambiado de flex a block para mantener el comportamiento original */
-}
-
-/* Estilos de la lista del submenú */
-.submenu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* Estilos de los elementos de la lista */
-.submenu li {
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
-}
-
-/* Quitar el borde del último elemento */
-.submenu li:last-child {
-  border-bottom: none;
-}
-
-/* Efecto hover en los elementos */
-.submenu li:hover {
-  background-color: #f0f0f0;
-  color: #59009a;
-}
-
-/* Estilos para dispositivos móviles */
-@media only screen and (max-width: 768px) {
-  .submenu {
-    position: absolute;
-    top: 24px;
-    width: auto;
-    min-width: 200px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-
-  .submenu li {
-    padding: 12px 20px;
-    text-align: left;
-  }
-}
-/* ------------------------------------------------------------- */
-/* Estilos del contenedor principal */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-}
-
-/* Estilos de los elementos del menu en la barra lateral */
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background: linear-gradient(#ffffff, #9c76c1);
-  box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-}
-
-/* Estilos de las imágenes dentro de los elementos del menú */
-.sidebar .menu-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-/* Estilos de los enlaces dentro de los elementos del menú */
-.sidebar .menu-item a {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: none;
+  gap: 10px;
   width: 100%;
 }
 
-/* Estilos del texto dentro de los elementos del menú */
-.sidebar .menu-item span {
-  font-size: 16px;
-  white-space: nowrap;
-  margin-left: 5px;
+.footer-bottom p {
+  color: #a7a7a7;
+  font-size: 12px;
 }
 
-/* Ajustes responsive */
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .sidebar .menu-item {
-    padding: 10px;
-  }
-
-  .sidebar .menu-item img {
-    margin-right: 10px;
-  }
-}
-/* --------------------------------------------------------------------------- */
-@media only screen and (max-width: 768px) {
-  body {
-    padding-top: 60px; /* Reducido de 100px a 60px */
-  }
-
-  .container {
-    flex-direction: column;
-    height: auto;
-    margin: 0 auto;
-    padding: 10px; /* Reducido de 20px a 10px */
-    max-width: 95%;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 10px auto; /* Reducido de 20px a 10px */
-    border-radius: 40px;
-    padding: 8px 16px;
-    border: 2px solid #59009A;
-  }
-
-  .main {
-    width: 100%;
-    padding: 10px; /* Reducido de 20px a 10px */
-    margin: 0 auto;
-  }
-
-  /* Resto de los estilos se mantienen igual */
-  .content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .title {
-    font-size: 35px;
-    margin: 10px 0; /* Reducido de 20px a 10px */
-    text-align: center;
-  }
-}
-  
-/* Media queries para móvil */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto; /* Margen uniforme arriba y abajo */
-    padding: 20px 15px; /* Padding horizontal y vertical uniforme */
-    border-radius: 20px;
-    border: 2px solid #59009A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-  }
-
-  .sidebar .menu-item {
-    width: 96%; /* Ancho ajustado */
-    margin: 6px 0; /* Espaciado vertical entre items */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .sidebar .menu-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 14px;
-    text-align: center; /* Centrar el texto */
-  }
-}
-
-/* Ajustes para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    margin: 15px auto; /* Margen reducido pero uniforme */
-    padding: 15px;
-  }
-
-  .sidebar .menu-item {
-    margin: 5px 0;
-    padding: 8px;
-  }
-}
-
-/* Mantener estilos de hover y active */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-  box-shadow:   #59009A;
-}
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-    .sidebar .menu-item:hover {
-      transform: scale(1.05);
-    }
-
-
-/* Estilos base del contenedor */
-.container {
+.social-icons {
   display: flex;
-  min-height: calc(100vh - 126px);
+  gap: 15px;
 }
 
-/* Estilos de la barra lateral */
-.sidebar {
-  width: 25%;
-  background-color: #c7b7fe49;
-  padding: 20px;
-  padding-top: 108px;
+.social-icons a {
+  color: #a7a7a7;
+  font-size: 18px;
+  text-decoration: none;
 }
 
-.sidebar .menu-item {
-  padding: 12px;
-  margin: 10px 0;
-  background: #fff;
-  border-radius: 15px;
-  transition: background 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.social-icons a:hover {
+  color: #ffffff;
 }
 
-/* Media queries para móvil */
-@media only screen and (max-width: 768px) {
-  .container {
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .footer-container {
     flex-direction: column;
-    padding: 10px;
+    align-items: flex-start;
   }
 
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto; /* Margen uniforme arriba y abajo */
-    padding: 20px 15px; /* Padding horizontal y vertical uniforme */
-    border-radius: 20px;
-    border: 2px solid #59009A;
-    display: flex;
+  .footer-column {
+    margin-bottom: 20px;
+    width: 100%; /* Cada columna ocupa el 100% en dispositivos pequeños */
+  }
+
+  .footer-bottom {
     flex-direction: column;
-    align-items: center;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    align-items: flex-start;
+    width: 100%; /* Asegura que ocupe todo el ancho */
   }
 
-  .sidebar .menu-item {
-    width: 96%; /* Ancho ajustado */
-    margin: 6px 0; /* Espaciado vertical entre items */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    text-align: center; /* Centrar el texto */
-  }
-
-  .sidebar .menu-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 14px;
-    text-align: center; /* Centrar el texto */
+  .social-icons {
+    margin-left: 0;
   }
 }
 
-/* Ajustes para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    margin: 15px auto; /* Margen reducido pero uniforme */
-    padding: 15px;
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px; /* Reducir padding en dispositivos pequeños */
   }
 
-  .sidebar .menu-item {
-    margin: 5px 0;
-    padding: 8px;
-  }
-}
-
-/* Mantener estilos de hover y active */
-.sidebar .menu-item.active,
-.sidebar .menu-item:hover {
-  background:  #ba7fe7;;
-  box-shadow:   #59009A;
-}
-/* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-.sidebar .menu-item.active,
-    .sidebar .menu-item:hover {
-      transform: scale(1.05);
-    }
-
-/* Responsive para móviles */
-@media only screen and (max-width: 768px) {
-  .genres {
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .genre {
-    width: calc(50% - 10px);
-  }
-
-  /* Específicamente para el último elemento (Meditar) en móvil */
-  .genre:last-child {
-    margin-left: 0;          /* Elimina el margen automático a la izquierda */
-    margin-right: auto;      /* Mantiene el espacio a la derecha */
-    width: calc(50% - 10px); /* Mantiene el mismo ancho que los otros elementos */
-  }
-
-  
-}
-/* Estilos para pantallas más pequeñas, como tablets o móviles */
-
-      @media only screen and (max-width: 768px) {
-        .container {
-          flex-direction: column;
-          height: auto;
-          /* Ajustar altura automática */
-        }
-
-        .sidebar {
-          width: 95%;
-          /* Ocupar todo el ancho disponible */
-          margin-bottom: 20px;
-          /* Espacio entre el sidebar y el contenido principal */
-          padding: 8px 16px;
-        }
-
-        .main-content {
-          width: 100%;
-          /* Ocupar todo el ancho disponible */
-        }
-
-        .image-container {
-          /* Ajustar el margen izquierdo */
-          margin-left: 0;
-          text-align: left;
-          /* Centrar el contenido */
-        }
-
-        .image-container2 {
-          margin-left: 0;
-          text-align: center;
-          /* Centrar el contenido */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-        }
-
-        .track-list {
-          max-height: none;
-          /* Ajustar altura automática */
-          width: 100%;
-          /* Ajustar el ancho al 100% */
-          padding: 10px;
-          /* Agregar algo de padding si es necesario */
-          box-sizing: border-box;
-          overflow-y: auto;
-          background-size: cover;
-          /* Asegura que la imagen cubra el contenedor sin distorsionarse */
-          background-position: center;
-          /* Centra la imagen de fondo */
-          background-repeat: no-repeat;
-          /* Evita que la imagen se repita */
-        }
-
-        .corner-text {
-          font-size: 1.5em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          top: 10px;
-          left: 10px;
-        }
-
-        .bottom-left-text {
-          font-size: 1em;
-          /* Reducir tamaño de fuente para pantallas pequeñas */
-          bottom: 10px;
-          left: 10px;
-        }
-
-        .title {
-          font-size: 55px;
-          /* Cambiar el tamaño del texto para pantallas pequeñas */
-          margin: 20px;
-          width: 100%;
-          /* Asegúrate de que ocupe el ancho completo */
-          text-align: center;
-          /* Asegura que el texto esté centrado */
-        }
-
-        /* Centrar el título de géneros */
-        .title {
-          text-align: center;
-          margin-left: 0;
-          margin-right: 0;
-          width: 100%;
-          justify-content: center;
-        }
-      }
-      
-      @media only screen and (max-width: 768px) {
-.container {
-flex-direction: column;
-height: auto;
-margin: 0 auto;
-padding: 20px;
-max-width: 95%;
-}
-.sidebar {
-width: 100%;
-max-width: 450px;
-margin: 20px auto;
-border-radius: 40px;
-padding: 8px 16px;
-border: 2px solid #59009A;
-}
-.main-content {
-width: 100%;
-padding: 20px;
-margin: 0 auto;
-}
-.title {
-font-size: 35px;
-margin: 20px 0;
-text-align: center;
-}
-}
-
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto;
-    border-radius: 25px; /* Aumentado para dar forma más ovalada */
-    padding: 8px 16px;
-    border: 2px solid #59009A;
-  }
-  
-  .sidebar .menu-item {
-    width: 96%;
-    margin: 6px 0;
-    padding: 10px;
-    border-radius: 20px; /* Aumentado para dar forma más ovalada */
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* Para pantallas aún más pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    border-radius: 20px; /* Mantenemos la forma ovalada */
-  }
-  
-  .sidebar .menu-item {
-    border-radius: 15px; /* Ligeramente menor pero manteniendo el aspecto ovalado */
-  }
-}
-
-
-
-/* Media queries para móvil */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto; /* Margen uniforme arriba y abajo */
-    padding: 20px 15px; /* Padding horizontal y vertical uniforme */
-    border-radius: 20px;
-    border: 2px solid #59009A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-  }
-
-  .sidebar .menu-item {
-    width: 96%; /* Ancho ajustado */
-    margin: 6px 0; /* Espaciado vertical entre items */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .sidebar .menu-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-  }
-
-  .sidebar .menu-item span {
+  .footer-column h4 {
     font-size: 14px;
   }
-}
 
-/* Ajustes para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    margin: 15px auto; /* Margen reducido pero uniforme */
-    padding: 15px;
+  .footer-column ul li a {
+    font-size: 12px;
   }
 
-  .sidebar .menu-item {
-    margin: 5px 0;
-    padding: 8px;
+  .footer-bottom {
+    align-items: flex-start;
+    width: 100%; /* Asegura que ocupe todo el ancho */
   }
-}
-       
-    @media only screen and (max-width: 768px) {
-.container {
-flex-direction: column;
-height: auto;
-margin: 0 auto;
-padding: 20px;
-max-width: 95%;
-}
-.sidebar {
-width: 100%;
-max-width: 450px;
-margin: 20px auto;
-border-radius: 40px;
-padding: 8px 16px;
-border: 2px solid #59009A;
-}
-.main-content {
-width: 100%;
-padding: 20px;
-margin: 0 auto;
-}
-.title {
-font-size: 35px;
-margin: 20px 0;
-text-align: center;
-}
-}
 
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 20px auto;
-    border-radius: 25px; /* Aumentado para dar forma más ovalada */
-    padding: 8px 16px;
-    border: 2px solid #59009A;
-  }
-  
-  .sidebar .menu-item {
-    width: 96%;
-    margin: 6px 0;
-    padding: 10px;
-    border-radius: 20px; /* Aumentado para dar forma más ovalada */
-    display: flex;
-    justify-content: center;
+  .social-icons {
+    margin-left: 0;
   }
 }
 
-/* Para pantallas aún más pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    border-radius: 20px; /* Mantenemos la forma ovalada */
-  }
-  
-  .sidebar .menu-item {
-    border-radius: 15px; /* Ligeramente menor pero manteniendo el aspecto ovalado */
-  }
-}
-
-/* Ajustes para pantallas móviles */
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 40px auto; /* Añade espacio extra arriba y abajo */
-    padding-top: 150px; /* Incrementa el espacio superior para bajar más el menú en pantallas móviles */
-    padding: 20px 15px;
-    border-radius: 25px;
-    border: 2px solid #59009A;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    margin-top: 50px; /* Baja aún más el menú en pantallas muy pequeñas */
-    padding-top: 170px; /* Incrementa el espacio superior aún más */
-    margin: 20px auto;
-    padding: 15px;
-  }
-}
-/* Ajustes para pantallas móviles */
-@media only screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 50px auto; /* Incrementa el margen superior para separar del header */
-    padding-top: 180px; /* Incrementa el espacio superior */
-    padding: 20px 15px;
-    border-radius: 25px;
-    border: 2px solid #59009A;
-  }
-}
-
-/* Ajustes para pantallas aún más pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    margin-top: 60px; /* Mayor margen superior en pantallas pequeñas */
-    padding-top: 200px; /* Más espacio superior para bajar aún más el menú */
-    padding: 15px;
-  }
-}
-
-/* Estilos base del contenedor */
-.container {
-  display: flex;
-  min-height: calc(100vh - 126px);
-}
-
-/* Media queries para móvil */
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    padding: 10px;
-    height: auto;
-    margin: 0 auto;
-    max-width: 95%;
-  }
-
-  .sidebar {
-    width: 100%;
-    max-width: 450px;
-    margin: 120px auto 20px auto; /* Aumentado significativamente el margen superior */
-    padding: 20px 15px;
-    border-radius: 25px;
-    border: 2px solid #59009A;
-    box-sizing: border-box;
-  }
-
-  .sidebar .menu-item {
-    width: 96%;
-    margin: 8px 0;
-    padding: 10px;
-    justify-content: center;
-    border-radius: 20px;
-  }
-
-  .sidebar .menu-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 14px;
-  }
-}
-
-/* Ajustes para pantallas muy pequeñas */
-@media only screen and (max-width: 480px) {
-  .sidebar {
-    margin-top: 150px; /* Aumentado aún más para pantallas pequeñas */
-    padding: 15px;
-    border-radius: 20px;
-  }
-
-  .sidebar .menu-item {
-    margin: 5px 0;
-    padding: 8px;
-    border-radius: 15px;
-  }
-
-  .sidebar .menu-item span {
-    font-size: 13px;
-  }
-}
-
-
-    </style>
+  </style>
 </head>
 <body class="body">
     <header>
         <div class="logo-container">
-            <a href="#inicio"><img src="/musicoterapia/Header/Captura de pantalla 2024-11-12 091241.png" alt="Logo" class="logo"></a>
+            <a href="#inicio"><img src="/musicoterapia/Vistas1.1/Header/Captura de pantalla 2024-11-12 091241.png" alt="Logo" class="logo"></a>
         </div>
         
         <button class="hamburger" onclick="toggleHamburgerMenu()">☰</button>
@@ -3504,102 +334,134 @@ text-align: center;
     
     
       
-    <script src="/musicoterapia/Header/script.js"></script>
+    <script src="/musicoterapia/Vistas1.1/Header/sin inicio secion/script.js"></script>
     <div class="container">
       <aside class="sidebar">
-        <br />
-        <br />
-        <div class="menu-item active">
-          <a href="principal_generos.html" style="text-decoration: none">
-            <img src="images/genero.png" alt="Icon" />
+        <br>
+        <br>
+        <br>
+        <div class="menu-item">
+          <img src="images/genero.png" alt="Icon" />
+          <a href="principal_generos.html">
             <span>Géneros</span>
           </a>
         </div>
         <div class="menu-item">
-          <a href="principal_album.html" style="text-decoration: none">
-            <img src="images/album.png" alt="Icon" />
+          <img src="images/album.png" alt="Icon" />
+          <a href="principal_album.html">
             <span>Álbum</span>
           </a>
         </div>
         <div class="menu-item">
-          <a href="principal_podcast.html" style="text-decoration: none">
-            <img src="images/pod.png" alt="Icon" />
+          <img src="images/pod.png" alt="Icon" />
+          <a href="principal_podcast.html">
             <span>Podcast</span>
           </a>
         </div>
-
         <div class="menu-item">
-          <a href="binaurales.html" style="text-decoration: none">
-            <img src="images/binaural.png" alt="Icon" />
+          <img src="images/binaural.png" alt="Icon" />
+          <a href="binaurales.html">
             <span>Sonidos Binaurales</span>
           </a>
         </div>
         <div class="menu-item">
-          <a href="playList.html" style="text-decoration: none">
-            <img src="images/playL.png" alt="Icon" />
+          <img src="images/playL.png" alt="Icon" />
+          <a href="playList.html">
             <span>PlayList</span>
           </a>
         </div>
-        <div class="menu-item">
-          <a href="Tus me gustas pistas.html" style="text-decoration: none">
-            <img src="images/like.png" alt="Icon" />
+  
+        <div class="menu-item ">
+          <img src="images/like.png" alt="Icon" />
+          <a href="Tus me gustas pistas.html">
             <span>Me gusta</span>
+          </a>
           </a>
         </div>
         <div class="menu-item">
-          <a href="buscar.html" style="text-decoration: none">
-            <img src="images/buscar boton.png" alt="Icon" />
+          <img src="images/buscar boton.png" alt="Buscar Icon">
+          <a href="buscar.html">
             <span>Buscar</span>
+          </a>
           </a>
         </div>
       </aside>
-
-      <main class="main-content">
+  
+      <main class="main">
         <div class="title">
-          <span>Géneros</span>
+          <span></span>
         </div>
-        <div class="genres">
-          <div class="genre">
-            <a href="genero_elegido.html?genreId=1">
-              <img
-                src="images/clasica.png"
-                alt="Clásica"
-                onerror="this.onerror=null;this.src='img/placeholder.png';"
-              />
-              <h3>Clásica</h3>
-            </a>
+        <div class="tabs">
+          <div class="black" onclick="window.location.href='#pistas'"></div>
+          <div class="purple" onclick="window.location.href='#podcast'">
+            <h1 id="titulo-genero">Sonido Binaural</h1>
           </div>
-
-          <div class="genre">
-            <a href="genero_elegido.html?genreId=2">
-              <img
-                src="images/ambiental.png"
-                alt="Ambiental"
-                onerror="this.onerror=null;this.src='img/placeholder.png';"
-              />
-              <h3>Ambiental</h3>
-            </a>
+        </div>
+        <div class="content">
+  
+  
+  
+          <div class="player">
+            <div class="album-cover">
+              <img id="album-image" src="images/El-piano.jpg" alt="genre" />
+              <div class="playhead"></div>
+            </div>
+            <div>
+              <h2 id="audio-title" style="margin: 0">Bienvenido y disfruta ♫</h2>
+              <p id="audio-artist">Artist</p>
+            </div>
+            <div class="progress-container">
+              <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
+            </div>
+            <div class="time">
+              <span id="current-time">0:00</span>
+              <span id="total-duration">0:00</span>
+            </div>
+            <div class="controls">
+              <button id="prev-btn">&#9664;&#9664;</button>
+              <button id="play-pause-btn">&#9654;</button>
+              <button id="next-btn">&#9654;&#9654;</button>
+            </div>
+            <div class="actions">
+              <div><span class="me-gusta">❤</span></div>
+              <button class="dropdown-button" onclick="toggleDropdown('dropdown')">
+                &#8942;
+              </button>
+              <div id="dropdown" class="dropdown">
+                <div class="dropdown-content">Agregar a favoritos</div>
+                <div class="dropdown-content" onclick="toggleNestedDropdown('playlist-dropdown')">
+                  Agregar a playlist
+                </div>
+                <div id="playlist-dropdown" class="nested-dropdown">
+                  <div class="dropdown-content">Playlist 1</div>
+                  <div class="dropdown-content">Playlist 2</div>
+                  <div class="dropdown-content">Playlist 3</div>
+                </div>
+                <div class="dropdown-content" onclick="showHorizontalList()">
+                  Compartir
+                </div>
+              </div>
+            </div>
+            <div id="horizontal-list" class="horizontal-list">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                alt="Facebook" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+              <button onclick="copyLink()">Copiar Link</button>
+            </div>
           </div>
-          <div class="genre">
-            <a href="genero_elegido.html?genreId=3">
-              <img
-                src="images/instrumental.png"
-                alt="Instrumental"
-                onerror="this.onerror=null;this.src='img/placeholder.png';"
-              />
-              <h3>Instrumental</h3>
-            </a>
+  
+  
+  
+  
+          <div class="tracks-container" id="tracks-list">
+            <!-- Los audios se cargarán dinámicamente aquí -->
+  
           </div>
-          <div class="genre">
-            <a href="genero_elegido.html?genreId=4">
-              <img
-                src="images/electronica.png"
-                alt="Electrónica"
-                onerror="this.onerror=null;this.src='img/placeholder.png';"
-              />
-              <h3>Electrónica</h3>
-            </a>
-          </div>
+  
+  
+  
+  
         </div>
       </main>
     </div>
@@ -3643,6 +505,378 @@ text-align: center;
 
 </body>
 <script>
+   
+    // Funcion que alterna la visibilidad de un menu desplegable
+    function toggleDropdown(elementId) {
+      const dropdown = document.getElementById(elementId);
+      dropdown.style.display =
+        dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    // Muestra la lista horizontal y oculta el menu desplegable
+    function showHorizontalList() {
+      const dropdown = document.getElementById("dropdown");
+      const horizontalList = document.getElementById("horizontal-list");
+      dropdown.style.display = "none";
+      horizontalList.style.display = "flex";
+    }
+
+    // Copia el link actual al portapapeles
+    function copyLink() {
+      const dummy = document.createElement("textarea");
+      document.body.appendChild(dummy);
+      dummy.value = window.location.href;
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+      alert("Link copied to clipboard!");
+    }
+
+    // Alterna la visibilidad del menú desplegable anidado
+    function toggleNestedDropdown(elementId) {
+      const nestedDropdown = document.getElementById(elementId);
+      nestedDropdown.style.display =
+        nestedDropdown.style.display === "block" ? "none" : "block";
+    }
+
+    // Cierra todos los menús desplegables si se hace clic fuera de ellos
+    window.onclick = function (event) {
+      if (
+        !event.target.matches(
+          ".dropdown-button, .dropdown-content, .horizontal-list img, .horizontal-list button"
+        )
+      ) {
+        closeDropdownsAndLists();
+      }
+    };
+
+    // Cierra todos los menús desplegables y listas horizontales
+    function closeDropdownsAndLists() {
+      const dropdowns = document.getElementsByClassName("dropdown");
+      for (let i = 0; i < dropdowns.length; i++) {
+        const openDropdown = dropdowns[i];
+        if (openDropdown.style.display === "block") {
+          openDropdown.style.display = "none";
+        }
+      }
+      const horizontalList = document.getElementById("horizontal-list");
+      if (horizontalList.style.display === "flex") {
+        horizontalList.style.display = "none";
+      }
+    }
+    // CORAZON LIKE l
+
+
+
+    // Definir las variables del reproductor y el contenedor
+    const audioPlayer = new Audio(); // Reproductor de audio
+    const audioTitle = document.getElementById('audio-title');
+    const albumImage = document.getElementById('album-image');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const prevBtn = document.getElementById('prev-btn'); // Botón de retroceder
+    const nextBtn = document.getElementById('next-btn'); // Botón de adelantar
+    const currentTimeElement = document.getElementById('current-time'); // Elemento que muestra el tiempo actual
+    const totalDurationElement = document.getElementById('total-duration'); // Elemento que muestra la duración total del audio
+
+    const progressBar = document.getElementById('progress-bar');
+    const likedTracksList = document.getElementById('liked-tracks-list');
+    const likeButton = document.querySelector('.me-gusta'); // Corazón en el reproductor
+
+    const SKIP_TIME = 10;  // Tiempo en segundos para retroceder o avanzar
+
+    let likedAudios = []; // Mantener los audios "me gusta" cargados
+    let currentTrackIndex = 0; // Índice de la pista actual en la lista de likedAudios
+
+    // Cargar los audios que han sido marcados como "me gusta"
+
+
+
+    // Función para cargar y reproducir el audio
+    function loadAudio(audioUrl, title, cover, index) {
+      if (!audioUrl) {
+        console.error('No hay ningún audio actualmente en reproducción.');
+        return;
+      }
+
+      audioPlayer.src = audioUrl;
+      audioTitle.textContent = title;
+      albumImage.src = cover;
+      audioPlayer.load();
+      audioPlayer.play();
+      playPauseBtn.innerHTML = '❚❚';  // Cambiar a pausa
+
+      // Actualizar el índice actual y el estado del botón de me gusta
+      currentTrackIndex = index;
+      console.log(`Reproduciendo: ${title} en índice: ${currentTrackIndex}`);
+
+      // Actualizar el estado del botón "me gusta" en el reproductor
+      updateLikeButtonState(audioUrl);
+      // Actualizar la duración total del audio cuando se cargue el archivo
+      audioPlayer.addEventListener('loadedmetadata', function () {
+        totalDurationElement.textContent = formatTime(audioPlayer.duration);
+      });
+      // Actualizar la barra de progreso mientras se reproduce
+      audioPlayer.addEventListener('timeupdate', updateProgressBar);
+    }
+
+    // Actualizar el estado del botón "Me gusta" basado en el audio actual
+
+    function updateLikeButtonState(audioUrl) {
+      const likeButton = document.querySelector('.me-gusta'); // Seleccionar el botón del reproductor
+      if (!likeButton) return; // Salir si no hay un botón de like
+
+      // Verificar si el audio está en la lista de likes cargados desde la API
+      const likedAudio = likedAudios.find(audio => audio.audio_file === audioUrl);
+
+      if (likedAudio) {
+        likeButton.classList.add('active');  // Iluminar el corazón
+        likeButton.dataset.likeId = likedAudio.like_id; // Guardar el ID del like en el botón
+        likeButton.dataset.audioId = likedAudio.id; // Guardar el ID del audio en el botón
+
+      } else {
+        likeButton.classList.remove('active');  // Desiluminar el corazón
+        delete likeButton.dataset.likeId; // Eliminar el ID del like del botón
+        delete likeButton.dataset.audioId; // Eliminar el ID del audio del botón
+
+      }
+    }
+
+    // Función para alternar el estado de "me gusta"
+
+
+    // Función para alternar el estado de "Me gusta" en el botón del reproductor
+    async function toggleLike(element) {
+      const likeButton = element;
+      likeButton.classList.toggle('active');
+
+      const isLiked = likeButton.classList.contains('active');
+      const audioUrl = audioPlayer.src; // Obtener la URL del audio en reproducción
+      const audio = likedAudios[currentTrackIndex]; // Obtener el audio actual en la lista de `likedAudios`
+      const audioId = audio ? audio.id : likeButton.dataset.audioId; // Usar el ID del audio desde `likedAudios` o `dataset`
+      const userId = 5; // ID ficticio por ahora
+
+      if (!audioUrl || !audioId || isNaN(audioId)) {
+        console.error('No hay ningún audio en reproducción o ID de audio inválido para dar "Me gusta".');
+        return;
+      }
+
+      try {
+        if (isLiked) {
+          const likeData = {
+            likeable_type: 'App\\Models\\Audio',
+            likeable_id: audioId, // Usar el ID real del audio, no el índice
+            user_id: userId
+          };
+
+          const response = await fetch('http://tranquilidad.test/v1/likes', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(likeData)
+          });
+
+          if (!response.ok) throw new Error(`Error en la solicitud POST. Status: ${response.status}`);
+          const data = await response.json();
+
+          console.log('Like agregado correctamente:', data);
+          likeButton.dataset.likeId = data.like.id; // Guardar el ID del like en el botón
+          likeButton.dataset.audioId = audioId; // Mantener el ID del audio en el dataset del botón
+
+        } else {
+          // Eliminar el "Me gusta"
+          const likeId = likeButton.dataset.likeId;
+
+          if (!likeId) {
+            console.error('No se encontró el likeId para eliminar el like.');
+            return;
+          }
+
+          const response = await fetch(`http://tranquilidad.test/v1/likes/${likeId}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+          if (!response.ok) throw new Error(`Error en la solicitud DELETE. Status: ${response.status}`);
+
+          console.log('Like eliminado correctamente');
+          likeButton.classList.remove('active'); // Desiluminar el corazón
+          delete likeButton.dataset.likeId; // Eliminar el ID del like del botón
+          removeAudioFromView(audioId); // Eliminar el audio de la vista "Tus me gustas"
+          removeAudioFromList(audioId); // Eliminar el audio de `likedAudios`
+        }
+      } catch (error) {
+        console.error('Error gestionando el like:', error);
+      }
+    }
+
+    // Función para eliminar el audio de la vista "Tus me gustas"
+    function removeAudioFromView(audioId) {
+      const likedTracksList = document.getElementById('liked-tracks-list');
+      const trackElements = likedTracksList.querySelectorAll('.track');
+
+      trackElements.forEach(track => {
+        // Verificar si el atributo 'data-id' coincide con el audio a eliminar
+        if (track.getAttribute('data-id') === String(audioId)) {
+          likedTracksList.removeChild(track); // Eliminar el contenedor del DOM
+          console.log(`Audio eliminado de la vista: ${audioId}`);
+        }
+      });
+    }
+
+
+    // Función para eliminar el audio de la lista `likedAudios`
+    function removeAudioFromList(audioId) {
+      const index = likedAudios.findIndex(audio => audio.id === audioId);
+      if (index !== -1) {
+        likedAudios.splice(index, 1); // Eliminar el audio de la lista
+        console.log(`Audio eliminado de la lista: ${audioId}. Índice: ${index}`);
+
+        // Ajustar el índice de la pista actual si es necesario
+        if (index <= currentTrackIndex && currentTrackIndex > 0) {
+          currentTrackIndex--; // Ajustar el índice si el audio eliminado estaba antes de la pista actual
+        }
+        console.log(`Nuevo índice de pista actual: ${currentTrackIndex}`);
+      }
+    }
+
+    // Cargar y gestionar la lista de audios "Me gusta"
+    function loadLikedAudios() {
+      const userId = 5; // Usuario ficticio por ahora
+      fetch(`http://tranquilidad.test/v1/likes?user_id=${userId}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length === 0) {
+            console.log('No hay audios guardados en "Me gusta".');
+            return;
+          }
+
+          likedAudios = []; // Limpiar la lista de likedAudios global
+          data.forEach(like => {
+            const audioId = like.likeable_id;
+            fetch(`http://tranquilidad.test/v1/audios/${audioId}`)
+              .then(response => response.json())
+              .then(audioData => {
+                if (audioData) {
+                  likedAudios.push({
+                    ...audioData,
+                    like_id: like.id // Agregar el ID del like al objeto de audio
+                  });
+
+                  // Llamar a la función para agregar el audio a la vista
+                  addLikedAudioToView(audioData, likedAudios.length - 1); // Índice basado en la longitud actual de la lista
+                }
+              })
+              .catch(error => console.error(`Error al cargar el audio con ID ${audioId}:`, error));
+          });
+        })
+        .catch(error => console.error('Error al cargar los likes:', error));
+    }
+
+    // Ejecutar la carga de audios "Me gusta" al iniciar la vista
+    document.addEventListener('DOMContentLoaded', loadLikedAudios);
+
+    // Función para agregar un audio a la vista de "Tus me gustas"
+    function addLikedAudioToView(audio, index) {
+      const likedTracksList = document.getElementById('liked-tracks-list');
+      const existingTrack = likedTracksList.querySelector(`[data-id="${audio.id}"]`);
+
+      if (!existingTrack) {
+        const trackElement = document.createElement('div');
+        trackElement.classList.add('track');
+        trackElement.setAttribute('data-id', audio.id);
+
+        trackElement.innerHTML = `
+      <img src="${audio.image_file}" alt="${audio.title}" />
+      <div class="track-info">
+          <h3>${audio.title}</h3>
+          <p>${audio.description}</p>
+      </div>
+      <button class="play-btn">&#9654;</button>
+    `;
+
+        // Asociar el botón de reproducción al reproductor
+        const playButton = trackElement.querySelector('.play-btn');
+        playButton.addEventListener('click', function () {
+          // Obtener el índice del audio en `likedAudios` utilizando el ID del audio
+          const trackIndex = likedAudios.findIndex(a => a.id === audio.id);
+          if (trackIndex !== -1) { // Si se encontró el índice, reproducir
+            loadAudio(audio.audio_file, audio.title, audio.image_file, trackIndex);
+          } else {
+            console.error('No se encontró el índice del audio en likedAudios.');
+          }
+        });
+
+        likedTracksList.appendChild(trackElement);
+      }
+    }
+
+
+
+
+
+    // Controlar el botón de play/pausa
+    playPauseBtn.addEventListener('click', function () {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.innerHTML = '&#10074;&#10074;';  // Cambiar a pausa (❚❚)
+      } else {
+        audioPlayer.pause();
+        playPauseBtn.innerHTML = '&#9654;';  // Cambiar a play (▶️)
+      }
+    });
+
+    // Función para actualizar la barra de progreso y el tiempo actual del reproductor
+    function updateProgressBar() {
+      if (!isNaN(audioPlayer.duration)) {
+        const progressPercentage = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.value = progressPercentage;
+
+        // Cambiar el color dinámicamente según el progreso
+        progressBar.style.background = `linear-gradient(to right, #59009A ${progressPercentage}%, #e1bee7 ${progressPercentage}%)`;
+
+        // Actualizar el tiempo actual y la duración total
+        currentTimeElement.textContent = formatTime(audioPlayer.currentTime);
+        totalDurationElement.textContent = formatTime(audioPlayer.duration);
+      }
+    }
+
+    // Permitir que el usuario cambie el progreso al arrastrar la barra
+    progressBar.addEventListener('input', function () {
+      const seekTime = (progressBar.value / 100) * audioPlayer.duration;
+      audioPlayer.currentTime = seekTime;
+    });
+
+    // Función para avanzar la pista en 10 segundos
+    nextBtn.addEventListener('click', function () {
+      audioPlayer.currentTime = Math.min(audioPlayer.currentTime + SKIP_TIME, audioPlayer.duration);
+    });
+
+    // Función para retroceder la pista en 10 segundos
+    prevBtn.addEventListener('click', function () {
+      audioPlayer.currentTime = Math.max(audioPlayer.currentTime - SKIP_TIME, 0);
+    });
+
+    // Función para formatear el tiempo en minutos y segundos
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+    // Al terminar la pista, pasar a la siguiente automáticamente
+    audioPlayer.addEventListener('ended', function () {
+      console.log(`Pista actual (índice): ${currentTrackIndex}, Total de pistas: ${likedAudios.length}`);
+
+      // Verificar si hay más pistas en la lista para reproducir
+      if (currentTrackIndex + 1 < likedAudios.length) {
+        currentTrackIndex++; // Incrementar el índice para la siguiente pista
+        const nextTrack = likedAudios[currentTrackIndex];
+        console.log(`Reproduciendo la siguiente pista: ${nextTrack.title} (Índice: ${currentTrackIndex})`);
+        loadAudio(nextTrack.audio_file, nextTrack.title, nextTrack.image_file, currentTrackIndex);
+      } else {
+        console.warn('Fin de la lista de reproducción. No hay más pistas para reproducir.');
+      }
+    });
+
+
     function loadTemplate(templateId, filePath, callback) {
     fetch(filePath)
         .then(response => response.text())
@@ -3651,9 +885,9 @@ text-align: center;
             if (callback) callback();
         })
         .catch(error => console.error('Error al cargar la plantilla:', error));
-  }
-  
-  loadTemplate('header-placeholder', '../../../FootNav/header.html', function() {
+}
+
+loadTemplate('header-placeholder', '../../../FootNav/header.html', function() {
     const servicios = document.querySelector('.servicios');
     const submenu = document.querySelector('.submenu'); 
     if (servicios) { 
@@ -3663,37 +897,37 @@ text-align: center;
         });
         
     }
-  
+
     document.addEventListener('click', function(event) {
         if (!servicios.contains(event.target) && !submenu.contains(event.target)) {
             submenu.classList.remove('active');
         }
     });
-  });
-  
-  loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
-  
-  
-  document.addEventListener('DOMContentLoaded', function() {
+});
+
+loadTemplate('footer-placeholder', '../../../FootNav/footer.html');
+
+
+document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const servicesSubmenu = document.getElementById('services-submenu');
-  
+
     menuToggle.addEventListener('click', function(e) {
         e.stopPropagation();
         servicesSubmenu.classList.toggle('active');
     });
-  
+
     // Cerrar el menú al hacer clic fuera de él
     document.addEventListener('click', function(event) {
         if (!menuToggle.contains(event.target) && !servicesSubmenu.contains(event.target)) {
             servicesSubmenu.classList.remove('active');
         }
     });
-  
+
     // Prevenir que los clics dentro del menú lo cierren
     servicesSubmenu.addEventListener('click', function(e) {
         e.stopPropagation();
     });
-  });
+});
   </script>
 </html>
