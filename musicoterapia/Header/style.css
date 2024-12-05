@@ -5,34 +5,33 @@
 }
 body {
     background-image: 
-        linear-gradient(rgba(240, 230, 255, 0.3), rgba(240, 230, 255, 0.3)), 
-        url('/musicoterapia/Vistas1.1/images/fondo.principal-morado-casi-blanco\ \(1\).png');
+        linear-gradient(rgba(240, 230, 255, 0.85), rgba(240, 230, 255, 0.85)), 
+        url('/musicoterapia/Vistas1.1/images/fondo_principal\ 1\ abastrato.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin: 0;
     padding: 0;
-}
-main {
-    margin-top: 120px; /* Ajusta la altura según el header */
-    padding: 20px;
-}
-
+ }
 /* Header */
 header {
     position: fixed;
     top: 0;
     left: 0;
-   
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #ffffff;
+    background-color: #f9e0f5f7;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     width: calc(100% - 25px); /* Resta un poco para evitar que cubra la barra */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+header.hidden {
+    transform: translateY(-100%); /* Mueve el header hacia arriba fuera de la vista */
 }
 main {
     margin-top: 120px; /* Ajusta la altura según el header */
@@ -106,14 +105,16 @@ main {
 }
 
 .profile-box {
-    background: #f9f9f9; /* Color de fondo de la cajita */
+    background-color: #fddaf8f0;
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px; /* Espaciado interno */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.244); /* Sombra para el efecto de cajita */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.09); /* Sombra para el efecto de cajita */
     display: flex; /* Usar flexbox para alinear los elementos dentro */
     align-items: center; /* Alinea los elementos en la parte superior */
 }
-
+.profile-container .profile-box {
+    background-color: #fddaf8f0;
+}
 /* Ajusta la posición de Jhon Sebastian */
 .profile-name {
     margin-bottom: 5px; /* Espacio entre el nombre y la imagen */
@@ -141,7 +142,7 @@ a{
     right: 0; /* Alinea a la derecha */
     top: 70px; /* Ajusta la posición */
     width: 150px; /* Ancho del menú */
-    background: white; /* Color de fondo del menú */
+    background-color: #f9e0f5f7;
     border: 1px solid #ddd; /* Borde del menú */
     border-radius: 8px; /* Bordes redondeados del menú */
     padding: 10px; /* Espaciado interno */
@@ -168,7 +169,7 @@ a{
     top: 100px;
     left: 0;
     width: 100%;
-    background: white;
+    background-color: #f9e0f5f7;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -180,7 +181,7 @@ a{
     gap: 10px;
 }
 .modulo {
-    background: #ffffff;
+    background-color: #f9e0f5f7;
     padding: 20px;
     text-align:left;
     margin-left: 20px;
@@ -190,11 +191,11 @@ a{
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .modulo:hover {
-    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+    background-color: #f9e0f5f7;
     transform: scale(1.05); /* Efecto de zoom */
 }
 .module {
-    background: #ffffff;
+    background-color: #f9e0f5f7;
     padding: 20px;
     text-align: center;
     border-radius: 6px;
@@ -205,7 +206,7 @@ a{
 }
   
 .module:hover {
-    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+    background-color: #f9e0f5f7;
     transform: scale(1.05); /* Efecto de zoom */
 }
 
@@ -227,7 +228,7 @@ a{
     top: 100px; /* Alinea debajo del header */
     left: 0;
     width: 100%;
-    background: white;
+    background-color: #f9e0f5f7;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -242,7 +243,6 @@ a{
 .hamburger-item:hover {
     color: #5a009ac2; /* Cambia el color al pasar el mouse */
 }
-
 
 /* Media Queries para Responsividad */
 @media (max-width: 1100px) {

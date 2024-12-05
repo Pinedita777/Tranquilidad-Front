@@ -1,849 +1,282 @@
+/* General */
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-image: 
+        linear-gradient(rgba(240, 230, 255, 0.7), rgba(240, 230, 255, 0.7)), 
+        url('/musicoterapia/Vistas1.1/images/fondo.principal-morado-casi-blanco\ \(1\).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+ }
 
 main {
-    margin-top: 75px;
-  }
-  /* Añadir margen superior al contenedor del menú */
-  .sidebar {
-    margin-top: 75px; /* Esto bajará todo el menú */
+    margin-top: 120px; /* Ajusta la altura según el header */
     padding: 20px;
-  }
-  
-  /* Ajustar el espaciado entre los botones del menú */
-  .sidebar .menu-item {
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+   
     display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Alineación a la izquierda */
-    padding: 12px;
-    margin: 15px 0; /* Espacio entre botones */
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-  }
-  
-  /* Ajustar el primer elemento del menú (Géneros) si es necesario */
-  .sidebar .menu-item:first-child {
-    margin-top: 30px; /* Espacio adicional en el primer botón */
-  }
-  /* Ajuste adicional para que el texto y la imagen estén bien alineados */
-  .sidebar .menu-item img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  .sidebar .menu-item span {
-    text-align: center;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  /* Ajuste del título */
-  .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 75px;
-    margin-top: 200px; /* Aumentado de 150px a 200px para bajar más el título */
-    margin-bottom: 50px; /* Aumentado de 20px a 50px para dar más espacio */
-    width: 100%;
-    font-family: "Roboto Slab", serif;
-  }
-  
-  /* Añadido para dar más espacio al inicio del menú */
-  .sidebar {
-    padding-top: 30px;
-  }
-  
-  /* Ajuste del título */
-  .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 75px;
-    margin-top: 150px;
-    margin-bottom: 20px;
-    width: 100%;
-    font-family: "Roboto Slab", serif;
-  }
-  
-  /* NUEVOS ESTILOS */
-  
-  /* NUEVOS ESTILOS  */
-  .submenu {
-    position: absolute;
-    background-color: #fff;
-    padding: 5px 5px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    top: 24px;
-    left: 0px;
-    width: auto;
-    z-index: 1000; /* Asegura que el submenú esté por encima de otros elementos */
-  }
-  
-  .nav:hover .submenu {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .submenu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .submenu li {
-    padding: 10px 20px; /* Reducido para mejor apariencia */
-    border-bottom: 1px solid #ddd;
-    cursor: pointer; /* Indica que es clickable */
-  }
-  
-  .submenu li:hover {
-    background-color: #f0f0f0;
-  }
-  
-  /* Estilos del contenedor principal */
-  .container {
-    display: flex;
-    height: calc(100vh - 126px);
-  }
-  
-  /* Estilos de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-  }
-  
-  /* Estilos de los elementos del menu en la barra lateral */
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 10px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-  }
-  
-  /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-  .sidebar .menu-item.active,
-  .sidebar .menu-item:hover {
-    background: linear-gradient(#ffffff, #9c76c1);
-    box-shadow: 1px 5px 10px 0.1px rgb(145, 145, 145);
-  }
-  
-  /* Estilos de las imágenes dentro de los elementos del menú */
-  .sidebar .menu-item img {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-  }
-  
-  /* Estilos de los enlaces dentro de los elementos del menú */
-  .sidebar .menu-item a {
-    display: flex;
-    align-items: center;
-    color: inherit;
-    text-decoration: none;
-    justify-content: center;
-  }
-  
-  /* Estilos del texto dentro de los elementos del menú */
-  .sidebar .menu-item span {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 16px;
-  }
-  
-  /* Estilos del contenido principal */
-  /* Ajustes para el main-content manteniendo el padding lateral */
-  .main-content {
-    width: 75%;
-    padding: 20px 170px; /* Mantiene el padding horizontal de 190px pero reduce el vertical */
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Ajuste del título dentro de main-content */
-  .title {
-    font-size: 60px;
-    margin-top: 0;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-family: "Roboto Slab", serif;
-  }
-  .title span {
-    position: relative;
-    z-index: 1;
-    transition: color 0.3s;
-  }
-  
-  
-  /* Ajuste del espaciado entre géneros */
-  .genres {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0px;
-    justify-content: flex-start; /* Change from center to flex-start */
-  }
-  .genre {
-    width: calc(50% - 20px);
-    text-align: center;
-  }
-  
-  .genre h3 {
-    margin-bottom: 10px;
-    font-family: "Roboto Slab", serif; /* Fuente Roboto Slab para los títulos */
-    transition: color 0.3s; /* Agrega una transición de color al pasar el cursor sobre el título */
-  }
-  .genre img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    max-width: 500px;
-    border-radius: 15px;
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .genre img:loading {
-    opacity: 0.5; /* Fade in the image as it loads */
-  }
-  
-  .genre:hover img {
-    transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  }
-  .genres a {
-    color: inherit; /* Inherits the color from parent elements */
-    text-decoration: none; /* Removes the underline */
-  }
-  
-  .genres a:hover {
-    color: #59009a; /* Optional: Change color on hover for visual feedback */
-  }
-  
-  /* Estilo para el título Álbum */
-  .main-content .title span {
-    font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-  }
-  
-  /* Estilo para el título Álbum */
-  .main-content .title span {
-    font-family: "Roboto", sans-serif; /* Cambia la fuente a Roboto */
-  }
-  
-  /* Estilos para pantallas más pequeñas, como tablets o móviles */
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      height: auto;
-      /* Ajustar altura automática */
-    }
-    /* Centrar el título de géneros */
-    .title {
-      text-align: center;
-      margin-left: 0;
-      margin-right: 0;
-      width: 100%;
-      justify-content: center;
-    }
-  }
-  
-  /* --------------------------- */
-  
-  /* Estilos del contenedor de pistas */
-  .tracks-container {
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    background: url();
-    border-radius: 15px;
-    align-items: center;
-    transition: background 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
-  }
-  
-  /* Estilos generales de cada pista */
-  .track {
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  /* Elimina el borde inferior de la última pista */
-  .track:last-child {
-    border-bottom: none;
-  }
-  
-  /* Estilos de las imágenes de las pistas */
-  .track img {
-    height: 50px;
-    width: 50px;
-    border-radius: 5px;
-  }
-  
-  /* Estilos de los divs dentro de cada pista */
-  .track div {
-    padding: 0 20px;
-  }
-  
-  /* Estilos de los enlaces de los botones de reproducción */
-  .track a.play-button {
-    background: white;
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 10px 20px;
+    background-color:#f9e0f5f7;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: calc(100% - 25px); /* Resta un poco para evitar que cubra la barra */
+}
+main {
+    margin-top: 120px; /* Ajusta la altura según el header */
+    padding: 20px;
+}
+  
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.logo {
+    width: 210px;
+    height: 110px;
+    border-radius: 50px;
+}
+
+.app-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 3px;
+    color: #59009A;
+    text-decoration: none; /* Elimina el subrayado */
+}
+
+/* Ajuste de navegación */
+.nav-links {
+    display: flex;
+    gap: 90px;
+    justify-content: center; /* Alinea todo hacia la izquierda */
+    flex-grow: 1; /* Permite que el menú ocupe el espacio disponible */
+    margin-left: 100px;
+    
+}
+/* Sección derecha */
+.nav-right {
+    display: flex; /* Usa flexbox para los elementos a la derecha */
+    gap: 40px; /* Espacio entre los elementos a la derecha */
+    margin-right: 40px;
+    color: #000000c2;
+    
+}
+
+.nav-item {
     text-decoration: none;
+    color: #59009A;
+    font-size: 17px;
+    font-weight: 500;
     cursor: pointer;
     position: relative;
-    color: black;
-  }
-  
-  /* Estilos del triángulo dentro del botón de reproducción */
-  .track a.play-button::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 10px 0 10px 16px;
-    border-color: transparent transparent transparent black;
-    position: absolute;
-    left: 13px;
-  }
-  
-  /* ------------------------------------------------------------- */
-  /* Estilos del contenedor principal */
-  .container {
-    display: flex;
-    min-height: calc(100vh - 126px);
-  }
-  
-  /* Estilos de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-  }
-  
-  /* Estilos de los elementos del menu en la barra lateral */
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 10px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  /* Estilos de los elementos del menú cuando están activos o al pasar el ratón */
-  .sidebar .menu-item.active,
-  .sidebar .menu-item:hover {
-    background: #ba7fe7;
-    box-shadow: #59009a;
-  } /* Elimina las sombras */
-  
-  /* Estilos de las imágenes dentro de los elementos del menú */
-  .sidebar .menu-item img {
-    width: 24px;
-    height: 24px;
-    margin-right: 15px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-  
-  /* Estilos de los enlaces dentro de los elementos del menú */
-  .sidebar .menu-item a {
-    display: flex;
-    align-items: center;
-    color: inherit;
+    transition: color 0.3s ease; /* Transición de color */
+    font-weight: bold; 
+}
+.special-item {
+    color: #494949; /* Cambia a tu color deseado */
+    transition: color 0.3s ease; /* Añade transición suave al color */
+    font-size:13px;
+}
+
+.special-item:hover {
+    color: #59009A; /* Cambia a otro color al pasar el mouse */
+}
+.nav-item:hover {
+    color: #5a009ac2; /* Cambia a azul cuando se pasa el mouse */
+}
+
+/* Estilos para el contenedor del perfil */
+.profile-container {
+    position: relative;
+}
+
+.profile-box {
+    background: #f9f9f9; /* Color de fondo de la cajita */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.244); /* Sombra para el efecto de cajita */
+    display: flex; /* Usar flexbox para alinear los elementos dentro */
+    align-items: center; /* Alinea los elementos en la parte superior */
+}
+
+/* Ajusta la posición de Jhon Sebastian */
+.profile-name {
+    margin-bottom: 5px; /* Espacio entre el nombre y la imagen */
+    font-size: 13px;
+    margin-right: 30px;
+    color: #5a009ac2;
+}
+
+a{
     text-decoration: none;
+}
+
+/* Estilos para la imagen del perfil */
+.profile-pic {
+    width: 45px; /* Ajusta según el tamaño deseado */
+    height: 45px; /* Ajusta según el tamaño deseado */
+    border-radius: 50%; /* Hacer la imagen redonda */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+}
+
+/* Menú de perfil */
+.profile-menu {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Para que se posicione sobre la cajita */
+    right: 0; /* Alinea a la derecha */
+    top: 70px; /* Ajusta la posición */
+    width: 150px; /* Ancho del menú */
+    background: white; /* Color de fondo del menú */
+    border: 1px solid #ddd; /* Borde del menú */
+    border-radius: 8px; /* Bordes redondeados del menú */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+    z-index: 1000; /* Para que se muestre encima de otros elementos */
+}
+  
+.profile-menu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #59009A;
+    transition: color 0.3s ease; /* Transición en los links */
+}
+  
+.profile-menu a:hover {
+    color: #5a009ac2;
+}
+
+/* Pestaña de módulos */
+.modules-overlay {
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 0;
     width: 100%;
-  }
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
   
-  /* Estilos del texto dentro de los elementos del menú */
-  .sidebar .menu-item span {
-    font-size: 16px;
-    white-space: nowrap;
-    margin-left: 5px;
-  }
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.modulo {
+    background: #ffffff;
+    padding: 20px;
+    text-align:left;
+    margin-left: 20px;
+    border-radius: 6px;
+    color: #5a009ac2;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.modulo:hover {
+    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
+}
+.module {
+    background: #ffffff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #59009A;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
   
-  body {
-    padding-top: 60px; /* Reducido de 100px a 60px */
-  }
-   /* TITULO PRINCIPAL  */
-   .title {
-    font-size: 60px;
-    margin-top: 40px; /* Aumenté de 0 a 50px para bajarlo */
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.module:hover {
+    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+
+/* Estilos generales del menú hamburguesa */
+.hamburger {
+    display: none; /* Oculto por defecto */
+    background: none;
+    border: none;
+    font-size: 30px; /* Tamaño del icono */
+    color: #59009A;
+    cursor: pointer;
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100px; /* Alinea debajo del header */
+    left: 0;
     width: 100%;
-    font-family: "Roboto Slab", serif;
-  }
-  /* Media queries mejorados para responsive */
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      align-items: center; /* Centrado del contenedor principal */
-      padding: 10px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hamburger-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #59009A;
+    transition: color 0.3s ease;
+}
+
+.hamburger-item:hover {
+    color: #5a009ac2; /* Cambia el color al pasar el mouse */
+}
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 1100px) {
+    .nav-links {
+        display: none; /* Oculta el menú en pantallas pequeñas */
     }
-  
-    .genre img {
-      width: 100%;
-      height: auto;
-      display: block; /* Mejora el centrado de la imagen */
-      margin: 0 auto 10px; /* Centrado y espacio inferior */
+
+    .hamburger {
+        display: block; /* Muestra el botón hamburguesa */
     }
-  
-    .title {
-      font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
+
+    .hamburger-menu {
+        display: none; /* Oculto por defecto */
     }
-  }
-  /* Modificar el espaciado de los elementos del menu en la barra lateral */
-  
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 8px 0; /* Reducido a 8px para un espaciado más compacto y uniforme */
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-  }
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px; /* Reducido de 100px a 60px para un espaciado más moderado */
-  }
-  /* RESPONSIVE */
-  /* Estilos base del contenedor */
-  .container {
-    display: flex;
-    min-height: calc(100vh - 126px);
-  }
-  
-  /* Estilos de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px;
-  }
-  
-  /* Estilos de los elementos del menu */
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 8px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Media queries mejorados para dispositivos móviles */
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      padding: 10px;
-    }
-  .menu-item {
-      margin: 6px 0 !important; /* Espaciado más compacto en móvil */
-      padding: 10px !important;
-    }
-  
-    .sidebar .menu-item img {
-      width: 20px; /* Iconos ligeramente más pequeños en móvil */
-      height: 20px;
-      margin-right: 12px;
-    }
-  
-    .sidebar .menu-item span {
-      font-size: 14px; /* Texto ligeramente más pequeño en móvil */
-    }
-  
-    /* Mejoras de interacción táctil */
-    .sidebar .menu-item:active {
-      transform: scale(0.98);
-      background: linear-gradient(#ffffff, #9c76c1);
-    }
-  }
-  
-  /* Ajustes para pantallas muy pequeñas */
-  @media only screen and (max-width: 480px) {
-    .sidebar {
-      max-width: 100%;
-      padding: 12px;
-      padding-top: 60px;
-    }
-  
-    .menu-item {
-      margin: 4px 0 !important;
-      padding: 8px !important;
-    }
-  
-    .sidebar .menu-item span {
-      font-size: 13px;
-    }
-  }
-  /* NUEVOS ESTILOS Y RESPOSIVE */
-  /* Estilos base del contenedor */
-  .container {
-    display: flex;
-    min-height: calc(100vh - 126px);
-  }
-  
-  /* Estilos de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px;
-  }
-  
-  .sidebar .menu-item {
-    padding: 12px;
-    margin: 10px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  /* Estilos base de la barra lateral */
-  .sidebar {
-    width: 25%;
-    background-color: #c7b7fe49;
-    padding: 20px;
-    padding-top: 108px;
-  }
-  
-  .sidebar .menu-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 12px;
-    margin: 10px 0;
-    background: #fff;
-    border-radius: 15px;
-    transition: background 0.3s ease;
-  }
-  
-  /* Efectos hover y active */
-  .sidebar .menu-item.active,
-  .sidebar .menu-item:hover {
-    background: #ba7fe7;
-    transform: scale(1.05);
-  }
-  
-  
-  /* Media queries para móvil */
-  
-  @media only screen and (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      padding: 10px;
-      height: auto;
-      margin: 0 auto;
-      max-width: 95%;
-    }
-  }
-  /* Media queries mejorados para responsive */
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  align-items: center; /* Centrado del contenedor principal */
-  padding: 10px;
-  }
-  .genres {
-  width: 100%;
-  justify-content: center;
-  gap: 15px;
-  padding: 0;
-  }
-  
-  .genre {
-  width: calc(50% - 10px);
-  margin: 0 auto 15px; /* Centrado y espacio inferior */
-  max-width: 300px; /* Limita el ancho máximo de cada género */
-  }
-  
-  .genre img {
-  width: 100%;
-  height: auto;
-  display: block; /* Mejora el centrado de la imagen */
-  margin: 0 auto 10px; /* Centrado y espacio inferior */
-  }
-  
-  .sidebar {
-  width: 95%;
-  margin: 0 auto 20px; /* Centrado y espacio inferior */
-  padding: 10px;
-  }
-  
-  .title {
-  width: 100%;
-  text-align: center;
-  margin: 15px auto; /* Centrado y espacio vertical */
-  }
-  }
-  /* Para pantallas muy pequeñas */
-  @media only screen and (max-width: 480px) {
-  .main-content {
-  max-width: 100%;
-  padding: 5px;
-  }
-  
-  .genres {
-  gap: 10px;
-  }
-  
-  .genre {
-  width: calc(50% - 5px);
-  max-width: 250px; /* Ajuste para pantallas muy pequeñas */
-  }
-  
-  .title {
-  font-size: 32px; /* Ajuste del tamaño del título para pantallas muy pequeñas */
-  }
-  }
-  
-  /* Media queries mejorados */
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  min-height: calc(100vh - 126px);
-  padding-bottom: 60px; /* Espacio para el footer */
-  }
-  
-  .sidebar {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 0;
-  }
-  
-  .title {
-  font-size: 40px;
-  margin: 15px 0;
-  text-align: center;
-  }
-  
-  /* Mantenemos el comportamiento original de los géneros */
-  .genre {
-  width: calc(50% - 20px);
-  }
-  
-  
-  /* Ajustes para el menú en móvil */
-  .nav {
-  position: relative;
-  }
-  
-  .submenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  max-width: 100vw;
-  z-index: 1000;
-  }
-  
-  .submenu ul {
-  width: 100%;
-  }
-  
-  .submenu li {
-  padding: 15px;
-  text-align: center;
-  }
-  
-  
-  }
-  
-  
-  
-  @media only screen and (max-width: 768px) {
-  body {
-  padding-top: 100px;
-  }
-  
-  .container {
-  flex-direction: column;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 95%;
-  }
-  
-  .main {
-  width: 100%;
-  padding: 20px;
-  margin: 0 auto;
-  }
-  
-  .content {
-  flex-direction: column;
-  align-items: center;
-  }
-  
-  .player {
-  width: 90%;
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 15px;
-  border: 2px solid #59009A;
-  border-radius: 15px;
-  }
-  
-  .tracks-container {
-  width: 90%;
-  max-width: 100%;
-  margin: 20px auto;
-  border: 2px solid #59009A;
-  border-radius: 15px;
-  padding: 15px;
-  transform: translateX(0);
-  }
-  
-  .title {
-  font-size: 35px;
-  margin: 20px 0;
-  text-align: center;
-  }
-  
-  .tabs {
-  margin-left: 0;
-  justify-content: center;
-  width: 100%;
-  }
-  
-  .track-list {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  }
-  
-  }
-  
-  
-  /* Media query para pantallas grandes hasta 1200px */
-  @media only screen and (max-width: 1200px) {
-  .content {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  }
-  
-  .tracks-container {
-  margin: 20px auto; /* Centrado horizontal */
-  width: 90%;
-  max-width: 800px; /* Limitamos el ancho máximo */
-  transform: none; /* Eliminamos cualquier transformación */
-  }
-  
-  .player {
-  width: 90%;
-  max-width: 800px;
-  margin: 0 auto;
-  }
-  }
-  
-  /* Media query para tablets y dispositivos medianos */
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 95%;
-  }
-  
-  .tracks-container {
-  width: 90%;
-  max-width: 600px;
-  margin: 20px auto;
-  transform: none;
-  border: 2px solid #59009A;
-  border-radius: 15px;
-  padding: 15px;
-  }
-  
-  }
-  @media only screen and (max-width: 768px) {
-  .container {
-  flex-direction: column;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 95%;
-  }
-  .sidebar {
-  width: 100%;
-  max-width: 450px;
-  margin: 20px auto;
-  border-radius: 40px;
-  padding: 8px 16px;
-  border: 2px solid #59009A;
-  }
-  .main-content {
-  margin: 0 auto;
-  }
-  .title {
-  font-size: 35px;
-  margin: 20px 0;
-  text-align: center;
-  }
-  }
-  
-  @media only screen and (max-width: 768px) {
-  .sidebar {
-  
-  width: 100%;
-  max-width: 450px;
-  margin: 60px auto 20px auto; /* Aumentado significativamente el margen superior */
-  padding: 20px 15px;
-  border-radius: 25px;
-  border: 2px solid #59009A;
-  box-sizing: border-box;
-  }
-  
-  }
-  
-  /* Ajustes responsivos */
-  @media only screen and (max-width: 768px) {
-    .main-content {
-      width: 100%;
-      padding: 20px;
-      margin-top: 20px;
-      max-width: 95%; /* Limita el ancho máximo en móvil */
-    }
-  
-    .title {
-      font-size: 40px;
-    }
-  }
-  @media only screen and (max-width: 768px) {
-    .genres .genre:last-child {
-      margin-left: 0; /* Elimina el centrado */
-      align-self: flex-start; /* Alinea a la izquierda */
+
+    .hamburger-menu.active {
+        display: block; /* Muestra el menú cuando está activo */
     }
     
-    .genres .genre:last-child img {
-      margin-left: 0; /* Asegura que la imagen no esté centrada */
+
+    .profile-container {
+        display: none; /* Oculta el perfil en pantallas pequeñas */
     }
-  }
-  
+    .nav-right{
+        display: none;
+    }
+
+    /* Reajusta el título */
+    .app-title {
+        margin-left: auto; /* Alinea el título a la izquierda */
+        margin-right: auto; /* Alinea el título a la derecha */
+    }
+    .module-grid{
+        display: none;
+    }
+}
