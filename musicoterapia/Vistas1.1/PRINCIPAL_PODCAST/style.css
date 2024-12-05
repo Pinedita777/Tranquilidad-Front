@@ -1,7 +1,4 @@
 
-main {
-  margin-top: 75px;
-}
 /* Añadir margen superior al contenedor del menú */
 .sidebar {
   margin-top: 75px; /* Esto bajará todo el menú */
@@ -163,7 +160,7 @@ main {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 120px; /* Aumentado de 80px a 120px para bajar más el contenido */
+  margin-top: 75px; /* Aumentado de 80px a 120px para bajar más el contenido */
 }
 
 /* Ajuste del título dentro de main-content */

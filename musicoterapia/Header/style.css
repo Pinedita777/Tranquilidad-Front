@@ -1,12 +1,11 @@
 /* General */
 * {
-    box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
 body {
     background-image: 
         linear-gradient(rgba(240, 230, 255, 0.85), rgba(240, 230, 255, 0.85)), 
-        url('/musicoterapia/Vistas1.1/images/fondo_principal\ 1\ abastrato.png');
+        url('/musicoterapia/Vistas1.1/images/fondo_principal\ 2\ abastrato.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bookmarkButton.addEventListener('click', () => {
                 bookmarkButton.classList.toggle('bookmarked');
                 if (bookmarkButton.classList.contains('bookmarked')) {
-                    bookmarkButton.style.color = '#FFD700'; // Dorado
+                    bookmarkButton.style.color = '#8e68a8'; // Morado medio claro
                 } else {
                     bookmarkButton.style.color = 'white'; // Blanco
                 }
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
             shareButton.addEventListener('click', () => {
                 shareButton.classList.toggle('shared');
                 if (shareButton.classList.contains('shared')) {
-                    shareButton.style.color = '#4CAF50'; // Verde
+                    shareButton.style.color = 'b2a2bd'; // Morado mas claro
                 } else {
                     shareButton.style.color = 'white'; // Blanco
                 }

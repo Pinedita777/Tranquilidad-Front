@@ -838,7 +838,7 @@
         
         
         
-        /* Para pantallas muy pequeñas */
+        /* Para pantallas muy pequeñas */}
         @media only screen and (max-width: 480px) {
         .main-content {
         max-width: 100%;
@@ -909,7 +909,7 @@
         border-radius: 15px; /* Ligeramente menor pero manteniendo el aspecto ovalado */
         }
         }
-        }
+        
         @media only screen and (max-width: 768px) {
         .title {
         font-size: 40px;
