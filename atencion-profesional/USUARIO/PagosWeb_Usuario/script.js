@@ -13,4 +13,10 @@ const menuIcon = document.querySelector('.menu-icon');
 
   
   
-  
+  function mostrarMensaje() {
+    document.getElementById("modal").style.display = "flex";
+}
+
+function redirigir() {
+    window.location.href = "../AgendarCita_Usuario/AgendarCitaUsuario.html";
+}

@@ -1,197 +1,113 @@
- 
- 
- 
- /* contenido body */
- body {
+/* Estilo para el formulario */
+
+body {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   margin: 0;
   padding: 0;
   min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/USUARIO/Imagenes/cancela2.png'); /* Cambia por la ruta de tu imagen */
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/mensajes.png'); /* Cambia por la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
   background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo blanco con transparencia */
+  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco con transparencia */
   background-blend-mode: overlay; /* Mezcla el color con la imagen */
 }
 
-  .comments-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    margin-top: 30px;
-    margin-bottom: 100px;
-}
 
-.comment {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 6px 4px rgba(0,0,0,0.1);
-    padding: 50px;
-    border: 1px solid #6200ea;
-    width: 100%;
+.formulario-cancelar-cita {
     max-width: 800px;
-}
-
-.comment-info {
-    flex: 1;
-    text-align: center;
-    margin-right: 50px;
-}
-
-.comment-info h3 {
-    margin: 0;
-    font-size: 20px;
-    color: #6200ea;
-}
-
-.comment-info p {
-    margin: 20px 0;
-    font-size: 18px;
-    color: #000000;
-}
-
-.fecha-hora {
-    margin-top: 60px;
-    font-size: 18px;
-    color: #000000;
-}
-
-.fecha-hora p {
-    margin: 8px 0;
-}
-
-.cancel {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 10px;
-    margin-left: 20px;
-}
-
-.cancel label {
-    font-size: 18px; 
-    color: #6200ea;
-    margin-bottom: 6px;
-}
-
-.cancel select,
-.cancel textarea {
-    width: 250px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px; 
-   
-}
-
-.cancelar-button {
-  background-color: #59009A;
-  color: #ffffff;
-  border: none;
-  margin: 20px 20px 20px 200px;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  margin-left: 30px;
-}
-
-.cancelar-button:hover {
-background-color: #440173;
-}
-
-
-
-
+    margin: 2rem auto;
+    text-align: left;
+    background: white;
+  }
   
-
-/* Ajustes para pantallas más grandes */
-@media (min-width: 768px) {
-    .comments-section {
-        margin-top: 50px;
-        margin-bottom: 80px;
-    }
-
-    .comment {
-        padding: 40px;
-    }
-
-    .comment-info h3 {
-        font-size: 22px;
-    }
-
-    .comment-info p {
-        font-size: 18px;
-    }
-
-    .cancelar-button {
-        padding: 12px 25px;
-        font-size: 18px;
-    }
-}
-
-/* Ajustes para tablets y pantallas medianas */
-@media (max-width: 768px) {
-    .comment {
-        padding: 30px; /* Reducimos el padding */
-        max-width: 90%; /* Ajustamos el ancho máximo */
-    }
-
-    .comment-info h3, .cancel label {
-        font-size: 18px; /* Ajustamos el tamaño del texto */
-    }
-
-    .comment-info p, .fecha-hora p {
-        font-size: 16px; /* Ajustamos el tamaño del texto */
-    }
-
-    .cancel select, .cancel textarea {
-        width: 100%; /* Hacemos que los inputs ocupen el 100% del espacio disponible */
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .cancelar-button {
-        margin: 20px auto;
-        display: block;
-    }
-}
-
-/* Ajustes para dispositivos móviles */
-@media (max-width: 480px) {
-    .comment {
-        padding: 20px;
-    }
-
-    .comment-info h3, .cancel label {
-        font-size: 16px;
-    }
-
-    .comment-info p, .fecha-hora p {
-        font-size: 14px;
-    }
-
-    .cancel select, .cancel textarea {
-        width: 100%;
-        padding: 6px;
-        font-size: 14px;
-    }
-
-    .cancelar-button {
-        font-size: 16px;
-        padding: 10px 15px;
-        margin: 10px auto;
-        width: 90%;
-    }
-
-    .ball {
-        width: 30px; /* Reduce el tamaño de las bolas en pantallas pequeñas */
-        height: 30px;
-      }
-}
-
+  .formulario-cancelar-cita h1 {
+    text-align: center;
+    color: #59009A;
+    margin-bottom: 2rem;
+  }
+  
+  .fila {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .fila label {
+    flex: 1;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .fila input,
+  .fila select,
+  .fila textarea {
+    flex: 2;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .fila-boton {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .btn-cancelar {
+    background-color: #59009A;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-cancelar:hover {
+    background-color: #410072;
+  }
+  
+  /* Estilo para el modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-contenido {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-contenido p {
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .btn-aceptar {
+    background-color: #59009A;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-aceptar:hover {
+    background-color: #410072;
+  }

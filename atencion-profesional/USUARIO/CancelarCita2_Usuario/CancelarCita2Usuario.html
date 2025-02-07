@@ -15,44 +15,77 @@
   <!-- Lugar donde se cargará el header -->
   <div id="header-container"></div>
 
-    <br><br><br><br>
-    <main>
-        <div class="comments-section">
-            <div class="comment">
-                <div class="comment-info">
-                    <h3>Nombre del Paciente</h3>
-                    <p>Juan</p>
-                    
-                    <h3>Profesional</h3>
-                    <p>Diego Armando Maradona</p>
-                    <div class="fecha-hora">
-                        <p>Fecha: 2024-07-16</p>
-                        <p>Hora: 14:00</p>
-                    </div>
-                </div>
-                <div class="cancel">
-                    <label for="motivo-cancelacion">Motivo de la Cancelación:</label>
-                    <select id="motivo-cancelacion" name="motivo-cancelacion">
-                        <option value="opcion1">Opción 1</option>
-                        <option value="opcion2">Opción 2</option>
-                        <option value="opcion3">Opción 3</option>
-                    </select>
-                    
-                    <label for="reprogramar">¿Desea Reprogramar?</label>
-                    <select id="reprogramar" name="reprogramar">
-                        <option value="si">Sí</option>
-                        <option value="no">No</option>
-                    </select>
-                    
-                    <label for="notas-adicionales">Notas Adicionales:</label>
-                    <textarea id="notas-adicionales" name="notas-adicionales" rows="3"></textarea>
-                </div>
-                
-            </div>
-            <a href="../Home_Usuario/HomeUsuario.html"><button type="submit" class="cancelar-button">Cancelar</button></a>
-        </div>
-        
-    </main>
+   <br><br><br><br><br><br><br><br><br><br>
+   <main class="formulario-cancelar-cita">
+    <h1>Cancelar Cita</h1>
+    <form id="cancelarCitaForm" onsubmit="mostrarModal(event)">
+      <div class="fila">
+        <label for="usuario">Nombre del Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required>
+      </div>
+      <div class="fila">
+        <label for="psicologo">Nombre del Psicólogo:</label>
+        <input type="text" id="psicologo" name="psicologo" required>
+      </div>
+      <div class="fila">
+        <label for="fecha">Fecha de la Cita:</label>
+        <input type="date" id="fecha" name="fecha" required>
+      </div>
+      <div class="fila">
+        <label for="motivo">Motivo de Cancelación:</label>
+        <textarea id="motivo" name="motivo" rows="3" required></textarea>
+      </div>
+      <div class="fila">
+        <label for="aplazar">¿Desea aplazar su cita?</label>
+        <select id="aplazar" name="aplazar" onchange="mostrarCampoFecha()">
+          <option value="no">No</option>
+          <option value="si">Sí</option>
+        </select>
+      </div>
+      <div class="fila" id="filaFechaNueva" style="display: none;">
+        <label for="fechaNueva">¿Para qué fecha desea su cita?</label>
+        <input type="date" id="fechaNueva" name="fechaNueva">
+      </div>
+      <div class="fila">
+        <label for="comunicacion">Método preferido de comunicación:</label>
+        <select id="comunicacion" name="comunicacion" required>
+          <option value="email">Correo Electrónico</option>
+          <option value="telefono">Teléfono</option>
+          <option value="mensaje">Mensaje de Texto</option>
+        </select>
+      </div>
+      <div class="fila-boton">
+        <button type="submit" class="btn-cancelar">Cancelar Cita</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Modal -->
+  <div id="modalConfirmacion" class="modal" style="display: none;">
+    <div class="modal-contenido">
+      <p>¡Su cita ha sido cancelada exitosamente!</p>
+      <button class="btn-aceptar" onclick="redireccionar()">Aceptar</button>
+    </div>
+  </div>
+
+  <script>
+    function mostrarModal(event) {
+      event.preventDefault();
+      const modal = document.getElementById('modalConfirmacion');
+      modal.style.display = 'flex';
+    }
+
+    function redireccionar() {
+      // Cambia 'index.html' por la URL del apartado principal
+      window.location.href = '../Home_Usuario/homeusuario.html';
+    }
+
+    function mostrarCampoFecha() {
+      const aplazar = document.getElementById('aplazar').value;
+      const filaFechaNueva = document.getElementById('filaFechaNueva');
+      filaFechaNueva.style.display = aplazar === 'si' ? 'flex' : 'none';
+    }
+  </script>
      <!-- Lugar donde se cargará el footer -->
   <div id="footer-container"></div>
 

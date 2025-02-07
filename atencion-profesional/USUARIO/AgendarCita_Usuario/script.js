@@ -28,3 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
 fetch('../Footer/inicio/inicio.html')
   .then(response => response.text())
   .then(data => document.getElementById('footer-container').innerHTML = data);
+
+
+
+  document.getElementById('citaForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const telefono = document.getElementById('telefono').value;
+    const paquete = document.getElementById('paquete').value;
+    const especialidad = document.getElementById('especialidad').value;
+    const fecha = document.getElementById('fecha').value;
+    const hora = document.getElementById('hora').value;
+    const comentarios = document.getElementById('comentarios').value;
+    
+     // Mostrar mensaje emergente personalizado
+     document.getElementById("mensajeEmergente").style.display = "flex";
+    });
+
+
+    // Botón para cerrar el mensaje emergente y redirigir a llamadas
+    document.getElementById("btnAceptar").addEventListener("click", function () {
+        window.location.href = "../CitasProgramadas_Usuario/CitasProgramadasUsuario.html"; // Cambia esto según la ruta correcta de tu sección de llamadas
+    });
+
+
