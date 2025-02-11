@@ -1,248 +1,147 @@
 
 
-/* contenido body */
-body::before,
-body::after {
-  content: '';
-  position: absolute;
-  background-color: #59009A;
-  border-radius: 50%;
-  filter: blur(6.25rem);
-  /* 100px */
-  opacity: 0.7;
-
-  
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-    background-image: url('/atencion-profesional/PROFESIONAL/Imagenes/Entorno-Profesional.jpg'); /* Cambia por la ruta de tu imagen */
-    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
-    background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-    background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con transparencia */
-    background-blend-mode: overlay; /* Mezcla el color con la imagen */
-  
+:root {
+  --primary-color: #59009A;
+  --primary-light: rgba(89, 0, 154, 0.1);
+  --text-gray: #666;
+  --spacing-unit: 1rem;
+  --card-transition: 0.3s ease;
 }
 
-body::before {
-  width: 18.75rem;
-  /* 300px */
-  height: 18.75rem;
-  /* 300px */
-  top: 20%;
-  left: 15%;
-  animation: move 10s infinite alternate;
-}
-
-body::after {
-  width: 12.5rem;
-  /* 200px */
-  height: 12.5rem;
-  /* 200px */
-  bottom: 20%;
-  right: 15%;
-  animation: move 8s infinite alternate-reverse;
-}
-
-@keyframes move {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  100% {
-    transform: translate(3.125rem, 3.125rem) scale(1);
-  }
-}
-
-.container {
-  position: relative;
-  z-index: 1;
-}
-
-main {
-  position: relative;
-  z-index: 1;
-
-}
-
-.footer {
-  position: relative;
-  z-index: 1;
-}
-
-.body {
-  padding: 1.25rem;
-  /* 20px */
-}
-
-.text h1 {
-  margin: 0;
-  color: #59009A;
-  font-size: 1.75rem;
-  /* Tamaño más pequeño para pantallas móviles */
-}
-
-.text p {
-  margin: 0;
-  color: #999;
-  font-size: 1rem;
-  /* Texto un poco más grande */
-}
-
-main {
-  padding: 2rem;
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
+* {
   margin: 0;
   padding: 0;
-  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/USUARIO/Imagenes/apartado-cita.png'); /* Cambia por la ruta de tu imagen */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
-  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.8); /* Color de fondo blanco con transparencia */
-  background-blend-mode: overlay; /* Mezcla el color con la imagen */
- 
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/apartado-cita.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: overlay;
+}
+
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* Cambiar según sea necesario */
-  gap: 2rem;
-  /* Aumentar el gap para mayor separación */
-}
-
-.grid-item {
-  color: #59009A;
-  width: calc(100% - 2rem);
-  /* Restar el margen del ancho */
-  height: auto;
-  margin: 1rem;
-  /* Ajusta este valor para mayor o menor separación */
-  padding: 1rem;
-  display: flex;
+  grid-template-columns: repeat(2, minmax(300px, 450px));
+  gap: 3rem;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  border-radius: 0.5rem;
-  /* 8px */
-  position: relative;
-  border: 0.125rem solid #59009A;
-  /* 2px */
-  background-size: cover;
-  background-position: center;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  height: 225px;
+  background: rgba(255, 255, 255, 0.599);
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
-  gap: 10px;
-}
-
-.grid-item::before {
-  content: '';
-  position: absolute;
-  top: -1.25rem;
-  /* -20px */
-  left: -1.25rem;
-  /* -20px */
-  width: 6.25rem;
-  /* 100px */
-  height: 6.25rem;
-  /* 100px */
-  background-color: #59009A;
-  border-radius: 50%;
-  z-index: -1;
-  transition: transform 0.3s ease-in-out;
-}
-
-.grid-item:hover::before {
-  transform: scale(1.5);
-}
-
-.grid-item:hover {
-  transform: scale(1.1);
-  font-size: 1.2em;
-}
-
-a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
 }
 
-.grid-item.archivos {
-  background-image: url('../Imagenes/WhatsApp.png');
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
-.grid-item.informes {
-  background-image: url('Informes.png');
+.card:hover::before {
+  opacity: 1;
 }
 
-.grid-item.resenas {
-  background-image: url('Reseñas.png');
+.card:hover {
+  transform: scale(1.05);
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
 }
 
-.grid-item.historial {
-  background-image: url('Historial.png');
+.card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
 }
 
-.grid-item.proximamente1 {
-  background-image: url('Proximamente.png');
+.card-icon {
+  font-size: 4rem;
+  color: var(--primary-color);
 }
 
-.grid-item.proximamente2 {
-  background-image: url('Proximamente.png');
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
 }
 
-
-
-
-/* Estilos para pantallas medianas */
-@media (min-width: 769px) and (max-width: 1024px) {
-  body {
-    padding: 1.25rem;
-    /* 20px */
+@media (max-width: 968px) {
+  .grid {
+      grid-template-columns: minmax(280px, 400px);
+      gap: 2rem;
   }
 
+  .card {
+      height: 250px;
+  }
+
+  .card-icon {
+      font-size: 3rem;
+  }
+
+  .card-title {
+      font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
   main {
-    padding: 6.25rem;
-    /* 100px */
+      padding: 2rem 1rem;
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    /* Mantener el gap entre los elementos */
+      padding: 1rem;
   }
 
-  .grid-item {
-    height: auto;
-    /* Ajusta la altura automáticamente */
-    font-size: 1.15em;
-    /* Un poco más grande que en pantallas pequeñas */
+  .card {
+      height: 200px;
   }
 
-}
-
-/* Estilos para pantallas grandes */
-@media (min-width: 1025px) {
-  main {
-    padding: 8.75rem;
-    /* 140px */
+  .card-icon {
+      font-size: 2.5rem;
   }
 
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    /* Tres columnas en pantallas grandes */
-  }
-
-  .grid-item {
-    height: 12.5rem;
-    /* 200px */
+  .card-title {
+      font-size: 1.25rem;
   }
 }
-
-
-
-

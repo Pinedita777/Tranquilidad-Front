@@ -1,3 +1,37 @@
+document.getElementById("citaForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Obtener valores del formulario
+    let nombre = document.getElementById("nombre").value;
+    let correo = document.getElementById("correo").value;
+    let telefono = document.getElementById("telefono").value;
+    let paquete = document.getElementById("paquete").value;
+    let especialidad = document.getElementById("especialidad").value;
+    let fecha = document.getElementById("fecha").value;
+    let hora = document.getElementById("hora").value;
+    let comentarios = document.getElementById("comentarios").value;
+
+    let nuevaCita = {
+        nombre, correo, telefono, paquete, especialidad, fecha, hora, comentarios
+    };
+
+    // Guardar en localStorage
+    let citas = JSON.parse(localStorage.getItem("citas")) || [];
+    citas.push(nuevaCita);
+    localStorage.setItem("citas", JSON.stringify(citas));
+
+    // Mostrar mensaje emergente
+    document.getElementById("mensajeEmergente").style.display = "flex";
+});
+
+// Botón Aceptar del mensaje emergente
+document.getElementById("btnAceptar").addEventListener("click", function() {
+    window.location.href = "../CitasProgramadas_Usuario/citas.html"; // Redirigir a la página de citas
+});
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const menuIcon = document.querySelector('.menu-icon');
     const dropdownMenu = document.querySelector('.dropdown-menu');
@@ -30,27 +64,5 @@ fetch('../Footer/inicio/inicio.html')
   .then(data => document.getElementById('footer-container').innerHTML = data);
 
 
-
-  document.getElementById('citaForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    const nombre = document.getElementById('nombre').value;
-    const correo = document.getElementById('correo').value;
-    const telefono = document.getElementById('telefono').value;
-    const paquete = document.getElementById('paquete').value;
-    const especialidad = document.getElementById('especialidad').value;
-    const fecha = document.getElementById('fecha').value;
-    const hora = document.getElementById('hora').value;
-    const comentarios = document.getElementById('comentarios').value;
-    
-     // Mostrar mensaje emergente personalizado
-     document.getElementById("mensajeEmergente").style.display = "flex";
-    });
-
-
-    // Botón para cerrar el mensaje emergente y redirigir a llamadas
-    document.getElementById("btnAceptar").addEventListener("click", function () {
-        window.location.href = "../CitasProgramadas_Usuario/CitasProgramadasUsuario.html"; // Cambia esto según la ruta correcta de tu sección de llamadas
-    });
-
+ 
 

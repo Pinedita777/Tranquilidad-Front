@@ -19,22 +19,35 @@
       <br><br><br><br><br><br><br>
       <body>
         <main class="body">
-            <div class="formulario">
-                <h1>PAGOS WEB</h1> <br><br>
-                
-                <input type="text" class="casilla" placeholder="Nombres">
-                <input type="text" class="casilla" placeholder="Apellidos">
-                <input type="text" class="casilla" placeholder="Correo Electrónico">
-                <input type="email" class="casilla" placeholder="Número de tarjeta">
-    
-                <div class="recordar-tarjeta">
-                    <input type="checkbox" id="remember-card">
-                    <label for="remember-card"> Recordar tarjeta</label>
-                </div>
-    
-                <button type="submit" class="pagar-button" onclick="mostrarMensaje()">Pagar</button>
-            </div>
-        </main>
+          <div class="formulario">
+              <h1>PAGOS WEB</h1> <br><br>
+      
+              <div class="input-group1">
+                  <input type="text" class="casilla1" placeholder="Numero de Tarjeta">
+              </div>
+              <div class="input-group">
+                  <input type="text" class="casilla" placeholder="Fecha de Vencimiento">
+                  <input type="text" class="casilla" placeholder="CVC/CVV">
+              </div>
+              <div class="input-group">
+                  <input type="email" class="casilla" placeholder="Nombre en la Tarjeta">
+                  <input type="email" class="casilla" placeholder="CC">
+              </div>
+      
+              <div class="recordar-tarjeta">
+                  <input type="checkbox" id="remember-card">
+                  <label for="remember-card"> Recordar tarjeta</label>
+      
+                  <div class="payment-icons">
+                      <img src="/atencion-profesional/USUARIO/PagosWeb_Usuario/Imagenes/visa.png" alt="Visa">
+                      <img src="/atencion-profesional/USUARIO/PagosWeb_Usuario/Imagenes/master.png" alt="Master Card">
+                      <img src="/atencion-profesional/USUARIO/PagosWeb_Usuario/Imagenes/american.png" alt="American Express">
+                  </div>
+              </div>
+      
+              <button type="submit" class="pagar-button" onclick="mostrarMensaje()">Pagar</button>
+          </div>
+      </main>
     
         <!-- Modal de mensaje emergente -->
         <div id="modal" class="modal">
