@@ -1,50 +1,109 @@
-// Función para confirmar la acción de aceptar o denegar la cita
-function confirmAction(action) {
-    if (action === 'ingresar') {
-        alert('Has ingresado a la cita.');
-    } else if (action === 'denegar') {
-        if (confirm('¿Estás seguro de que deseas denegar la cita?')) {
-            alert('Cita denegada.');
+document.addEventListener("DOMContentLoaded", function () {
+    const contenedorCitas = document.getElementById("contenedorCitas");
+    const modalIngresar = document.getElementById("modalIngresar");
+    const modalTitulo = document.getElementById("modalTitulo");
+    const modalDetalles = document.getElementById("modalDetalles");
+    const btnAceptarIngresar = document.getElementById("btnAceptarIngresar");
+
+    let citas = JSON.parse(localStorage.getItem("citas")) || [];
+
+    function mostrarCitas() {
+        contenedorCitas.innerHTML = "";
+
+        citas.forEach((cita, index) => {
+            const tarjeta = document.createElement("div");
+            tarjeta.classList.add("tarjeta");
+
+            tarjeta.innerHTML = `
+                <h3>${cita.nombre}</h3>
+                <p><strong>Correo:</strong> ${cita.correo}</p>
+                <p><strong>Teléfono:</strong> ${cita.telefono}</p>
+                <p><strong>Paquete:</strong> ${cita.paquete}</p>
+                <p><strong>Especialidad:</strong> ${cita.especialidad}</p>
+                <p><strong>Profesional:</strong> ${cita.profesional}</p>
+                <p><strong>Fecha:</strong> ${cita.fecha}</p>
+                <p><strong>Hora:</strong> ${cita.hora}</p>
+                <p><strong>Comentarios:</strong> ${cita.comentarios}</p>
+                <button class="btn-ingresar" data-index="${index}">Ingresar</button>
+                <button class="btn-editar" data-index="${index}">Editar</button>
+                <button class="btn-cancelar" data-index="${index}">Cancelar</button>
+            `;
+
+            contenedorCitas.appendChild(tarjeta);
+        });
+    }
+
+    mostrarCitas();
+
+    // Evento para manejar los botones
+    contenedorCitas.addEventListener("click", function (event) {
+        const index = event.target.getAttribute("data-index");
+
+        if (event.target.classList.contains("btn-cancelar")) {
+            citas.splice(index, 1);
+            localStorage.setItem("citas", JSON.stringify(citas));
+            mostrarCitas();
+        } else if (event.target.classList.contains("btn-ingresar")) {
+            const cita = citas[index];
+
+            // Mostrar los detalles en el modal
+            modalTitulo.textContent = `Ingresando a la cita de ${cita.nombre}`;
+            modalDetalles.innerHTML = `
+                <p><strong>Especialidad:</strong> ${cita.especialidad}</p>
+                <p><strong>Fecha:</strong> ${cita.fecha}</p>
+                <p><strong>Hora:</strong> ${cita.hora}</p>
+            `;
+
+            // Agregar clase para animación y mostrar el modal
+            modalIngresar.classList.add("show");
+            modalIngresar.style.display = "flex";
+
+            // Guardar la cita en localStorage
+            localStorage.setItem("citaActual", JSON.stringify(cita));
+        } else if (event.target.classList.contains("btn-editar")) {
+            localStorage.setItem("citaEditar", JSON.stringify(citas[index]));
+            window.location.href = "../CancelarCita1_Profesional/cita-actualizada.html";
         }
-    }
-}
+    });
 
-// Función para mostrar el mes y año actual dinámicamente en el calendario
-function loadCalendar() {
-    const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-    const currentDate = new Date();
-    const currentMonth = monthNames[currentDate.getMonth()] + " " + currentDate.getFullYear();
-    document.getElementById("current-month").textContent = currentMonth;
+    // Botón Aceptar del modal (redirección a videollamadas)
+    btnAceptarIngresar.addEventListener("click", function () {
+        window.location.href = "../Consulta_Profesional/ConsultaProfesional.html";
+    });
 
-    // Generar días del mes (ejemplo para mayo)
-    let calendarHTML = '';
-    for (let i = 1; i <= 31; i++) {
-        calendarHTML += `<button class="date">${i}</button>`;
-    }
-    document.getElementById("calendar").innerHTML = calendarHTML;
-}
+    // Cerrar modal al hacer clic fuera de él
+    modalIngresar.addEventListener("click", function (event) {
+        if (event.target === modalIngresar) {
+            modalIngresar.classList.remove("show");
+            setTimeout(() => {
+                modalIngresar.style.display = "none";
+            }, 300); // Espera que termine la animación antes de ocultarlo
+        }
+    });
+});
 
-// Cargar el calendario al inicio
-document.addEventListener('DOMContentLoaded', loadCalendar);
 
-window.onload = function() {
-    const boton = document.getElementById('dropdown-button');
-    const contenedor = document.getElementById('appointment');
-    
-    // Posiciona el botón en la esquina inferior derecha
-    boton.style.position = 'absolute';
-    boton.style.bottom = '10px'; // A 10 píxeles del borde inferior
-    boton.style.right = '10px';  // A 10 píxeles del borde derecho
-  };
-  // Función para mostrar/ocultar el calendario al hacer clic en "Editar"
-  function mostrarFormulario(btn) {
-    const form = btn.nextElementSibling; // Encuentra el formulario justo después del botón "Editar"
-    if (form.style.display === "none") {
-        form.style.display = "block"; // Muestra el formulario
-    } else {
-        form.style.display = "none"; // Oculta el formulario si ya está visible
-    }
-}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const navbar = document.querySelector('.navbar');
+
+    menuIcon.addEventListener('click', function(event) {
+        event.stopPropagation(); // Previene que el click se propague al documento
+        dropdownMenu.classList.toggle('show');
+    });
+
+    // Cerrar el menú cuando se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!navbar.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+
+
 
   // Cargar el header
   fetch('../Header/header.html')
@@ -55,3 +114,4 @@ window.onload = function() {
 fetch('../Footer/inicio/inicio.html')
   .then(response => response.text())
   .then(data => document.getElementById('footer-container').innerHTML = data);
+  

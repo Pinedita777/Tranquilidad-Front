@@ -10,127 +10,67 @@
     <link rel="stylesheet" href="../Header/style.css">
     <link rel="stylesheet" href="../Footer/inicio/styles.css">
 </head>
-<body>
-  <!-- Lugar donde se cargará el header -->
-  <div id="header-container"></div>
 
-  <br><br><br><br><br><br><br>
-<div class="schedule-container">
-  <div class="schedule">
-    <div class="schedule-info">
-      <div class="details">
-        <span>Usuario: Juanito Alimaña # 1202</span>
-        <span>Consulta # 137</span>
-      </div>
-      <div class="details">
-        <span>Fecha: 10-05-2024</span>
-        <span>Hora: 16:00</span>
-      </div>
-      <div class="cancel">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-       <a href="../CancelarCita2_Profesional/CancelarCita2.html"> <span>Cancelar cita</span></a>
-      </div>
+
+  <body>
+
+    <!-- Lugar donde se cargará el header -->
+    <div id="header-container"></div>
+
+    <br><br><br><br><br><br><br><br><br>
+    <div class="container">
+        <h2>Cita Actualizada</h2>
+        <form id="actualizarCitaForm">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" disabled>
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" disabled>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" disabled>
+
+            <label for="paquete">Seleccionar Paquete:</label>
+            <select id="paquete" disabled>
+                <option value="basico">Básico - 1 sesión</option>
+                <option value="intermedio">Intermedio - 3 sesiones</option>
+                <option value="premium">Premium - 5 sesiones</option>
+            </select>
+
+            <label for="especialidad">Especialidad:</label>
+            <select id="especialidad" disabled>
+                <option value="clinica">Psicología Clínica</option>
+                <option value="cognitiva">Psicología Cognitiva</option>
+                <option value="desarrollo">Psicología del Desarrollo</option>
+            </select>
+
+            <label for="fecha">Seleccionar Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="hora">Seleccionar Hora:</label>
+            <input type="time" id="hora" required>
+
+            <label for="comentarios">Comentarios Adicionales:</label>
+            <textarea id="comentarios" rows="4"></textarea>
+
+            <button type="submit">Actualizar Cita</button>
+        </form>
     </div>
-  </div>
-  <div class="schedule">
-    <div class="schedule-info">
-      <div class="details">
-        <span>Usuario: Radamel Falcao Garcia # 5419</span>
-        <span>Consulta # 138</span>
-      </div>
-      <div class="details">
-        <span>Fecha: 12-05-2024</span>
-        <span>Hora: 09:00</span>
-      </div>
-      <div class="cancel">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-        <a href="../CancelarCita2_Profesional/CancelarCita2.html"> <span>Cancelar cita</span></a>
-      </div>
+
+    <!-- Mensaje Emergente -->
+    <div id="mensajeEmergente" class="modal">
+        <div class="modal-content">
+            <h3>¡Cita Actualizada! 🎉</h3>
+            <p>Felicidades, su cita ha sido actualizada exitosamente.</p>
+            <button id="btnAceptar">Aceptar</button>
+        </div>
     </div>
-  </div>
-  <div class="schedule">
-    <div class="schedule-info">
-      <div class="details">
-        <span>Usuario: Alfredo Di Stefano #9</span>
-        <span>Consulta # 139</span>
-      </div>
-      <div class="details">
-        <span>Fecha: 19-05-2024</span>
-        <span>Hora: 13:30</span>
-      </div>
-      <div class="cancel">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-        <a href="../CancelarCita2_Profesional/CancelarCita2.html"> <span>Cancelar cita</span></a>
-      </div>
-    </div>
-  </div>
 
-<div class="schedule">
-  <div class="schedule-info">
-      <div class="details">
-          <span>Usuario: Lionel Messi # 10</span>
-          <span>Consulta # 140</span>
-      </div>
-      <div class="details">
-          <span>Fecha: 20-05-2024</span>
-          <span>Hora: 15:00</span>
-      </div>
-      <div class="cancel">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-          </svg>
-          <a href="../CancelarCita2_Profesional/CancelarCita2.html"> <span>Cancelar cita</span></a>
-      </div>
-  </div>
-</div>
-<div class="schedule">
-  <div class="schedule-info">
-      <div class="details">
-          <span>Usuario: Cristiano Ronaldo # 7</span>
-          <span>Consulta # 141</span>
-      </div>
-      <div class="details">
-          <span>Fecha: 21-05-2024</span>
-          <span>Hora: 10:30</span>
-      </div>
-      <div class="cancel">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-          </svg>
-          <a href="../CancelarCita2_Profesional/CancelarCita2.html"> <span>Cancelar cita</span></a>
-      </div>
-  </div>
-</div>
-<div class="schedule">
-  <div class="schedule-info">
-      <div class="details">
-          <span>Usuario: Neymar Jr. # 11</span>
-          <span>Consulta # 142</span>
-      </div>
-      <div class="details">
-          <span>Fecha: 22-05-2024</span>
-          <span>Hora: 14:00</span>
-      </div>
-      <div class="cancel">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-          </svg>
-          <a href="../CancelarCita2_Profesional/CancelarCita2.html"> <span>Cancelar cita</span></a>
-      </div>
-  </div>
-</div>
-</div>
- <!-- Lugar donde se cargará el footer -->
- <div id="footer-container"></div>
 
-  <script src="script.js"></script>
-  <script src="/atencion-profesional/PROFESIONAL/Header/script.js"></script>
-
+    
+    <!-- Lugar donde se cargará el footer -->
+    <div id="footer-container"></div>
+    <script src="script.js"></script>
+    <script src="/atencion-profesional/PROFESIONAL/Header/script.js"></script>
 </body>
 </html>

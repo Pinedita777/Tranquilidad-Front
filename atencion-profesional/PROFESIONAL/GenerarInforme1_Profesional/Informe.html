@@ -14,9 +14,9 @@
   <!-- Lugar donde se cargará el header -->
   <div id="header-container"></div>
 
-<br><br><br><br><br><br><br>
+<br><br><br><br><br>
 <div class="body">
-  <form class="formulario" action="procesar_formulario.php" method="POST">
+  <div class="formulario"  >
     <h2>Datos Generales</h2>
     <label for="nombres">Apellidos y Nombres:</label>
     <input type="text" id="nombres" name="nombres" required>
@@ -49,10 +49,10 @@
     
     <label for="tecnicas_pruebas">Técnicas y Pruebas Aplicadas:</label>
     <textarea id="tecnicas_pruebas" name="tecnicas_pruebas" required></textarea>
-    
-    
-  </form>
-  <a href="../GenerarInforme2_Profesional/Informe2.html"><button type="siguiente">Siguiente</button></a>
+    <div class="button-container">
+    <a href="../GenerarInforme2_Profesional/Informe2.html"><button type="siguiente">Siguiente</button></a></div>
+  </div>
+  
 </div>
  <!-- Lugar donde se cargará el footer -->
  <div id="footer-container"></div>

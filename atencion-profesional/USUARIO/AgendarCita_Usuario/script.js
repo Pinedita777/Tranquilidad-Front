@@ -7,12 +7,13 @@ document.getElementById("citaForm").addEventListener("submit", function(event) {
     let telefono = document.getElementById("telefono").value;
     let paquete = document.getElementById("paquete").value;
     let especialidad = document.getElementById("especialidad").value;
+    let profesional = document.getElementById("profesional").value; 
     let fecha = document.getElementById("fecha").value;
     let hora = document.getElementById("hora").value;
     let comentarios = document.getElementById("comentarios").value;
 
     let nuevaCita = {
-        nombre, correo, telefono, paquete, especialidad, fecha, hora, comentarios
+        nombre, correo, telefono, paquete, especialidad, profesional, fecha, hora, comentarios
     };
 
     // Guardar en localStorage

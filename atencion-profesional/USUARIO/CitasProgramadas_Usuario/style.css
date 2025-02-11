@@ -5,7 +5,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   margin: 0;
-  padding: 0;
+  padding-top: 200px;
   min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
   background-image: url('/atencion-profesional/USUARIO/Imagenes/mensajes.png'); /* Cambia por la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
@@ -14,6 +14,7 @@ body {
   background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
   background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco con transparencia */
   background-blend-mode: overlay; /* Mezcla el color con la imagen */
+ 
 }
 
 h2 {
@@ -25,6 +26,8 @@ h2 {
 }
 
 .contenedor-citas {
+  margin-top: 0;
+  padding-top: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
@@ -78,7 +81,8 @@ h2 {
 
 .tarjeta h3 {
   color: #59009A;
-  margin-bottom: 10px;
+  margin-bottom: 15px; /* Ajusta el valor según sea necesario */
+  margin-top: 10px; /* Si necesitas separarlo de arriba también */
 }
 
 .tarjeta p {

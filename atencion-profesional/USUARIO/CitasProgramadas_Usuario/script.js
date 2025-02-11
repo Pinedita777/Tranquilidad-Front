@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Teléfono:</strong> ${cita.telefono}</p>
                 <p><strong>Paquete:</strong> ${cita.paquete}</p>
                 <p><strong>Especialidad:</strong> ${cita.especialidad}</p>
+                <p><strong>Profesional:</strong> ${cita.profesional}</p>
                 <p><strong>Fecha:</strong> ${cita.fecha}</p>
                 <p><strong>Hora:</strong> ${cita.hora}</p>
                 <p><strong>Comentarios:</strong> ${cita.comentarios}</p>
@@ -113,3 +114,4 @@ document.addEventListener('DOMContentLoaded', function() {
 fetch('../Footer/inicio/inicio.html')
   .then(response => response.text())
   .then(data => document.getElementById('footer-container').innerHTML = data);
+  
