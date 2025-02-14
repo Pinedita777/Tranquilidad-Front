@@ -7,17 +7,19 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/PROFESIONAL/Imagenes/Entorno-Profesional.jpg'); /* Cambia por la ruta de tu imagen */
+  background-image: url('/atencion-profesional/USUARIO/PagosWeb_Usuario/Imagenes/pagos-web.jpg'); /* Cambia por la ruta de tu imagen */
   background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
   background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
   background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.9); /* Color de fondo blanco con transparencia */
+  background-color: rgba(255, 255, 255, 0.5); /* Color de fondo blanco con transparencia */
   background-blend-mode: overlay; /* Mezcla el color con la imagen */
 }
 
-main {
-    margin-top: 50px;
+.body {
+ justify-content: center;
+ align-items: center;
+ display: flex;
 }
 
 h1 {
@@ -28,14 +30,25 @@ h1 {
 
 /* Estilos para el formulario */
 .formulario {
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 100px;
+    background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
+    border-radius: 15px;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    text-align: center;
 }
+
+.formulario:hover{
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Estilos para cada grupo de inputs */
 .input-group {
@@ -96,17 +109,18 @@ h1 {
 }
 /* Estilo para el botón de pago */
 .pagar-button {
-    background-color: #59009A;
-    color: #ffffff;
-    border: none;
-    margin: 20px 20px 20px 200px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #59009A, #8a2be2);
+  color: #fff;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
 }
 
 .pagar-button:hover {
-    background-color: #440173;
+  background: linear-gradient(145deg, #8a2be2, #59009A);
+  transform: translateY(-3px);
 }
 
 /* Estilos para el modal */
