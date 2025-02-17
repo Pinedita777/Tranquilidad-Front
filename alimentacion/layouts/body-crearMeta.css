@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Fondo de marca de agua */
 body {
     background: url('../inclued/ALIMENTACION22.jpg') center center fixed; /* Imagen centrada y fija */
@@ -11,12 +12,16 @@ body {
 }
 
 /* Main container */
+=======
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 main {
     flex: 1;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     margin-top: 160px;
     position: relative; /* Asegura que el contenido esté por encima de la imagen de fondo */
     z-index: 1;
@@ -25,11 +30,18 @@ main {
 /* Sección de contenido con fondo semitransparente */
 section {
     background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco translúcido */
+=======
+}
+
+section {
+    background-color: #fff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 800px;
+<<<<<<< HEAD
     position: relative;
     z-index: 2; /* Asegura que el contenido esté por encima del fondo */
 }
@@ -47,13 +59,25 @@ section h2 {
 }
 
 /* Estilos del formulario */
+=======
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+<<<<<<< HEAD
 /* Estilos de los inputs y textareas */
+=======
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
@@ -62,8 +86,12 @@ input, textarea {
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 /* Botón de guardar */
 .btn-save {
+=======
+.btn-save{
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     text-decoration: none;
     background-color: #59009A;
     color: #fff;
@@ -72,4 +100,8 @@ input, textarea {
     border-radius: 5px;
     cursor: pointer;
     align-self: flex-end;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

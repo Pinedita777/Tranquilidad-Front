@@ -6,14 +6,18 @@
   padding: 20px;
   box-sizing: border-box;
   margin-top: 150px;
+<<<<<<< HEAD
   flex-direction: column;
   justify-content: center;
   align-items: center;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 
 .player-container {
   text-align: center;
+<<<<<<< HEAD
   width: 90%;
   background-color: #fff8ffe3;
   padding: 20px;
@@ -22,6 +26,15 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 50px;
+=======
+  width: 50%;
+  max-width:50% ;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-left: 30px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 .album-art {
@@ -186,6 +199,7 @@ video::-moz-media-controls {
 }
 
 
+<<<<<<< HEAD
 .comentarios {
   display: flex;
   flex-direction: column;
@@ -319,17 +333,73 @@ textarea:focus {
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+=======
+.comments {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-right: 30px;
+}
+
+.comments h2 {
+  color: #59009a;
+  margin-top: 0;
+}
+
+.comments textarea {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.comments button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Contenedor de comentarios con scroll */
+.comentarios {
+  min-height: 300px;
+  max-height: 300px; /* Altura máxima del contenedor */
+  width: 100%;
+  margin-top: 10px;
+  overflow-y: scroll; /* Habilitar desplazamiento vertical */
+  border: 1px solid #ccc;
+  padding: 0.625rem;
+  background-color: #f9f9f9; /* Fondo claro */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 
 
+<<<<<<< HEAD
+=======
+.com {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 @media (max-width: 768px){
   .container{
     flex-direction: column;
@@ -348,6 +418,7 @@ button:disabled {
   }
 }
 
+<<<<<<< HEAD
 body::before{
   content: '';
   position: absolute;
@@ -362,3 +433,5 @@ body::before{
   opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
   z-index: -1;
 }
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

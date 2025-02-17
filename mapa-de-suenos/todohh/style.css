@@ -10,10 +10,15 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+<<<<<<< HEAD
+=======
+   
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+<<<<<<< HEAD
     background-color: #f9e0f5f7;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -23,6 +28,12 @@ header {
 
 header.hidden {
     transform: translateY(-100%); /* Mueve el header hacia arriba fuera de la vista */
+=======
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: calc(100% - 15px); /* Resta un poco para evitar que cubra la barra */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 main {
     margin-top: 120px; /* Ajusta la altura según el header */
@@ -96,6 +107,7 @@ main {
 }
 
 .profile-box {
+<<<<<<< HEAD
     background-color: #fddaf8f0;
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px; /* Espaciado interno */
@@ -106,6 +118,16 @@ main {
 .profile-container .profile-box {
     background-color: #fddaf8f0;
 }
+=======
+    background: #f9f9f9; /* Color de fondo de la cajita */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.244); /* Sombra para el efecto de cajita */
+    display: flex; /* Usar flexbox para alinear los elementos dentro */
+    align-items: center; /* Alinea los elementos en la parte superior */
+}
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 /* Ajusta la posición de Jhon Sebastian */
 .profile-name {
     margin-bottom: 5px; /* Espacio entre el nombre y la imagen */
@@ -133,7 +155,11 @@ a{
     right: 0; /* Alinea a la derecha */
     top: 70px; /* Ajusta la posición */
     width: 150px; /* Ancho del menú */
+<<<<<<< HEAD
     background-color: #f9e0f5f7;
+=======
+    background: white; /* Color de fondo del menú */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     border: 1px solid #ddd; /* Borde del menú */
     border-radius: 8px; /* Bordes redondeados del menú */
     padding: 10px; /* Espaciado interno */
@@ -160,7 +186,11 @@ a{
     top: 100px;
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     background-color: #f9e0f5f7;
+=======
+    background: white;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -172,7 +202,11 @@ a{
     gap: 10px;
 }
 .modulo {
+<<<<<<< HEAD
     background-color: #f9e0f5f7;
+=======
+    background: #ffffff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     padding: 20px;
     text-align:left;
     margin-left: 20px;
@@ -182,11 +216,19 @@ a{
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .modulo:hover {
+<<<<<<< HEAD
     background-color: #f9e0f5f7;
     transform: scale(1.05); /* Efecto de zoom */
 }
 .module {
     background-color: #f9e0f5f7;
+=======
+    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
+}
+.module {
+    background: #ffffff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     padding: 20px;
     text-align: center;
     border-radius: 6px;
@@ -197,7 +239,11 @@ a{
 }
   
 .module:hover {
+<<<<<<< HEAD
     background-color: #f9e0f5f7;
+=======
+    background-color: #ffffff; /* Cambia el color al pasar el mouse */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     transform: scale(1.05); /* Efecto de zoom */
 }
 
@@ -219,7 +265,11 @@ a{
     top: 100px; /* Alinea debajo del header */
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     background-color: #f9e0f5f7;
+=======
+    background: white;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 

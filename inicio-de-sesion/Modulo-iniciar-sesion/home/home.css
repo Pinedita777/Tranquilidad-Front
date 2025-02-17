@@ -160,6 +160,7 @@ a{
     gap: 10px;
 }
 .modulo {
+<<<<<<< HEAD
     display: flex;
     overflow: hidden;
     width: 100%;
@@ -172,6 +173,17 @@ a{
     border-radius: 4%;
   }
 
+=======
+    background: #ffffff;
+    padding: 20px;
+    text-align:left;
+    margin-left: 20px;
+    border-radius: 6px;
+    color: #5a009ac2;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .modulo:hover {
     background-color: #ffffff; /* Cambia el color al pasar el mouse */
     transform: scale(1.05); /* Efecto de zoom */
@@ -245,7 +257,11 @@ body {
 
 .main-content {
     flex: 1; /* Permite que el main ocupe el espacio entre header y footer */
+<<<<<<< HEAD
      /* Ajusta para que el header no tape el contenido */
+=======
+    padding-top: 80px; /* Ajusta para que el header no tape el contenido */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     padding-bottom: 40px; /* Ajusta el padding inferior para separar del footer */
 }
 
@@ -299,6 +315,7 @@ body {
 }
 
 .tip-card {
+<<<<<<< HEAD
     width: 100%;
     max-width: 400px;
     background: linear-gradient(145deg, #e0e0e0, #ffffff);
@@ -332,13 +349,27 @@ body {
 }
 
 
+=======
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #59009A; /* Color morado para el borde */
+}
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .tip-card h3 {
     font-size: 18px;
     margin: 10px 0;
     color: #333;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .tip-card img {
     width: 100%;
     height: 150px; /* Altura fija para todas las imágenes */
@@ -405,6 +436,7 @@ body {
 }
 
 .card {
+<<<<<<< HEAD
     width: 100%;
     max-width: 400px;
     background: linear-gradient(145deg, #e0e0e0, #ffffff);
@@ -438,6 +470,17 @@ body {
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2), -5px -5px 20px rgba(255, 255, 255, 0.6);
+=======
+    border: 2px solid #59009A; /* Borde morado para las tarjetas */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el hover */
+}
+
+/* Animación y efecto de hover */
+.card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el ratón */
+    box-shadow: 0 4px 15px rgba(89, 0, 154, 0.4); /* Sombra púrpura */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 /* Estilos para las imágenes dentro de las tarjetas */
@@ -506,10 +549,13 @@ body {
 
 /* Estilos para las tarjetas de tips */
 .tip-card {
+<<<<<<< HEAD
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     animation: fadeIn 1s ease-in-out;
     border: 2px solid #59009A; /* Color morado para el borde de las tarjetas */
     border-radius: 10px; /* Bordes redondeados para las tarjetas */
@@ -645,6 +691,7 @@ body {
     }
 }
 
+<<<<<<< HEAD
  
   
   /* Responsividad */
@@ -655,6 +702,8 @@ body {
     }
   }
 
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 /* Responsive */
 @media (max-width: 1200px) {
     /* En pantallas medianas, usar 2 columnas para las tarjetas */
@@ -703,8 +752,11 @@ body {
     }
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 /* Footer */
 
 /* Elimina márgenes y padding de todos los elementos */
@@ -874,6 +926,7 @@ body {
         display: none;
     }
 }
+<<<<<<< HEAD
 .marca-agua::before {
     content: '';
     position: absolute;
@@ -888,3 +941,5 @@ body {
     opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
     z-index: -3;
   }
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

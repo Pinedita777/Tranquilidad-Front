@@ -2,6 +2,10 @@
 * {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+<<<<<<< HEAD
+=======
+  padding-top: 60px; /* Añade espacio arriba del contenido para que no se tape con el header */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
 }
 
@@ -15,7 +19,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+<<<<<<< HEAD
   background-color: #f9e0f5f7;
+=======
+  background-color: #ffffff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -87,7 +95,11 @@ header {
 }
 
 .profile-box {
+<<<<<<< HEAD
   background: #f9e0f5f7; /* Color de fondo de la cajita */
+=======
+  background: #f9f9f9; /* Color de fondo de la cajita */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   border-radius: 10px; /* Bordes redondeados */
   padding: 10px; /* Espaciado interno */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.244); /* Sombra para el efecto de cajita */
@@ -122,8 +134,13 @@ a{
   right: 0; /* Alinea a la derecha */
   top: 70px; /* Ajusta la posición */
   width: 150px; /* Ancho del menú */
+<<<<<<< HEAD
   background: #f9e0f5f7; /* Color de fondo del menú */
   border: 1px solid #f9e0f5f7; /* Borde del menú */
+=======
+  background: white; /* Color de fondo del menú */
+  border: 1px solid #ddd; /* Borde del menú */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   border-radius: 8px; /* Bordes redondeados del menú */
   padding: 10px; /* Espaciado interno */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
@@ -149,7 +166,11 @@ a{
   top: 100px;
   left: 0;
   width: 100%;
+<<<<<<< HEAD
   background: #f9e0f5f7;
+=======
+  background: white;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   padding: 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 999;
@@ -161,7 +182,11 @@ a{
   gap: 10px;
 }
 .modulo {
+<<<<<<< HEAD
   background: #f9e0f5f7;
+=======
+  background: #ffffff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   padding: 20px;
   text-align:left;
   margin-left: 20px;
@@ -171,11 +196,19 @@ a{
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 .modulo:hover {
+<<<<<<< HEAD
   background-color: #f9e0f5f7; /* Cambia el color al pasar el mouse */
   transform: scale(1.05); /* Efecto de zoom */
 }
 .module {
   background: #f9e0f5f7;
+=======
+  background-color: #ffffff; /* Cambia el color al pasar el mouse */
+  transform: scale(1.05); /* Efecto de zoom */
+}
+.module {
+  background: #ffffff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   padding: 20px;
   text-align: center;
   border-radius: 6px;
@@ -186,7 +219,11 @@ a{
 }
 
 .module:hover {
+<<<<<<< HEAD
   background-color: #f9e0f5f7; /* Cambia el color al pasar el mouse */
+=======
+  background-color: #ffffff; /* Cambia el color al pasar el mouse */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   transform: scale(1.05); /* Efecto de zoom */
 }
 
@@ -208,7 +245,11 @@ a{
   top: 100px; /* Alinea debajo del header */
   left: 0;
   width: 100%;
+<<<<<<< HEAD
   background: #f9e0f5f7;
+=======
+  background: white;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 

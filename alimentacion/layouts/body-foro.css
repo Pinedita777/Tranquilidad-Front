@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Fondo de marca de agua */
 body {
     background: url('../inclued/ALIMENTACION22.jpg') no-repeat center center fixed; /* Imagen no se repite */
@@ -27,6 +28,10 @@ main {
     width: 80%;
     max-width: 900px; /* Define un límite máximo */
     margin: 10px auto; /* Centra el post horizontalmente y agrega un poco de espacio vertical */
+=======
+
+.post {
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     background-color: #fff;
     padding: 20px;
     margin-bottom: 10px;
@@ -36,6 +41,7 @@ main {
     justify-content: space-between;
     left: 10%;
     right: 10%;
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
 }
 
@@ -50,10 +56,22 @@ main {
 }
 
 /* Detalles dentro del post */
+=======
+}
+
+.btn-view{
+    text-decoration: none;
+}
+
+.post p {
+    margin: 0;
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .post .details {
     display: flex;
     align-items: center;
 }
+<<<<<<< HEAD
 
 /* Estilo para el icono dentro de los detalles */
 .post .details i {
@@ -61,10 +79,16 @@ main {
 }
 
 /* Estilo del botón de vista */
+=======
+.post .details i {
+    margin-right: 10px;
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .post .btn-view {
     background-color: #59009A;
     color: white;
     border: none;
+<<<<<<< HEAD
     padding: 8px 10px 5px 10px;
     cursor: pointer;
     border-radius: 3px;
@@ -75,3 +99,13 @@ main {
     transform: scale(1.1);
     transition: 300ms;
 }
+=======
+    padding: 8px 10px 5px 10px; 
+    cursor: pointer;
+    border-radius: 3px;
+}
+.view-button:hover{
+    transform:scale(1.1);
+    transition: 300ms;
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

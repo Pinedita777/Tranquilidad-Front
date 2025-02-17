@@ -15,32 +15,59 @@ body{
 }
 .ingresar{
     display: flex;
+<<<<<<< HEAD
     background-color:#ffffff;
+=======
+    background-color:#674dbc;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     width: 30%;
     padding: 10px;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
     justify-content: center;
 }
 .contenedorLogo{
     width: 210px;
     height: 110px;
+=======
+}
+.contenedorLogo{
+    width: 140px;
+    height: 140px;
+    margin-bottom: 40px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 .contenedorLogo img{
     width: 100%;
     height: 100%;
 }
+<<<<<<< HEAD
 
 .contenedorH2 h2{
         text-align: center;
         margin-top: 20PX;
         color: #674dbc;
+=======
+.contenedorH2 {
+    margin-top: 20px;
+}
+.contenedorH2 h2{
+        text-align: center;
+        margin-top: 20PX;
+        color: aliceblue;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 .contenedorP{
     text-align: center;
+<<<<<<< HEAD
     color: #674dbc;
     margin-top: 50px;
+=======
+    color: aliceblue;
+    margin-top: 220px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 .contenedorRedes{
     width: 40px;
@@ -60,8 +87,12 @@ body{
     width: 70%;
     overflow:hidden;
     /* background-color: #fafafb; */
+<<<<<<< HEAD
     filter: brightness(90%); /* Reduce el brillo al 50% */
     background-image: url('/inicio-de-sesion/Modulo-iniciar-sesion/registroProfesional/imagenes/imagenes/DALL·E\ 2024-12-05\ 19.36.49\ -\ A\ peaceful\ and\ calming\ background\ for\ a\ webpage\,\ using\ soft\ gradients\ of\ lilac\,\ lavender\,\ and\ pastel\ blues.\ The\ design\ includes\ subtle\ flowing\ waves\ a.webp');
+=======
+    background-image: url('imagenes/imagenes/fondoPino.png');
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 .button {
     padding: 10px 15px;

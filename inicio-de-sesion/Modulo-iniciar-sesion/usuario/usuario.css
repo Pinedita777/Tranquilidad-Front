@@ -6,14 +6,21 @@
 
 body {
     margin-bottom: 120px;
+<<<<<<< HEAD
+=======
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
 }
 
 
 /*contenido vista usuario  */
 .contenido {
+<<<<<<< HEAD
     position: relative;
     margin-top: 150px;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     padding: 20px;
     justify-content: center;
     display: flex;
@@ -134,7 +141,11 @@ body {
 }
 
 .logoUsuario img {
+<<<<<<< HEAD
     width: 80%;
+=======
+    width: 100%;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     height: 100%;
     border-radius: 50%;
 }
@@ -143,7 +154,11 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+<<<<<<< HEAD
     width: 80%;
+=======
+    width: 100%;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -165,7 +180,11 @@ body {
 .modal {
     display: none;
     position: fixed;
+<<<<<<< HEAD
     z-index: 5;
+=======
+    z-index: 1;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     left: 0;
     top: 0;
     width: 100%;
@@ -252,11 +271,16 @@ body {
 }
 
 .botonimg {
+<<<<<<< HEAD
     display: flex;
     width: 30px;
     height: 30px;
     align-items: center;
     text-align: center;
+=======
+    width: 30px;
+    height: 30px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 .botonimg img {
@@ -364,6 +388,7 @@ body {
 
 .formulario-editar button:hover {
     background-color: #674dbc;
+<<<<<<< HEAD
 }
 
 .marca-agua::before {
@@ -383,3 +408,6 @@ body {
   h3{
     margin-bottom: 0;
   }
+=======
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

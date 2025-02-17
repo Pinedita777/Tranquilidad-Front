@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
   background-image: url('/mapa-de-suenos/imagenes/WhatsApp\ Image\ 2024-12-02\ at\ 9.33.46\ PM\ \(1\).jpeg'); /* Ruta de la imagen */
   background-size: cover; /* Para que la imagen cubra todo el fondo */
   background-position: center; /* Para centrar la imagen */
@@ -18,6 +19,15 @@ pointer-events: none; /* Permite que se puedan hacer clics en los elementos del 
 }
 
 
+=======
+  font-family: 'Quicksand', sans-serif;
+  background-color: #f8f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -33,6 +43,7 @@ pointer-events: none; /* Permite que se puedan hacer clics en los elementos del 
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
   background: linear-gradient(145deg, #e0e0e0, #ffffff);
 }
 .card {
@@ -47,6 +58,17 @@ pointer-events: none; /* Permite que se puedan hacer clics en los elementos del 
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 4%;
+=======
+}
+.card {
+  display: flex;
+  
+  overflow: hidden;
+  width: 100%;
+ 
+  max-width: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 

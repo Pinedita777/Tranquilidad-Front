@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+<<<<<<< HEAD
    
     let ratings = JSON.parse(localStorage.getItem('ratings')) || [];
    
+=======
+    const comments = JSON.parse(localStorage.getItem('comments')) || [];
+    let ratings = JSON.parse(localStorage.getItem('ratings')) || [];
+    const commentList = document.getElementById('comment-list');
+    const commentText = document.getElementById('comment-text');
+    const addCommentBtn = document.getElementById('add-comment-btn');
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     const stars = document.querySelectorAll('.star');
     const averageRatingSpan = document.getElementById('average-rating');
     const overlay = document.getElementById('overlay');
@@ -10,7 +18,71 @@ document.addEventListener('DOMContentLoaded', function() {
    
 
 
+<<<<<<< HEAD
   
+=======
+    // Mostrar comentarios guardados
+    function renderComments() {
+commentList.innerHTML = '';
+comments.forEach((comment, index) => {
+  const div = document.createElement('div');
+  div.classList.add('comment-item');
+  div.innerHTML = `<p><strong>Usuario:</strong> ${comment}</p>
+                   <button class="delete-btn" data-index="${index}"></button>`;
+  
+  // Añadimos el botón de eliminación al final del div
+  div.appendChild(createDeleteButton(index)); 
+  commentList.appendChild(div);
+});
+
+// Agregar evento a los botones de eliminación
+document.querySelectorAll('.delete-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    commentToDeleteIndex = this.dataset.index;
+    overlay.style.display = 'block';
+    confirmDelete.style.display = 'block';
+  });
+});
+}
+
+function createDeleteButton(index) {
+const btn = document.createElement('button');
+btn.classList.add('delete-btn');
+btn.setAttribute('data-index', index);
+btn.style.float = 'right'; // Asegura que el botón flote a la derecha
+return btn;
+}
+
+    // Guardar comentario y recargar la lista
+    addCommentBtn.addEventListener('click', function() {
+      const comment = commentText.value.trim();
+      if (comment) {
+        comments.push(comment);
+        localStorage.setItem('comments', JSON.stringify(comments));
+        commentText.value = '';
+        renderComments();
+      }
+    });
+
+    // Confirmar eliminación de comentario
+    document.getElementById('confirm-yes').addEventListener('click', function() {
+      if (commentToDeleteIndex !== null) {
+        comments.splice(commentToDeleteIndex, 1);
+        localStorage.setItem('comments', JSON.stringify(comments));
+        renderComments();
+      }
+      overlay.style.display = 'none';
+      confirmDelete.style.display = 'none';
+      commentToDeleteIndex = null;
+    });
+
+    document.getElementById('confirm-no').addEventListener('click', function() {
+      overlay.style.display = 'none';
+      confirmDelete.style.display = 'none';
+      commentToDeleteIndex = null;
+    });
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
  // Función para calcular y mostrar el promedio numérico
  function renderAverage() {
   const averageRating = ratings.length > 0 ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0;
@@ -78,6 +150,7 @@ renderComments();
     servicesToggle.addEventListener('click', () => {
       submenu.style.display = submenu.style.display === 'none' || submenu.style.display === '' ? 'flex' : 'none';
     });
+<<<<<<< HEAD
   });
   document.addEventListener('DOMContentLoaded', () => {
     const formComentario = document.getElementById('formComentario');
@@ -221,3 +294,6 @@ renderComments();
     // Iniciar la carga de comentarios
     cargarComentarios();
 });
+=======
+  });
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

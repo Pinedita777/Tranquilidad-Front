@@ -10,13 +10,20 @@
   justify-content: space-between;
   width: 100%;
   margin-top: 80px;
+<<<<<<< HEAD
   position: relative;
   z-index: 2;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 .sidebar {
   width: 350px;
+<<<<<<< HEAD
  background-color: #d2b7fecc;
+=======
+  background-color: #c7b7fe49;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   padding: 20px;
   transition: width 0.0s ease;
   margin-right: 20px;
@@ -63,7 +70,11 @@
 }
 
 .task-card {
+<<<<<<< HEAD
 
+=======
+  background-color: #fff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 70%;
@@ -99,7 +110,11 @@
 }
 
 .favorite-icon.active {
+<<<<<<< HEAD
   color: #59009A; /* Color del corazón al activarse */
+=======
+  color: red; /* Color del corazón al activarse */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 
@@ -108,11 +123,15 @@
   font-size: 8px;
   color: #999;
   margin-bottom: 8px;
+<<<<<<< HEAD
   margin-left: 10px;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   text-align: left;
 }
 
 .task {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -129,6 +148,13 @@
 .task:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+=======
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  text-align: left;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 .favorite-img {
@@ -136,6 +162,7 @@
   height: auto;
   border-radius: 4px;
 }
+<<<<<<< HEAD
 .marca-agua::before {
   content: '';
   position: absolute;
@@ -153,6 +180,25 @@
 
 
 
+=======
+
+.add-task-btn {
+  padding: 10px 20px;
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.add-task-btn:hover {
+  background-color: #3700b3;
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
 
 
@@ -161,7 +207,11 @@
 }
 
 .material-symbols-outlined {
+<<<<<<< HEAD
 
+=======
+  margin-left: 150px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   color: rgb(171, 170, 170);
 }
 
@@ -251,6 +301,13 @@
   padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+html {
+  min-height: 100%;
+  position: relative;
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
   /* no poner nada, daña el todo, llamas a body y afecta a todos los body */
 
@@ -274,5 +331,9 @@
 .material-symbols-outlined{
  border: 0;
 background: none;
+<<<<<<< HEAD
 color: #59009A;
+=======
+color: red;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }

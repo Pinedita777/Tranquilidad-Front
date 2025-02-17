@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
 });
 
+<<<<<<< HEAD
 
 
 
@@ -130,3 +131,5 @@ function toggleModulues() {
     const modulesContent = document.getElementById("modules-content");
     modulesContent.style.display = modulesContent.style.display === "block" ? "none" : "block";
 }
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

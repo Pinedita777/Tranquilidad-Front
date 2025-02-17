@@ -12,7 +12,11 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     background-color: #ffff;
+=======
+    background-color: #674dbc;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     height: 100vh;
 
 }
@@ -33,7 +37,11 @@ align-items: center;
 h2{
     text-align: center;
     margin-top: 20PX;
+<<<<<<< HEAD
     color: #674dbc;
+=======
+    color: aliceblue;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 .contenedorParrafo {
     text-align: center;
@@ -42,10 +50,17 @@ h2{
     width: 300px;
 }
 .contenedorParrafo P{
+<<<<<<< HEAD
     color: #674dbc;
 }
 button{
     background-color: #674dbc;
+=======
+    color: aliceblue;
+}
+button{
+    background-color: aliceblue;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     color: rgba(151, 71, 255, 1);
     width: 150px;
     height: 40px;
@@ -70,8 +85,13 @@ button:hover{
     align-items: center;
 }
 .contenedorLogo{
+<<<<<<< HEAD
     width: 210px;
     height: 110px;
+=======
+    width: 140px;
+    height: 140px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     margin-bottom: 40px;
 }
 .contenedorLogo img{
@@ -96,6 +116,7 @@ button:hover{
     height:100%;
     overflow:hidden;
     /* background-color: #fafafb; */
+<<<<<<< HEAD
     filter: brightness(50%); /* Reduce el brillo al 50% */
     background-image: url('/inicio-de-sesion/Modulo-iniciar-sesion/mensajes/imagenes/DALL·E\ 2024-12-05\ 19.36.49\ -\ A\ peaceful\ and\ calming\ background\ for\ a\ webpage\,\ using\ soft\ gradients\ of\ lilac\,\ lavender\,\ and\ pastel\ blues.\ The\ design\ includes\ subtle\ flowing\ waves\ a.webp')
 }
@@ -103,6 +124,13 @@ button:hover{
     display: flex;
     filter: brightness(50%); /* Reduce el brillo al 50% */
     background-image: url('/inicio-de-sesion/Modulo-iniciar-sesion/login/imagenes/DALL·E\ 2024-12-05\ 19.36.49\ -\ A\ peaceful\ and\ calming\ background\ for\ a\ webpage\,\ using\ soft\ gradients\ of\ lilac\,\ lavender\,\ and\ pastel\ blues.\ The\ design\ includes\ subtle\ flowing\ waves\ a.webp');
+=======
+    background-image: url('imagenes/fondoPino.png');
+}
+.crearCuentaProfesional{
+    display: flex;
+    background-image: url('imagenes/fondoPino.png');
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     flex-direction: column;
     justify-content: center;
     align-items: center;

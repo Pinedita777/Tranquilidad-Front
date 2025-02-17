@@ -36,6 +36,7 @@ function toggleModulues() {
       console.error("Error al cargar el archivo:", error);
     });
 }
+<<<<<<< HEAD
 let lastScrollY = window.scrollY; // Posición inicial del scroll
 
 // Evento de scroll
@@ -55,6 +56,8 @@ window.addEventListener('scroll', function() {
     // Actualiza la última posición del scroll
     lastScrollY = currentScrollY;
 });
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
 // Cargar el header y footer
 loadHTML('header', '../../../mapa-de-suenos/todohh/header.html');

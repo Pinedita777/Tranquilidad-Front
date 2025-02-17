@@ -12,9 +12,15 @@ body {
   font-family: sans-serif;
 
   padding: 0;
+<<<<<<< HEAD
   width: 100%;
   left: 0%;
 
+=======
+  background-color: #fffcfc;
+  width: 100%;
+  left: 0%;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 
@@ -26,7 +32,10 @@ body {
   max-width: 24.5625rem; /* 393px -> 24.5625rem */
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+<<<<<<< HEAD
   z-index: 2;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 .imag:hover {
@@ -54,7 +63,11 @@ body {
 
 .sidebar {
   width: 350px;
+<<<<<<< HEAD
   background-color: #d2b7fecc;
+=======
+  background-color: #c7b7fe49;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   padding: 20px;
   transition: width 0.0s ease;
   margin-right: 20px;
@@ -62,12 +75,20 @@ body {
   flex-direction: column;
   justify-content: center;
   padding-bottom: 210px;
+<<<<<<< HEAD
   margin-top: -66px;
 
 }
 
   /* Modified for smoother transition */
 
+=======
+  
+  
+
+  /* Modified for smoother transition */
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .sidebar .menu-item {
   padding: 12px;
   margin: 15px 0;
@@ -112,12 +133,19 @@ a {
 }
 
 .container {
+<<<<<<< HEAD
   position: relative;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   display: flex;
   font-family: sans-serif;
   margin-top: 80px;
   margin-bottom: -80px;
+<<<<<<< HEAD
   z-index: 2;
+=======
+  
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   
 }
 
@@ -180,6 +208,7 @@ a {
   }
 }
 
+<<<<<<< HEAD
 .marca-agua::before {
   content: '';
   position: absolute;
@@ -263,3 +292,10 @@ a {
   padding: 10px 15px;
   text-align: center;
 }
+=======
+
+
+
+
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

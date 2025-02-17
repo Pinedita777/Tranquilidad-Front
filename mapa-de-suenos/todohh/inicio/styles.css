@@ -14,7 +14,11 @@ html, body {
 }
 
 .footer {
+<<<<<<< HEAD
   background-color: #6d0eb1e4;
+=======
+  background-color: #59009A;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   color: #a7a7a7;
   padding: 50px 20px; /* Añadido padding lateral para dispositivos pequeños */
   width: 100%;

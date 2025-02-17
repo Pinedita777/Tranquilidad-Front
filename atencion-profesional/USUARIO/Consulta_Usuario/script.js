@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Cargar el header
 fetch('../Header/header.html')
 .then(response => response.text())
@@ -7,3 +8,22 @@ fetch('../Header/header.html')
 fetch('../Footer/inicio/inicio.html')
 .then(response => response.text())
 .then(data => document.getElementById('footer-container').innerHTML = data);
+=======
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const navbar = document.querySelector('.navbar');
+
+    menuIcon.addEventListener('click', function(event) {
+        event.stopPropagation(); // Previene que el click se propague al documento
+        dropdownMenu.classList.toggle('show');
+    });
+
+    // Cerrar el menú cuando se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        if (!navbar.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove('show');
+        }
+    });
+});
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

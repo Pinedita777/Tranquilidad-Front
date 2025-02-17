@@ -5,6 +5,7 @@
     padding: 0;
 }
 
+<<<<<<< HEAD
 body {
  
   
@@ -29,6 +30,12 @@ body::before {
   background-color: rgba(255, 255, 255, 0.377); /* Capa superpuesta con transparencia (ajusta la opacidad según sea necesario) */  z-index: -1; /* Asegura que esta capa quede detrás del contenido */
   z-index: -1; /* Asegura que esta capa quede detrás del contenido */
   pointer-events: none; /* Permite que se puedan hacer clics en los elementos del fondo */
+=======
+/* Estilos para el cuerpo de la página */
+body {
+    background-color: #f7f2fa;
+    min-height: 100vh;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 /* Estilos para el contenedor de columnas (tablero) */

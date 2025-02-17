@@ -2,6 +2,7 @@
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 50px;
+<<<<<<< HEAD
 } */
 
 body {
@@ -28,11 +29,39 @@ main {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+=======
+}
+
+canvas {
+    max-width: 600px;
+    margin: 0 auto;
+} */
+
+.section {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    /* background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); */
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .section h3 {
     font-size: 18px;
     color: white;
     background-color: #59009A;
     padding: 5px 10px;
+<<<<<<< HEAD
+=======
+    /* font-size: 18px;
+    margin: 0 0 10px 0;
+    color: white;
+    background-color: #59009A;
+    padding: 5px 10px;
+    border-radius: 5px 5px 0 0; */
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 canvas {
@@ -44,15 +73,25 @@ canvas {
     display: block;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .section table {
     width: 100%;
     border-collapse: collapse;
 }
+<<<<<<< HEAD
 
 .section table, .section th, .section td {
     border: 1px solid #ddd;
 }
 
+=======
+.section table, .section th, .section td {
+    border: 1px solid #ddd;
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 .section th, .section td {
     padding: 8px;
     text-align: left;
@@ -60,4 +99,10 @@ canvas {
 
 .columna {
     width: 50%;
+<<<<<<< HEAD
 }
+=======
+  }
+  
+ 
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

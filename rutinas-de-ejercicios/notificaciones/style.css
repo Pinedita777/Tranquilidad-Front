@@ -15,7 +15,11 @@ h1{
 
 .sidebar {
   width: 350px;
+<<<<<<< HEAD
   background-color: #d2b7fecc;
+=======
+  background-color: #c7b7fe49;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   padding: 20px;
   transition: width 0.0s ease;
   margin-right: 20px;
@@ -66,6 +70,10 @@ h1{
   display: flex;
   flex-direction: column;
   justify-content: center;
+<<<<<<< HEAD
+=======
+  background-color: #ffffff;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-left: 20px; /* Adjusted to fit sidebar */
   margin-top: 60px;
@@ -116,8 +124,11 @@ hr {
   display: flex;
   flex-direction: row;
   margin-top: 80px;
+<<<<<<< HEAD
   position: relative;
   z-index: 2;
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 /* Media Queries for Responsiveness */
@@ -142,6 +153,7 @@ hr {
   }
 }
 
+<<<<<<< HEAD
 .marca-agua::before {
   content: '';
   position: absolute;
@@ -156,3 +168,5 @@ hr {
   opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
   z-index: 1;
 }
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

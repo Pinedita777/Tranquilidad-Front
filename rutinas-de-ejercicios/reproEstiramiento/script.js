@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     // Get the current page/view identifier
     const pageId = getCurrentPageIdentifier();
@@ -180,6 +181,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+=======
+
+   // Identificador único para este archivo (cámbialo en cada archivo HTML)
+const archivoId = 'comentariosArchivo1'; // Cambia 'comentariosArchivo1' por otro valor en cada archivo
+
+// Seleccionamos los elementos
+const comentarioInput = document.getElementById('comentario');
+const enviarBtn = document.getElementById('enviar');
+const comentariosContainer = document.getElementById('comentarios-container');
+
+// Cargar comentarios almacenados en localStorage al iniciar la página
+window.addEventListener('load', function() {
+    const comentariosGuardados = JSON.parse(localStorage.getItem(archivoId)) || [];
+    comentariosGuardados.forEach(comentario => agregarComentario(comentario));
+});
+
+// Agregar evento al botón de enviar
+enviarBtn.addEventListener('click', function() {
+    const textoComentario = comentarioInput.value.trim();
+    if (textoComentario !== "") {
+        agregarComentario(textoComentario);
+        guardarComentario(textoComentario);
+        comentarioInput.value = ''; // Limpiar el área de texto
+    }
+});
+
+// Función para agregar el comentario al contenedor
+function agregarComentario(comentario) {
+    const comentarioDiv = document.createElement('div');
+    comentarioDiv.classList.add('com');
+    comentarioDiv.innerHTML = `
+        <div class="comentar">${comentario}</div>
+    `;
+    comentariosContainer.appendChild(comentarioDiv);
+}
+
+// Función para guardar el comentario en localStorage
+function guardarComentario(comentario) {
+    let comentariosGuardados = JSON.parse(localStorage.getItem(archivoId)) || [];
+    comentariosGuardados.push(comentario);
+    localStorage.setItem(archivoId, JSON.stringify(comentariosGuardados));
+}
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const favoriteIcons = document.querySelectorAll(".favorite");
+    
+        favoriteIcons.forEach(function (icon) {
+            icon.addEventListener("click", function () {
+                if (icon.style.color === "red") {
+                    icon.style.color = "gray"; // Vuelve al color original
+                } else {
+                    icon.style.color = "red";  // Cambia a rojo
+                }
+            });
+        });
+    });
+    
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
 
 
@@ -209,7 +268,11 @@ const fullscreenButton = document.getElementById('fullscreenBtn');
 function loadVideo(index) {
     const videoData = videos[index];
     videoElement.src = videoData.url;
+<<<<<<< HEAD
     likeButton.textContent = videoData.liked ? '💜' : '🤍';
+=======
+    likeButton.textContent = videoData.liked ? '❤️' : '🤍';
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     videoElement.load();
 }
 
@@ -219,7 +282,11 @@ loadVideo(currentVideoIndex);
 likeButton.addEventListener('click', () => {
     const videoData = videos[currentVideoIndex];
     videoData.liked = !videoData.liked;
+<<<<<<< HEAD
     likeButton.textContent = videoData.liked ? '💜' : '🤍';
+=======
+    likeButton.textContent = videoData.liked ? '❤️' : '🤍';
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 });
 
 // Función para pasar al siguiente video

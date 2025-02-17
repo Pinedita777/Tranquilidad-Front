@@ -7,6 +7,7 @@
     padding: 20px;
     margin-top: 60px;
     margin-bottom: 90px;
+<<<<<<< HEAD
   
 }
 body {
@@ -28,14 +29,24 @@ body {
   pointer-events: none; /* Permite que se puedan hacer clics en los elementos del fondo */
   }
   
+=======
+    background: linear-gradient(135deg, #ffffff 40%, #f0f0f5 100%);
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
 /* Estilo para las tarjetas */
 .card {
     width: 100%;
     max-width: 400px;
+<<<<<<< HEAD
     background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
     border-radius: 15px;
     box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+=======
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+    border-radius: 15px;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.7);
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
@@ -64,8 +75,12 @@ body {
 /* Efecto de hover */
 .card:hover {
     transform: scale(1.05);
+<<<<<<< HEAD
     background: linear-gradient(145deg, #e0e0e0, #ffffff);
    
+=======
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2), -5px -5px 20px rgba(255, 255, 255, 0.6);
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 /* Imagen dentro de la tarjeta */

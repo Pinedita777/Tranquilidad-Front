@@ -4,6 +4,7 @@ const menuIcon = document.querySelector('.menu-icon');
   // Añadir un event listener para abrir/cerrar el menú
   menuIcon.addEventListener('click', () => {
     navbar.classList.toggle('menu-open');
+<<<<<<< HEAD
   });
 
 
@@ -139,3 +140,6 @@ const menuIcon = document.querySelector('.menu-icon');
 });
 
   
+=======
+  });
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf

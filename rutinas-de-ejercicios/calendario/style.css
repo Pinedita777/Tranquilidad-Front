@@ -18,7 +18,11 @@ h1{
 
 .sidebar {
   width: 350px;
+<<<<<<< HEAD
   background-color: #d2b7fecc;
+=======
+  background-color: #c7b7fe49;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
   padding: 20px;
   transition: width 0.0s ease;
   margin-right: 20px;
@@ -77,11 +81,17 @@ h1{
 
 
 .container{
+<<<<<<< HEAD
 position: relative;
 display: flex;
 justify-content: space-between;
 margin-top: 77px;
 z-index: 3;
+=======
+display: flex;
+justify-content: space-between;
+margin-top: 80px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 }
 
 
@@ -122,8 +132,13 @@ cursor: pointer;
 
 .datepicker {
 
+<<<<<<< HEAD
 margin-right: 20px;
 background-color: #fff;
+=======
+margin-right: 50px;
+
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 border-radius: 10px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
@@ -219,6 +234,10 @@ background-color: var(--c-theme-primary);
 
 .cal{
 display: flex;
+<<<<<<< HEAD
+=======
+margin-right: 100px;
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 margin-top: 100px;
 margin-bottom: 40px;
 }
@@ -247,6 +266,7 @@ font-size: 20px;
 height: 100%;
 }
 
+<<<<<<< HEAD
 /*notaaaas*/
 .modal {
   display: none; /* Oculta el modal por defecto */
@@ -376,6 +396,8 @@ min-height: 30px; /* Opcional: altura mínima para mantener el diseño uniforme 
 }
 
 
+=======
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
 
 
 @media (max-width: 768px) {
@@ -401,6 +423,7 @@ min-height: 30px; /* Opcional: altura mínima para mantener el diseño uniforme 
 }
 .navbar{
   width: 100%;
+<<<<<<< HEAD
 }
 .marca-agua::before {
   content: '';
@@ -416,3 +439,6 @@ min-height: 30px; /* Opcional: altura mínima para mantener el diseño uniforme 
   opacity: 0.5; /* Ajusta la transparencia de la marca de agua */
   z-index: 1;
 }
+=======
+}
+>>>>>>> c5be7607fb2f16835939a323b7bd461536910acf
