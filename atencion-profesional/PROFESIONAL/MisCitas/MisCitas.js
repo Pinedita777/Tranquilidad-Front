@@ -5,15 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalDetalles = document.getElementById("modalDetalles");
     const btnAceptarIngresar = document.getElementById("btnAceptarIngresar");
 
-    let citas = JSON.parse(localStorage.getItem("citas")) || [];
-
     function mostrarCitas() {
+        const citas = JSON.parse(localStorage.getItem("citas")) || [];
         contenedorCitas.innerHTML = "";
+
+        if (citas.length === 0) {
+            contenedorCitas.innerHTML = "<p>No hay citas agendadas</p>";
+            return;
+        }
 
         citas.forEach((cita, index) => {
             const tarjeta = document.createElement("div");
             tarjeta.classList.add("tarjeta");
-
             tarjeta.innerHTML = `
                 <h3>${cita.nombre}</h3>
                 <p><strong>Correo:</strong> ${cita.correo}</p>
@@ -23,95 +26,65 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Profesional:</strong> ${cita.profesional}</p>
                 <p><strong>Fecha:</strong> ${cita.fecha}</p>
                 <p><strong>Hora:</strong> ${cita.hora}</p>
-                <p><strong>Comentarios:</strong> ${cita.comentarios}</p>
+                <p><strong>Comentarios:</strong> ${cita.comentarios || 'Sin comentarios'}</p>
                 <button class="btn-ingresar" data-index="${index}">Ingresar</button>
                 <button class="btn-editar" data-index="${index}">Editar</button>
                 <button class="btn-cancelar" data-index="${index}">Cancelar</button>
             `;
-
             contenedorCitas.appendChild(tarjeta);
         });
     }
-
+    
     mostrarCitas();
 
-    // Evento para manejar los botones
     contenedorCitas.addEventListener("click", function (event) {
-        const index = event.target.getAttribute("data-index");
+        const button = event.target;
+        if (!button.matches('button')) return;
 
-        if (event.target.classList.contains("btn-cancelar")) {
-            citas.splice(index, 1);
-            localStorage.setItem("citas", JSON.stringify(citas));
-            mostrarCitas();
-        } else if (event.target.classList.contains("btn-ingresar")) {
-            const cita = citas[index];
+        const index = button.getAttribute("data-index");
+        const citas = JSON.parse(localStorage.getItem("citas")) || [];
+        const cita = citas[index];
+        if (!cita) return;
 
-            // Mostrar los detalles en el modal
+        if (button.classList.contains("btn-cancelar")) {
+            localStorage.setItem("citaCancelar", JSON.stringify(cita));
+            window.location.href = "../CancelarCita2_Profesional/CancelarCita2.html";
+        } else if (button.classList.contains("btn-ingresar")) {
             modalTitulo.textContent = `Ingresando a la cita de ${cita.nombre}`;
             modalDetalles.innerHTML = `
                 <p><strong>Especialidad:</strong> ${cita.especialidad}</p>
                 <p><strong>Fecha:</strong> ${cita.fecha}</p>
                 <p><strong>Hora:</strong> ${cita.hora}</p>
             `;
-
-            // Agregar clase para animación y mostrar el modal
             modalIngresar.classList.add("show");
             modalIngresar.style.display = "flex";
-
-            // Guardar la cita en localStorage
             localStorage.setItem("citaActual", JSON.stringify(cita));
-        } else if (event.target.classList.contains("btn-editar")) {
-            localStorage.setItem("citaEditar", JSON.stringify(citas[index]));
-            window.location.href = "../CancelarCita1_Profesional/cita-actualizada.html";
+        } else if (button.classList.contains("btn-editar")) {
+            localStorage.setItem("citaEditar", JSON.stringify(cita));
+            window.location.href = "../CitaActualizada-Profesional/CitaActualizada.html";
         }
     });
 
-    // Botón Aceptar del modal (redirección a videollamadas)
-    btnAceptarIngresar.addEventListener("click", function () {
+    btnAceptarIngresar?.addEventListener("click", function () {
         window.location.href = "../Consulta_Profesional/ConsultaProfesional.html";
     });
 
-    // Cerrar modal al hacer clic fuera de él
-    modalIngresar.addEventListener("click", function (event) {
+    modalIngresar?.addEventListener("click", function (event) {
         if (event.target === modalIngresar) {
             modalIngresar.classList.remove("show");
             setTimeout(() => {
                 modalIngresar.style.display = "none";
-            }, 300); // Espera que termine la animación antes de ocultarlo
+            }, 300);
         }
     });
 });
 
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const menuIcon = document.querySelector('.menu-icon');
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    const navbar = document.querySelector('.navbar');
-
-    menuIcon.addEventListener('click', function(event) {
-        event.stopPropagation(); // Previene que el click se propague al documento
-        dropdownMenu.classList.toggle('show');
-    });
-
-    // Cerrar el menú cuando se hace clic fuera de él
-    document.addEventListener('click', function(event) {
-        if (!navbar.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.remove('show');
-        }
-    });
-});
-
-
-
-  // Cargar el header
-  fetch('../Header/header.html')
-  .then(response => response.text())
-  .then(data => document.getElementById('header-container').innerHTML = data);
+// Cargar el header
+fetch('../Header/header.html')
+.then(response => response.text())
+.then(data => document.getElementById('header-container').innerHTML = data);
 
 // Cargar el footer
 fetch('../Footer/inicio/inicio.html')
-  .then(response => response.text())
-  .then(data => document.getElementById('footer-container').innerHTML = data);
-  
+.then(response => response.text())
+.then(data => document.getElementById('footer-container').innerHTML = data);

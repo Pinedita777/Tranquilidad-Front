@@ -1,21 +1,17 @@
-
-
-
 /* Contenido body */
 body {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   margin: 0;
   padding-top: 200px;
-  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/USUARIO/Imagenes/mensajes.png'); /* Cambia por la ruta de tu imagen */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
-  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco con transparencia */
-  background-blend-mode: overlay; /* Mezcla el color con la imagen */
- 
+  min-height: 100vh;
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/mensajes.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: overlay;
 }
 
 h2 {
@@ -37,10 +33,11 @@ h2 {
   margin: auto;
   margin-bottom: 100px;
 }
+
 .tarjeta {
   width: 100%;
   max-width: 400px;
-  background: rgba(255, 255, 255, 0.599); /* Fondo ligeramente transparente */
+  background: rgba(255, 255, 255, 0.599);
   border-radius: 15px;
   box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -68,7 +65,7 @@ h2 {
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0));
   opacity: 0;
   transition: opacity 0.5s;
-  z-index: 0; /* Asegura que esté detrás del contenido */
+  z-index: 0;
 }
 
 .tarjeta:hover::before {
@@ -77,21 +74,19 @@ h2 {
 
 .tarjeta * {
   position: relative;
-  z-index: 1; /* Asegura que el texto y botones estén por encima del ::before */
+  z-index: 1;
 }
 
 .tarjeta h3 {
   color: #59009A;
-  margin-bottom: 15px; /* Ajusta el valor según sea necesario */
-  margin-top: 10px; /* Si necesitas separarlo de arriba también */
+  margin-bottom: 15px;
+  margin-top: 10px;
 }
 
 .tarjeta p {
   margin: 5px 0;
   color: #333;
 }
-
-
 
 .btn-ingresar {
   display: inline-block;
@@ -101,16 +96,15 @@ h2 {
   text-align: center;
   border-radius: 30px;
   text-decoration: none;
-
+  border: none;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .btn-ingresar:hover {
   background: linear-gradient(145deg, #8a2be2, #59009A);
   transform: translateY(-3px);
-
 }
-
-
 
 .btn-editar {
   display: inline-block;
@@ -120,18 +114,15 @@ h2 {
   text-align: center;
   border-radius: 30px;
   text-decoration: none;
-
+  border: none;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .btn-editar:hover {
   background: linear-gradient(145deg, #1e71e4, #03117dc6);
   transform: translateY(-3px);
-
 }
-
-
-
-
 
 .btn-cancelar {
   display: inline-block;
@@ -141,17 +132,17 @@ h2 {
   text-align: center;
   border-radius: 30px;
   text-decoration: none;
-
+  border: none;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .btn-cancelar:hover {
   background: linear-gradient(145deg, #fb4444, #640505);
   transform: translateY(-3px);
-
 }
 
-
-/* Estilos para el modal */
+/* Estilos para los modales */
 .modal {
   display: none;
   position: fixed;
@@ -162,7 +153,7 @@ h2 {
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Asegurar que quede por encima de todo */
+  z-index: 1000;
 }
 
 .modal-content {
@@ -176,6 +167,7 @@ h2 {
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  min-width: 300px;
 }
 
 .modal.show .modal-content {
@@ -183,18 +175,70 @@ h2 {
   transform: scale(1);
 }
 
-/* Estilos del botón */
+/* Estilos para los botones del modal */
 .modal-content button {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #59009A;
-  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
 }
 
-.modal-content button:hover {
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-aplazar {
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #1e71e4, #03117dc6);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn-eliminar {
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #fb4444, #640505);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn-aplazar:hover,
+.btn-eliminar:hover {
+  transform: translateY(-3px);
+  transition: transform 0.3s ease;
+}
+
+/* Estilos para el modal de ingreso */
+#btnAceptarIngresar {
+  background-color: #59009A;
+  color: white;
+}
+
+#btnAceptarIngresar:hover {
   background-color: #440173;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contenedor-citas {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .tarjeta {
+    margin: 10px auto;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10px;
+  }
 }
