@@ -1,0 +1,177 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('/atencion-profesional/USUARIO/Imagenes/cancela.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: overlay;
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 20px;
+  display: flex;
+  gap: 40px;
+}
+
+/* Secciones del formulario */
+.form-section {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.599);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Efecto de borde de luz */
+.form-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 0));
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.form-section:hover::before {
+  opacity: 1;
+}
+
+.form-section:hover {
+  transform: scale(1.02);
+  background: linear-gradient(145deg, #e0e0e0, rgba(255, 255, 255, 0.8));
+}
+
+/* Grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Etiquetas */
+.form-label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  background: linear-gradient(45deg, #59009A, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Inputs y áreas de texto */
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(89, 0, 154, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #555;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #59009A;
+  box-shadow: 0 0 5px rgba(89, 0, 154, 0.3);
+}
+
+/* Campos no editables */
+.form-input.static {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(89, 0, 154, 0.2);
+  color: #666;
+  pointer-events: none;
+}
+
+/* Estilo específico para áreas de texto */
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Contenedor del botón */
+.button-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Botón */
+.form-button {
+  padding: 0.625rem 1.875rem;
+  background: linear-gradient(145deg, #59009A, #8a2be2);
+  color: #fff;
+  border: none;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-button:hover {
+  background: linear-gradient(145deg, #8a2be2, #59009A);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(89, 0, 154, 0.3);
+}
+
+/* Estilo para el placeholder */
+::placeholder {
+  color: #999;
+  opacity: 0.7;
+}
+
+/* Estilo para las opciones del select */
+select.form-input option {
+  color: #555;
+  background: white;
+  padding: 8px;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-section {
+    min-width: 100%;
+  }
+}

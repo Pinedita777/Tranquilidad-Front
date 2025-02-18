@@ -1,98 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const carousel = document.querySelector('.carousel-inner');
-  const items = document.querySelectorAll('.carousel-item');
-  const dotsContainer = document.querySelector('.carousel-indicators');
-  let currentIndex = 0;
-  const totalItems = items.length;
-  const itemsPerView = window.innerWidth > 768 ? 3 : 2;
-  const maxIndex = totalItems - itemsPerView;
+const stories = [
+  [
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen4.jpg", text: "Los atardeceres nos enseñan a dejar ir lo que no podemos cambiar. 🌅" },
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen5.jpg", text: "El final del día es la mejor oportunidad para respirar y agradecer. 🌄" },
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen6.jpg", text: "La calma del atardecer nos recuerda que cada día tiene su belleza. 🌅" }
+  ],
+  [
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen7.jpg", text: "Incluso en la rutina, un atardecer nos da un momento de paz. 🌇" },
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen8.jpg", text: "Los colores del atardecer nos inspiran a soñar sin límites. 🌆" },
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen9.jpg", text: "Cada puesta de sol es un recordatorio de que siempre hay un nuevo comienzo. 🌄" }
+  ],
+  [
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen10.jpg", text: "Mira el atardecer y recuerda que la vida es un hermoso viaje. 🌅" },
+      { img: "/atencion-profesional/USUARIO/Imagenes/Imagen2.jpg", text: "El sol se despide, pero mañana nos traerá nuevas oportunidades. 🌞" },
+      { img: "/atencion-profesional/USUARIO/Home_Usuario/Imagenes/Imagen4.jpg", text: "Siente la brisa del atardecer y deja ir las preocupaciones del día. 🍃" }
+  ]
+];
 
-  // Create dots
-  items.forEach((_, index) => {
-    if (index <= maxIndex) {
-      const dot = document.createElement('button');
-      dot.classList.add('carousel-dot');
-      if (index === 0) dot.classList.add('active');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    }
-  });
+let currentIndexes = [0, 0, 0];
 
-  const dots = document.querySelectorAll('.carousel-dot');
-
-  function updateSlidePosition() {
-    const slideWidth = items[0].offsetWidth + 8; // Width + gap
-    carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-
-    // Update dots
-    dots.forEach((dot, index) => {
-      dot.classList.toggle('active', index === currentIndex);
-    });
+const updateStories = () => {
+  for (let i = 0; i < 3; i++) {
+      document.getElementById(`story-image-${i + 1}`).src = stories[i][currentIndexes[i]].img;
+      document.getElementById(`story-text-${i + 1}`).textContent = stories[i][currentIndexes[i]].text;
   }
+};
 
-  function goToSlide(index) {
-    if (index >= 0 && index <= maxIndex) {
-      currentIndex = index;
-      updateSlidePosition();
-    }
+// Cambio automático cada 5 segundos
+setInterval(() => {
+  for (let i = 0; i < 3; i++) {
+      currentIndexes[i] = (currentIndexes[i] + 1) % stories[i].length;
   }
+  updateStories();
+}, 5000);
 
-  function nextSlide() {
-    if (currentIndex < maxIndex) {
-      currentIndex++;
-      updateSlidePosition();
-    } else {
-      // Smooth return to start
-      currentIndex = 0;
-      carousel.style.transition = 'none';
-      updateSlidePosition();
-      setTimeout(() => {
-        carousel.style.transition = 'transform 0.8s ease-in-out';
-      }, 50);
-    }
-  }
-
-  function prevSlide() {
-    if (currentIndex > 0) {
-      currentIndex--;
-      updateSlidePosition();
-    } else {
-      // Smooth wrap to end
-      currentIndex = maxIndex;
-      carousel.style.transition = 'none';
-      updateSlidePosition();
-      setTimeout(() => {
-        carousel.style.transition = 'transform 0.8s ease-in-out';
-      }, 50);
-    }
-  }
-
-  // Event listeners
-  document.querySelector('.carousel-control.prev').addEventListener('click', prevSlide);
-  document.querySelector('.carousel-control.next').addEventListener('click', nextSlide);
-
-  // Auto advance slides
-  let autoAdvance = setInterval(nextSlide, 5000);
-
-  // Pause on hover
-  carousel.addEventListener('mouseenter', () => clearInterval(autoAdvance));
-  carousel.addEventListener('mouseleave', () => {
-    autoAdvance = setInterval(nextSlide, 5000);
-  });
-
-  // Handle window resize
-  window.addEventListener('resize', () => {
-    // Update itemsPerView based on new window width
-    const newItemsPerView = window.innerWidth > 768 ? 3 : 2;
-    if (newItemsPerView !== itemsPerView) {
-      currentIndex = 0; // Reset position on layout change
-    }
-    updateSlidePosition();
-  });
-
-  // Initial position
-  updateSlidePosition();
-});
+window.onload = () => {
+  updateStories();
+};
 
 
 

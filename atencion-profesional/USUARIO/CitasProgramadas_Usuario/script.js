@@ -5,15 +5,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalDetalles = document.getElementById("modalDetalles");
     const btnAceptarIngresar = document.getElementById("btnAceptarIngresar");
 
-    let citas = JSON.parse(localStorage.getItem("citas")) || [];
-
     function mostrarCitas() {
+        const citas = JSON.parse(localStorage.getItem("citas")) || [];
         contenedorCitas.innerHTML = "";
+
+        if (citas.length === 0) {
+            contenedorCitas.innerHTML = "<p>No hay citas agendadas</p>";
+            return;
+        }
 
         citas.forEach((cita, index) => {
             const tarjeta = document.createElement("div");
             tarjeta.classList.add("tarjeta");
-
             tarjeta.innerHTML = `
                 <h3>${cita.nombre}</h3>
                 <p><strong>Correo:</strong> ${cita.correo}</p>
@@ -23,61 +26,58 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p><strong>Profesional:</strong> ${cita.profesional}</p>
                 <p><strong>Fecha:</strong> ${cita.fecha}</p>
                 <p><strong>Hora:</strong> ${cita.hora}</p>
-                <p><strong>Comentarios:</strong> ${cita.comentarios}</p>
+                <p><strong>Comentarios:</strong> ${cita.comentarios || 'Sin comentarios'}</p>
                 <button class="btn-ingresar" data-index="${index}">Ingresar</button>
                 <button class="btn-editar" data-index="${index}">Editar</button>
                 <button class="btn-cancelar" data-index="${index}">Cancelar</button>
             `;
-
             contenedorCitas.appendChild(tarjeta);
         });
     }
 
     mostrarCitas();
 
-    // Evento para manejar los botones
     contenedorCitas.addEventListener("click", function (event) {
-        const index = event.target.getAttribute("data-index");
+        const button = event.target;
+        if (!button.matches('button')) return;
 
-        if (event.target.classList.contains("btn-cancelar")) {
-            citas.splice(index, 1);
-            localStorage.setItem("citas", JSON.stringify(citas));
-            mostrarCitas();
-        } else if (event.target.classList.contains("btn-ingresar")) {
-            const cita = citas[index];
+        const index = button.getAttribute("data-index");
+        const citas = JSON.parse(localStorage.getItem("citas")) || [];
+        const cita = citas[index];
+        if (!cita) return;
 
-            // Mostrar los detalles en el modal
+        if (button.classList.contains("btn-cancelar")) {
+            // Guardar la cita en localStorage y redirigir
+            localStorage.setItem("citaCancelar", JSON.stringify(cita));
+            window.location.href = "../CancelarCita2_Usuario/CancelarCita2.html";
+        } else if (button.classList.contains("btn-ingresar")) {
+            // Mostrar el modal con la información de la cita
             modalTitulo.textContent = `Ingresando a la cita de ${cita.nombre}`;
             modalDetalles.innerHTML = `
                 <p><strong>Especialidad:</strong> ${cita.especialidad}</p>
                 <p><strong>Fecha:</strong> ${cita.fecha}</p>
                 <p><strong>Hora:</strong> ${cita.hora}</p>
             `;
-
-            // Agregar clase para animación y mostrar el modal
             modalIngresar.classList.add("show");
             modalIngresar.style.display = "flex";
-
-            // Guardar la cita en localStorage
             localStorage.setItem("citaActual", JSON.stringify(cita));
-        } else if (event.target.classList.contains("btn-editar")) {
-            localStorage.setItem("citaEditar", JSON.stringify(citas[index]));
+        } else if (button.classList.contains("btn-editar")) {
+            // Guardar cita a editar y redirigir
+            localStorage.setItem("citaEditar", JSON.stringify(cita));
             window.location.href = "../CitaActualizada_Usuario/cita-actualizada.html";
         }
     });
 
-    // Botón Aceptar del modal (redirección a videollamadas)
-    btnAceptarIngresar.addEventListener("click", function () {
+    btnAceptarIngresar?.addEventListener("click", function () {
         window.location.href = "../Consulta_Usuario/ConsultaUsuario.html";
     });
 
-    // Cerrar modal al hacer clic fuera de él
-    modalIngresar.addEventListener("click", function (event) {
+    modalIngresar?.addEventListener("click", function (event) {
         if (event.target === modalIngresar) {
             modalIngresar.classList.remove("show");
             setTimeout(() => {
                 modalIngresar.style.display = "none";
-            }, 300); // Espera que termine la animación antes de ocultarlo
+            }, 300);
         }
     });
 });
