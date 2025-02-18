@@ -24,10 +24,6 @@ header {
 header.hidden {
     transform: translateY(-100%); /* Mueve el header hacia arriba fuera de la vista */
 }
-main {
-    margin-top: 120px; /* Ajusta la altura según el header */
-    padding: 20px;
-}
   
 .logo-container {
     display: flex;
