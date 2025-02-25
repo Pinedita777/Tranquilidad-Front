@@ -1,3 +1,4 @@
+// miscitas.js
 document.addEventListener("DOMContentLoaded", function () {
     const contenedorCitas = document.getElementById("contenedorCitas");
     const modalIngresar = document.getElementById("modalIngresar");
@@ -6,17 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const btnAceptarIngresar = document.getElementById("btnAceptarIngresar");
 
     function mostrarCitas() {
-        const citas = JSON.parse(localStorage.getItem("citas")) || [];
+        const todasLasCitas = JSON.parse(localStorage.getItem("citas")) || [];
+        // Solo mostrar citas aceptadas
+        const citasAceptadas = todasLasCitas.filter(cita => cita.estado === 'aceptada');
+        
         contenedorCitas.innerHTML = "";
 
-        if (citas.length === 0) {
-            contenedorCitas.innerHTML = "<p>No hay citas agendadas</p>";
+        if (citasAceptadas.length === 0) {
+            contenedorCitas.innerHTML = "<p>No hay citas aceptadas</p>";
             return;
         }
 
-        citas.forEach((cita, index) => {
+        citasAceptadas.forEach((cita, index) => {
             const tarjeta = document.createElement("div");
             tarjeta.classList.add("tarjeta");
+            // Añadir clase de estado
+            tarjeta.classList.add(`estado-${cita.estado}`);
+            
             tarjeta.innerHTML = `
                 <h3>${cita.nombre}</h3>
                 <p><strong>Correo:</strong> ${cita.correo}</p>
@@ -43,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const index = button.getAttribute("data-index");
         const citas = JSON.parse(localStorage.getItem("citas")) || [];
-        const cita = citas[index];
+        const citasAceptadas = citas.filter(cita => cita.estado === 'aceptada');
+        const cita = citasAceptadas[index];
         if (!cita) return;
 
         if (button.classList.contains("btn-cancelar")) {

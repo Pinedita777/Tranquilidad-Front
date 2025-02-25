@@ -1,80 +1,187 @@
 
 
 
-/* Contenido Body*/
 body {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; /* Asegura que el fondo cubra toda la altura */
-  background-image: url('/atencion-profesional/USUARIO/Imagenes/agenda-cita.png'); /* Cambia por la ruta de tu imagen */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
-  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.7); /* Color de fondo blanco con transparencia */
-  background-blend-mode: overlay; /* Mezcla el color con la imagen */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding-top: 180px;
+    min-height: 100vh;
+    background-image: url('/atencion-profesional/USUARIO/Imagenes/mensajes.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: overlay;
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    margin-bottom: 100px;
-
-  background-image: url('/atencion-profesional/USUARIO/Imagenes/agenda-cita.png'); /* Cambia por la ruta de tu imagen */
-  background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  background-position: center top; /* Centra la imagen y la desplaza hacia arriba */
-  background-attachment: fixed; /* Hace que la imagen sea fija al hacer scroll */
-  background-color: rgba(255, 255, 255, 0.889); /* Color de fondo blanco con transparencia */
-  background-blend-mode: overlay; /* Mezcla el color con la imagen */
+    padding-top: 120px;
+    padding-bottom: 50px;
 }
 
-.appointment-requests {
-    width: 60%;
-    
-}
-
-.appointment-request {
-    border: 1px solid #6a1b9a;
-    padding: 15px;
-    margin-bottom: 50px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    
-}
-
-.appointment-request p {
-    margin: 5px 0;
-}
-
-.actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-}
-
-.accept-button, .decline-button {
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
+h2 {
+    color: #59009A;
+    text-align: center;
+    font-size: 2.5rem; /* Aumentado de 2rem */
+    margin: 0 auto 50px; /* Aumentado de 30px y centrado */
+    margin-bottom: -90px;
+    text-transform: uppercase;
     font-weight: bold;
+    position: relative; /* Para añadir un subrayado decorativo */
+    padding-bottom: 15px; /* Espacio para el subrayado */
+    max-width: 800px; /* Limitar el ancho máximo */
 }
 
-.accept-button {
-    background-color: #6a1b9a;
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #59009A;
+}
+
+.buzon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px; /* Aumentado de 25px */
+    padding: 30px; /* Aumentado de 20px */
+    margin: 0 auto; /* Centrar el contenedor */
+    max-width: 1400px; /* Limitar el ancho máximo */
+}
+
+.cita-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px; /* Aumentado de 20px */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid #59009A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px; /* Altura mínima para uniformidad */
+}
+
+/* El resto del código permanece igual */
+.cita-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cita-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cita-icon {
+    background: #59009A;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.cita-info {
+    flex-grow: 1;
+}
+
+.cita-tipo {
+    font-size: 0.9rem;
+    color: #59009A;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cita-detalles {
+    margin: 15px 0;
+}
+
+.cita-detalles p {
+    margin: 8px 0;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.cita-detalles i {
+    margin-right: 10px;
+    color: #59009A;
+    width: 20px;
+}
+
+.cita-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Empuja los botones al fondo de la card */
+    padding-top: 20px;
+}
+
+.btn-aceptar, .btn-denegar {
+    flex: 1;
+    padding: 12px; /* Aumentado de 10px */
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-aceptar {
+    background: #59009A;
     color: white;
 }
 
-.decline-button {
-    background-color: #e0e0e0;
-    color: #333;
+.btn-aceptar:hover {
+    background: #4a0080;
 }
 
+.btn-denegar {
+    background: #ff4444;
+    color: white;
+}
 
+.btn-denegar:hover {
+    background: #cc0000;
+}
 
-  
-  
+.empty-message {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    margin: 40px 0;
+}
+
+@media (max-width: 768px) {
+    .buzon-container {
+        grid-template-columns: 1fr;
+        gap: 30px; /* Espaciado reducido en móviles */
+        padding: 15px;
+    }
+    
+    .cita-card {
+        margin: 0;
+        min-height: 250px; /* Altura mínima reducida en móviles */
+    }
+    
+    h2 {
+        font-size: 2rem; /* Título más pequeño en móviles */
+        margin-bottom: 30px;
+    }
+}

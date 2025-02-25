@@ -13,6 +13,7 @@ html, body {
 }
 
 body {
+  padding-top: 100px;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   display: flex;
