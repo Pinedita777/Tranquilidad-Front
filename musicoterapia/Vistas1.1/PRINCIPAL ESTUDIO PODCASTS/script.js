@@ -1104,7 +1104,7 @@ function poblarPestañaEditar() {
                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                         <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
                             <input type="radio" name="category" value="atracciones">
-                            <span>Atracciones</span>
+                            <span>Afirmaciones</span>
                         </label>
                         <label style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
                             <input type="radio" name="category" value="motivacional">
